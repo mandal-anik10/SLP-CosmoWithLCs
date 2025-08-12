@@ -1,6 +1,6 @@
 \documentclass[12pt]{beamer}
 
-\usetheme[progressbar=foot,numbering=fraction]{metropolis}
+\usetheme[progressbar=foot,numbering=fraction, background=dark, sectionpage=none]{metropolis}
 \usepackage{appendixnumberbeamer}
 \makeatletter
 \setlength{\metropolis@progressinheadfoot@linewidth}{2pt} % Set thickness
@@ -27,8 +27,6 @@
 }
 
 
-\metroset{sectionpage=none}
-
 
 % Title page informations ############################################################################
 \title{Metropolis}
@@ -36,7 +34,7 @@
 \date{2025, November 30}
 \author{Anik Mandal}
 \institute{Ashoka University}
-\titlegraphic{\hfill\includegraphics[height=1.5cm]{../../tex-resource/ashoka-logo.png}}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{../tex-resource/ashoka-logo.png}}
 \newcommand{\supervisorname}{Dr.~Jane~Doe}
 \newcommand{\department}{Department~of~Physics}
 \newcommand{\secondlogo}{../../tex-resource/ashoka-logo.png}
@@ -63,6 +61,10 @@
 %     \insertdate
 %   \end{minipage}
 % }
+% In your preamble (before \begin{document}), add:
+\setbeamertemplate{frame footer}{
+  \hfill \tiny{\insertshortauthor}
+}
 
 
 \begin{document}
