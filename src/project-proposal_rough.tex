@@ -1,0 +1,212 @@
+% Research Proposal LaTeX Template
+% Nature-style formatting for research proposals
+% Last updated: September 2025
+
+\documentclass[12pt]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}           % Times New Roman font
+\usepackage{geometry}        % Page layout
+\usepackage{setspace}        % Line spacing
+\usepackage{graphicx}        % Graphics support
+\usepackage{amsmath,amssymb} % Mathematical symbols
+\usepackage{natbib}          % Citations
+\usepackage{hyperref}        % Hyperlinks and TOC
+\usepackage{fancyhdr}        % Headers and footers
+\usepackage{titling}         % Title formatting
+\usepackage{booktabs}        % Professional tables
+\usepackage{caption}         % Caption formatting
+\usepackage{tocloft}         % Table of contents formatting
+\usepackage[dvipsnames]{xcolor}
+
+% Page setup
+\geometry{
+    a4paper,
+    left=2.54cm,
+    right=2.54cm,
+    top=2.54cm,
+    bottom=2.54cm
+}
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, urlcolor=RoyalBlue}
+
+% 1.5 spacing for readability
+\onehalfspacing
+
+% Header setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\textit{Research Proposal}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Title formatting
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vskip 1em}
+\preauthor{\begin{center}\large}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\normalsize}
+\postdate{\par\end{center}\vskip 2em}
+
+% Table of contents formatting
+\renewcommand{\contentsname}{Table of Contents}
+\setcounter{tocdepth}{3}
+
+% Section numbering
+\setcounter{secnumdepth}{3}
+
+% Document begins
+\begin{document}
+
+% Title page
+\title{Project Proposal \\
+\large Labrotary Studies of Cosmology inspired Defect Dynamics in \\Liquid Crystals}
+
+\author{
+    Anik Mandal$^{1,*}$ \\
+    SLP guide : Prof. Pramoda Kumar$^{1}$\\
+    Supervisor : Prof. Somak Raychaudhury$^{1}$\\[0.5em]
+    \small
+    $^{1}$Ashoka University, Sonipat, India \\[0.5em]
+    $^{*}$Corresponding author. Email: anik.mandal\_phd24@ashoka.edu.in
+}
+
+\date{\today}
+
+\maketitle
+
+% Abstract/Executive Summary
+\begin{abstract}
+Provide a concise summary of your proposed research (250-300 words). Include the problem statement, objectives, methodology, expected outcomes, and significance of the study. This should be accessible to reviewers from different disciplines.
+
+\textbf{Keywords:} keyword1, keyword2, keyword3, keyword4, keyword5
+\end{abstract}
+
+\vspace{2em}
+
+% Table of Contents
+% \tableofcontents
+% \clearpage
+
+% Main sections
+\section{Introduction and Background}
+
+\input{src/proposal/Introduction}
+
+% \subsection{Problem Statement}
+% Clearly define the research problem you aim to address. Explain why this problem is important and timely.
+
+% \subsection{Literature Review}
+% Provide a comprehensive review of existing literature relevant to your research question. Identify gaps that your research will address.
+
+% \subsection{Research Questions/Hypotheses}
+% State your primary research question(s) and any hypotheses you plan to test.
+
+\section{Research Objectives}
+
+% \subsection{Primary Objectives}
+% List the main goals of your research project.
+
+% \subsection{Secondary Objectives}
+% Include any additional objectives that support your primary goals.
+
+\section{Methodology}
+
+% \subsection{Research Design}
+% Describe your overall research approach (experimental, observational, theoretical, etc.).
+
+% \subsection{Study Population/Sample}
+% Define your target population and sampling strategy.
+
+% \subsection{Data Collection Methods}
+% Detail how you will collect data, including instruments, procedures, and protocols.
+
+% \subsection{Data Analysis Plan}
+% Explain how you will analyze your data, including statistical methods and software.
+
+\section{Timeline and Milestones}
+
+% \begin{table}[h]
+% \centering
+% \caption{Project Timeline}
+% \begin{tabular}{@{}lll@{}}
+% \toprule
+% Phase & Activity & Timeline \\
+% \midrule
+% Phase 1 & Literature review and protocol development & Months 1-3 \\
+% Phase 2 & Data collection & Months 4-12 \\
+% Phase 3 & Data analysis & Months 13-15 \\
+% Phase 4 & Manuscript preparation & Months 16-18 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+\section{Budget and Resources}
+
+% \subsection{Personnel Costs}
+% Detail staffing requirements and associated costs.
+
+% \subsection{Equipment and Supplies}
+% List necessary equipment, materials, and supplies.
+
+% \subsection{Other Expenses}
+% Include travel, publication fees, and other miscellaneous costs.
+
+\section{Expected Outcomes and Impact}
+
+% \subsection{Anticipated Results}
+% Describe what you expect to find or achieve through this research.
+
+% \subsection{Significance and Innovation}
+% Explain how your research will advance the field and its broader implications.
+
+% \subsection{Dissemination Plan}
+% Outline how you will share your findings (publications, presentations, etc.).
+
+\section{Limitations and Risk Assessment}
+
+% \subsection{Potential Limitations}
+% Acknowledge any limitations of your proposed approach.
+
+% \subsection{Risk Mitigation Strategies}
+% Describe how you will address potential challenges or setbacks.
+
+\section{Ethical Considerations}
+
+% Discuss any ethical issues related to your research and how you will address them. Include IRB approval plans if applicable.
+
+\section{Qualifications and Experience}
+
+% Briefly describe the research team's qualifications and relevant experience for conducting this study.
+
+% References
+\bibliographystyle{naturemag}
+% Use \bibliography{your_bib_file} for automatic bibliography
+% Or list references manually:
+\bibliography{src/proposal/bibliography}
+% \begin{enumerate}
+% \item Author, A. B. \& Author, C. D. Title of the paper. \textit{Journal Name} \textbf{123}, 456--467 (2023).
+% \item Author, E. F. et al. Another relevant paper. \textit{Nature} \textbf{456}, 789--801 (2023).
+% % Add more references as needed
+% \end{enumerate}
+
+% Appendices (if needed)
+% \clearpage
+% \section*{Appendices}
+
+% \subsection*{Appendix A: Detailed Budget Breakdown}
+% Provide detailed budget information if required.
+
+% \subsection*{Appendix B: Supporting Documents}
+% Include any additional supporting materials, protocols, or documentation.
+
+\end{document}
+
+% Instructions for use:
+% 1. Replace all placeholder text with your specific proposal content
+% 2. Adjust sections as needed for your discipline and funding requirements
+% 3. Add your actual references and bibliography
+% 4. Customize the timeline table for your project duration
+% 5. Include any required appendices or supporting documents
+% 6. Check funding agency guidelines for specific formatting requirements

@@ -1,0 +1,213 @@
+% Nature Journal LaTeX Template
+% Compatible with standard article class
+% Author: Created for Nature publication submissions
+% Last updated: September 2025
+
+\documentclass[12pt]{report}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}           % Times New Roman font
+\usepackage{geometry}        % Page layout
+\usepackage{setspace}        % Line spacing
+\usepackage{graphicx}        % Graphics support
+\usepackage{amsmath,amssymb} % Mathematical symbols
+\usepackage{natbib}          % Nature-style citations
+\usepackage{url}             % URL support
+\usepackage{hyperref}        % Hyperlinks
+\usepackage{lineno}          % Line numbers for review
+\usepackage{fancyhdr}        % Headers and footers
+\usepackage{titling}         % Title formatting
+\usepackage[table,xcdraw]{xcolor} % Color support
+\usepackage{booktabs}        % Professional tables
+\usepackage{caption}         % Caption formatting
+
+% Page setup following Nature guidelines
+\geometry{
+    a4paper,
+    left=2.54cm,
+    right=2.54cm,
+    top=2.54cm,
+    bottom=2.54cm
+}
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, urlcolor=RoyalBlue}
+
+% Double spacing as required by Nature
+\doublespacing
+
+% Line numbers for review process
+\linenumbers
+
+% Header setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\textit{Manuscript for Nature}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Title formatting
+\pretitle{\begin{center}\large\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\normalsize}
+\postdate{\par\end{center}\vskip 2em}
+
+% Figure and table caption formatting
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    format=plain,
+    justification=raggedright,
+    singlelinecheck=false
+}
+
+% Bibliography style (Nature uses numbered references)
+\bibliographystyle{naturemag}
+
+% Document begins
+\begin{document}
+
+% Title page
+\title{Your Article Title Here: Concise and Descriptive (Max 75 Characters)}
+
+\author{
+    First Author$^{1,*}$, 
+    Second Author$^{2}$, 
+    Third Author$^{1,3}$ \\[0.5em]
+    \small
+    $^{1}$Department of Research, University Name, City, Country \\
+    $^{2}$Institute of Science, Institution Name, City, Country \\
+    $^{3}$Current address: New Department, New Institution, City, Country \\[0.5em]
+    $^{*}$Corresponding author. Email: corresponding.author@institution.edu
+}
+
+\date{} % Remove date
+
+\maketitle
+
+% Summary paragraph (Nature's key requirement)
+\noindent\textbf{Summary Paragraph} \\
+\textbf{Write a fully-referenced summary paragraph of no more than 200 words here. This should be structured as follows: 2-3 sentences of basic-level introduction to the field, a brief account of the background and rationale of the work, a statement of the main conclusions (introduced by "Here we show" or equivalent), and 2-3 sentences putting the main findings into general context. Avoid numbers, abbreviations, acronyms unless essential. This paragraph is separate from the main text and aimed at readers outside the discipline.$^{1-3}$}
+
+\vspace{1em}
+
+% Main text sections
+\section{Introduction}
+
+Write your introduction here. The introduction should provide background that puts the manuscript into context and allows readers outside the field to understand the purpose and significance of the study. Define the problem addressed and why it is important. Include a brief review of key literature and note any relevant controversies. Conclude with the overall aim of the work$^{4,5}$.
+
+\section{Results}
+
+Present your main findings here. Use subheadings to organize different aspects of your results. Each result should be clearly stated and supported by appropriate figures or tables. Keep the text concise but comprehensive$^{6}$.
+
+\subsection{First key finding}
+Describe your first major result here$^{7}$.
+
+\subsection{Second key finding}
+Describe your second major result here$^{8}$.
+
+\section{Discussion}
+
+Interpret your evidence here. Connect your findings to the broader context and discuss the implications. Address limitations and suggest future research directions. Keep this section focused on the significance of your work$^{9,10}$.
+
+% References section
+\section*{References}
+% Note: Create a .bib file with your references and use \bibliography{your_bib_file}
+% For now, format references manually following Nature style:
+\begin{enumerate}
+\item Smith, J. \& Jones, A. Title of the paper. \textit{Nature} \textbf{123}, 456--458 (2023).
+\item Johnson, K. et al. Another important paper. \textit{Science} \textbf{456}, 789--792 (2023).
+\item Brown, L. M. Book title. (Publisher, 2023).
+% Add more references as needed (up to 50 for main text)
+\end{enumerate}
+
+% End notes (required by Nature)
+\section*{Acknowledgements}
+We thank [brief acknowledgements]. This work was supported by [funding sources]. 
+
+\section*{Author contributions}
+F.A. conceived the project and wrote the manuscript. S.A. performed experiments. T.A. analyzed data. All authors discussed the results and contributed to the final manuscript.
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\section*{Data availability}
+The data that support the findings of this study are available from the corresponding author upon reasonable request. [Or specify database/repository where data is deposited]
+
+\section*{Code availability}
+Custom code used in this study is available from the corresponding author upon reasonable request. [Or specify repository where code is available]
+
+\section*{Additional information}
+Supplementary Information is available for this paper.
+
+Correspondence and requests for materials should be addressed to F.A.
+
+Peer review information: \textit{Nature} thanks [reviewers] for their contribution to the peer review of this work.
+
+Reprints and permissions information is available at www.nature.com/reprints.
+
+% Figure legends (list after references)
+\clearpage
+\section*{Figure legends}
+
+\textbf{Figure 1 | Title of first figure.} Brief description of the figure and what each panel shows. Define all symbols, abbreviations, and statistical measures. Keep under 300 words.
+
+\textbf{Figure 2 | Title of second figure.} Brief description of the second figure. Continue with additional figures as needed.
+
+% Tables (if any)
+\clearpage
+\section*{Tables}
+
+\begin{table}[h]
+\centering
+\caption{Table 1 | Brief title of table}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Parameter & Value 1 & Value 2 \\
+\midrule
+Item 1 & 123 & 456 \\
+Item 2 & 789 & 012 \\
+Item 3 & 345 & 678 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Define symbols and abbreviations here. Provide essential descriptive material as briefly as possible.
+\end{tablenotes}
+\end{table}
+
+% Methods section (appears online only, not in print)
+\clearpage
+\section*{Methods}
+
+\subsection{Experimental design}
+Describe your experimental approach here. Be concise but include all elements necessary for interpretation and replication. Maximum 3,000 words for this section$^{11}$.
+
+\subsection{Materials}
+List key materials, reagents, and equipment used.
+
+\subsection{Statistical analysis}
+Describe statistical methods used, including software and significance thresholds.
+
+\subsection{Data processing}
+Explain how data were processed and analyzed.
+
+% Methods references (continue numbering from main text)
+\section*{Methods references}
+\begin{enumerate}
+\setcounter{enumi}{10} % Continue from last main text reference
+\item Additional reference for methods. \textit{Journal} \textbf{123}, 456--458 (2023).
+\end{enumerate}
+
+\end{document}
+
+% Instructions for use:
+% 1. Replace placeholder text with your content
+% 2. Add your references to the References section
+% 3. Include figures as separate high-resolution files
+% 4. Ensure total word count: ~2,500 words for 6-page article, ~4,300 for 8-page article
+% 5. Limit main text references to ~50
+% 6. Keep figure legends under 300 words each
+% 7. Submit as single file with figures embedded for initial submission
