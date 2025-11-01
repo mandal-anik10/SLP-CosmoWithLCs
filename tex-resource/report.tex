@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry, graphicx, float, hyperref, fancyhdr, titlesec, setspace, abstract, indentfirst, booktabs, multirow, array, caption, subcaption, fontspec, enumitem}
+\setlength{\headheight}{14.5pt}
+\usepackage[dvipsnames]{xcolor}
+
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\addtolength{\headwidth}{\marginparwidth}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\headrulewidth}{1pt}
+
+\geometry{
+    a4paper,
+    left=2.4cm,
+    right=2.4cm,
+    top=3.0cm,
+    bottom=2.5cm
+}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RoyalBlue,
+    filecolor=magenta,      
+    urlcolor=RoyalBlue,
+    pdftitle={Laboratory Studies of Cosmology-Inspired Defect Dynamics in Liquid Crystals},
+    pdfauthor={Anik Mandal},
+    bookmarksopen=true,
+    bookmarksnumbered=true
+}
+
+% Custom commands
+\newcommand{\email}[1]{\texttt{#1}}
+\newcommand{\university}{Ashoka University}
+\newcommand{\location}{Sonipat, India}
+
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\huge\bfseries Laboratory Studies of Cosmology Inspired Defect Dynamics in \\Liquid Crystals\par}
+    \vspace{2cm}
+    {\Large Semester Long Project Report\par}
+    \vspace{1.5cm}
+    {\large
+    \textbf{Anik Mandal}$^{1,*}$ \\[0.5em]
+    SLP Guide: Prof. Pramoda Kumar$^1$ \\
+    Supervisor: Prof. Somak Raychaudhury$^1$ \\[1em]
+    $^1$\university, \location \\
+    $^{*}$Email: \href{mailto:anik.mandal_phd24@ashoka.edu.in}{anik.mandal\_phd24@ashoka.edu.in}
+    }
+    \vfill
+    {\large \today\par}
+\end{titlepage}
+
+% Abstract
+\begin{abstract}
+
+\end{abstract}
+
+% Table of Contents
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+% Main content
+\section{Introduction}
+
+
+\subsection{Kibble-Zurek Mechanism}
+
+\subsection{Topological Defects in Cosmology}
+
+\subsection{Project Objectives}
+
+\section{Experimental Setup}
+\subsubsection*{Nematic Liquid Crystals}
+
+\subsubsection*{Homeotropic Alignment}
+% \subsection{apparatus}
+\subsection{Preparing empty cell}
+\subsubsection*{\textit{Patterning:}}
+\subsubsection*{\textit{Etching:}}
+\subsubsection*{}
+\subsection{Capacitance-Based Cell Thickness Measurement}
+\subsection{Preparing homeotropic cell}
+
+\subsection{Optical Microscopy System}
+
+\section{Computational Framework}
+\subsection{String density estimation}
+\subsubsection*{Step-1: Pre-processing and Noise Reduction}
+In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the 
+overall quality of the image. The median filter is a non-linear filtering technique that replaces each pixel value 
+with the median of the intensity values within its 3×3 neighborhood. Specifically, for every pixel, a $3\times3$ 
+window is centered on it, and the nine pixel values within this window are sorted in ascending order. The median 
+value from this sorted list is then assigned to the central pixel, effectively suppressing impulsive noise such as 
+salt-and-pepper noise while preserving important image details. Unlike linear filters that tend to blur edges by 
+averaging pixel values, the median filter maintains sharp boundaries and fine structures, making it particularly 
+effective for applications where edge preservation is crucial.
+
+\subsubsection*{Step-2: Ridge detection operation}
+\subsubsection*{Step-3: Hysteresis thresholding} 
+\subsubsection*{Step-4: Binary closing and Removing small objects}
+\subsubsection*{Step-5: Skeletonizing}
+\subsubsection*{Step-6: Calculating string density}
+
+\subsection{}
+
+
+
+\section{Defect Dynamics}
+\subsubsection*{The Freedericksz Transition}
+\subsection{Electric Field Quench}
+\subsection{Magnetic Field Quench}
+
+\section{Conclusion}
+
+% Bibliography
+\bibliographystyle{naturemag}
+\bibliography{references}
+
+% Appendices (if needed)
+\appendix
+\section{Supplementary Materials}
+
+% Add any supplementary materials, equations, or detailed procedures here
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[12pt]{beamer}
+
+\usetheme[progressbar=foot,numbering=fraction, sectionpage=none]{metropolis}
+\useoutertheme{miniframes}
+
+\usepackage{appendixnumberbeamer}
+\makeatletter
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt} % Set thickness
+\makeatother
+
+
+% Include section navigation bar at the top
+\setbeamercolor{progress bar}{fg=red}
+\setbeamerfont{section in head/foot}{series=\bfseries}
+% \setbeamertemplate{headline}{%
+%   \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1ex]{section in head/foot}
+%     \insertsectionnavigationhorizontal{\paperwidth}{}{}
+%   \end{beamercolorbox}
+% }
+\useoutertheme{miniframes}
+
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1ex]{section in head/foot}
+    \centering
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\vspace{1pt}}
+    \vspace{1pt}
+    \insertsubsectionnavigationhorizontal{\paperwidth}{}{}
+  \end{beamercolorbox}
+}
+
+
+% Title page informations ############################################################################
+\title{SLP Presentation}
+\subtitle{Laboratory Studies of Cosmology inspired Defect Dynamics in Liquid Crystals}
+\date{2025, November 30}
+\author{Anik Mandal}
+\institute{Ashoka University}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{../tex-resource/ashoka-logo.png}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents%[hideallsubsections]
+\end{frame}
+
+
+\section[Intro]{Introduction}
+
+\begin{frame}[fragile]{Project Objectives}
+    hkj
+\end{frame}
+
+\begin{frame}[fragile]{Cosmological Defects}
+  khb
+\end{frame}
+\begin{frame}[fragile]{Kibble-Zurek Mechanism}
+hk
+\end{frame}
+
+\section{Experimental Setup}
+
+\section{Computational Framework}
+
+\section{Defect Dynamics}
+
+\section{Conclusion}
+
+
+\begin{frame}[fragile]{Backup slides}
+jln
+\end{frame}
+
+% \begin{frame}[allowframebreaks]{References}
+
+%   \bibliography{references}
+%   \bibliographystyle{abbrv}
+
+% \end{frame}
+
+\end{document}

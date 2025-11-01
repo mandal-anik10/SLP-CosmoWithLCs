@@ -1,0 +1,80 @@
+
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{geometry, hyperref, amsmath, fontspec, enumitem, graphicx}
+\usepackage[dvipsnames]{xcolor}
+
+\setmainfont{Georgia}
+\geometry{
+    a4paper,
+    left=1.8cm,
+    right=1.8cm,
+    top=1.8cm,
+    bottom=1.8cm
+}
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, urlcolor=RoyalBlue}
+
+\begin{document}
+\noindent
+{\LARGE Mid-project Report\hrulefill}\\[5pt]
+{\Large \textbf{Laboratory Studies \cite{Chuang1991CosmologyCrystals,Chuang1991Late-timeCrystal,Kibble2007Phase-transitionUniverse} of Cosmology inspired Defect Dynamics in Liquid Crystals}}\\[5pt]
+Anik Mandal$^{1,*}$ \\
+SLP guide : Prof. Pramoda Kumar$^{1}$\\
+Supervisor : Prof. Somak Raychaudhury$^{1}$\\[0.5em]
+\small
+$^{1}$Ashoka University, Sonipat, India \\[0.5em]
+$^{*}$Email: \href{mailto:anik.mandal_phd24@ashoka.edu.in}{anik.mandal\_phd24@ashoka.edu.in}
+\\
+\rule{\linewidth}{0.4pt}
+
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Introduction}}\\
+
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Experimental Setup}}\\
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Preparing empty cell}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Patterning:}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Etching:}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Surface treatment:}}\\
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Capacitance-Based Cell Thickness Measurement}}\\
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Preparing homeotropic cell}}\\
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Optical Microscopy System}}\\
+
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Computationial Framework}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{String density estimation}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Pre-processing and Noise Reduction:}\\
+In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the 
+overall quality of the image. The median filter is a non-linear filtering technique that replaces each pixel value 
+with the median of the intensity values within its 3×3 neighborhood. Specifically, for every pixel, a $3\times3$ 
+window is centered on it, and the nine pixel values within this window are sorted in ascending order. The median 
+value from this sorted list is then assigned to the central pixel, effectively suppressing impulsive noise such as 
+salt-and-pepper noise while preserving important image details. Unlike linear filters that tend to blur edges by 
+averaging pixel values, the median filter maintains sharp boundaries and fine structures, making it particularly 
+effective for applications where edge preservation is crucial.
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Ridge detection operation:}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Hysteresis thresholding:}\\
+
+\begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{figs/test-framework-2s_40V.png}
+        \caption{Enter Caption}
+        \label{fig:placeholder}
+\end{figure}
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Binary closing and Removing small objects:}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Skeletonizing:}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Calculating string density:}\\
+
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{}}\\
+
+
+
+\bibliographystyle{naturemag}
+\bibliography{references}
+
+
+\end{document}
