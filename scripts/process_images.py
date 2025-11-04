@@ -25,7 +25,7 @@ file_path = '../exp-data/20251004/10V_10X/'
 output_file = '10V_10X_processed'
 
 
-def framework(image):
+def framework(image, skleton_img=False):
     # Turning image to float format
     if image.dtype!= 'float':
         image = image.astype(float) / 255.0
@@ -49,7 +49,10 @@ def framework(image):
     summary_df  = summarize(skeleton_obj)
     total_length = summary_df['branch-distance'].sum()
     
-    return total_length
+    if skleton_img == True:
+        return total_length, skleton
+    else:
+        return total_length
     
 
 def perform_processing(idx):
@@ -83,10 +86,11 @@ class NpEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NpEncoder, self).default(obj)
 
-output_file = '../results/' + output_file
-
-with open('%s.json'%output_file, 'w') as file:
-    json.dump(outs, file, indent=4, cls=NpEncoder)
+if __name__ == '__main__':
+    output_file = '../results/' + output_file
+    
+    with open('%s.json'%output_file, 'w') as file:
+        json.dump(outs, file, indent=4, cls=NpEncoder)
     
 #============================================|THE END|=============================================
 
