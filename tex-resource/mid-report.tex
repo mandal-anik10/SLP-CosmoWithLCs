@@ -3,7 +3,7 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 
-\usepackage{geometry, hyperref, amsmath, fontspec, enumitem, graphicx}
+\usepackage{geometry, hyperref, amsmath, fontspec, enumitem, graphicx, subfig}
 \usepackage[dvipsnames]{xcolor}
 
 \setmainfont{Georgia}
@@ -19,7 +19,7 @@
 \begin{document}
 \noindent
 {\LARGE Mid-project Report\hrulefill}\\[5pt]
-{\Large \textbf{Laboratory Studies \cite{Chuang1991CosmologyCrystals,Chuang1991Late-timeCrystal,Kibble2007Phase-transitionUniverse} of Cosmology inspired Defect Dynamics in Liquid Crystals}}\\[5pt]
+{\Large \textbf{Laboratory Studies of Cosmology inspired Defect Dynamics in Liquid Crystals}}\\[5pt]
 Anik Mandal$^{1,*}$ \\
 SLP guide : Prof. Pramoda Kumar$^{1}$\\
 Supervisor : Prof. Somak Raychaudhury$^{1}$\\[0.5em]
@@ -30,25 +30,58 @@ $^{*}$Email: \href{mailto:anik.mandal_phd24@ashoka.edu.in}{anik.mandal\_phd24@as
 \rule{\linewidth}{0.4pt}
 
 \noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Introduction}}\\
+\indent Topological defects such as domain walls, cosmic strings, monopoles, and textures are predicted by theories of symmetry-breaking phase transitions \cite{Kibble2007Phase-transitionUniverse, Kibble1976TopologyStrings, CentreTransitions, CentreDefects}, which played a crucial role as the early universe cooled after the Big Bang. While these defects impact the large-scale structure of the universe \cite{CentreStructure}, the vast scales involved make them impossible to study directly. Fortunately, symmetry-breaking and defect formation can also be created and investigated in laboratory systems \cite{Zurek1985CosmologicalHelium, Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal}, such as nematic liquid crystals \cite{Gennes1993TheCrystals}, which serve as accessible analogs for cosmological processes.\\
+\indent The Kibble-Zurek mechanism (KZM) predicts that when a system is rapidly quenched through a phase transition, defect density at formation scales inversely with the square root of the quench rate:
 
+\begin{equation}
+\rho_0 \propto \tau_Q^{-1/2}
+\end{equation}
+
+where $\rho_0$ is the defect density and $\tau_Q$ is the quench timescale. This inverse law demonstrates that faster transitions result in greater numbers of defects \cite{Fowler2017KibbleZurekCrystal}.
+
+Following initial defect formation, the string network enters a late-time coarsening regime governed by defect annihilation and mutual interactions \cite{CentreEvolution}. In this phase, the defect density evolves according to the one-scale model:
+
+\begin{equation}
+\rho(t) \propto t^{-1}
+\end{equation}
+
+This inverse-time scaling law describes how characteristic length scales separate defects and grow linearly with time, causing density to decrease. The coarsening is driven by attractive interactions between opposite-charge defects (e.g., string-antistring annihilation), reducing total energy. This behavior has been experimentally verified \cite{Chuang1991Late-timeCrystal} in nematic systems and provides universal predictions applicable to cosmological defect networks.\\
+
+\vspace{1cm}
 \noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Experimental Setup}}\\
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Preparing empty cell}}\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Patterning:}}\\
+\indent ITO-coated glass slides are cut and patterned to create defined electrode regions. The glass is placed on a cutting mat and the non-coated side is cut to 4 cm × 2 cm dimensions. A multimeter verifies the coated side. The coated surface is then marked with 1 cm wide cello tape, leaving 0.5 cm gaps at both ends. This protects the desired conducting area.\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Etching:}}\\
-\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Surface treatment:}}\\
+\indent In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and transferred to the cleaning stage.\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Post Etching Treatment:}}\\
+\indent The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Applying Surfactant (DMOAP):}}\\
+\indent 0.2\% DMOAP surfactant solution is prepared by mixing 160 μL DMOAP with 80 mL distilled water. Both glass slabs are held vertically, with the coated sides facing the same direction, and dipped into the surfactant solution for 5 minutes. The surfactant forms a thin layer that promotes homeotropic (vertical) alignment. The slabs are rinsed with distilled water and dried with nitrogen gas.\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Cell Assembly:}}\\
+\indent Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.\\
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Capacitance-Based Cell Thickness Measurement}}\\
+\indent The thickness of the liquid crystal cell is determined using a capacitance measurement method. The cell acts as a parallel plate capacitor, where the measured capacitance (C) is related to the thickness (d) by the formula,
+$d = \epsilon_0\epsilon_r A/C$, with $\epsilon_0$ being the vacuum permittivity, $\epsilon_r$ the relative permittivity($\approx1$ for air), and $A$ the effective electrode area. A precision LCR meter is used to measure the cell’s capacitance, and to accurately calculate the effective area, only the region of overlap between the patterned ITO electrodes is considered, excluding the edge regions and spacers.\\
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Preparing homeotropic cell}}\\
+\indent The assembled LC cell is placed on a temperature control device programmed with a three-stage thermal protocol: (1) heat to 60°C at 20°C/min for 10 min, (2) cool to 50°C at 1°C/min, and (3) cool to 40°C at 0.5°C/min over 999 min (~16.6 hours). Once the device reaches 60°C, a small drop of MBBA liquid crystal is carefully placed on the cell edge using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, where capillary action draws it throughout the cell gap. The lid is closed and the cell is left undisturbed for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under crossed polarizers to verify uniform alignment (uniform dark appearance indicates proper alignment) and is then ready for experimental use or stored in a sealed container at room temperature.\\
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Optical Microscopy System}}\\
+\indent For defect dynamics imaging, a Leica DM4 polarized optical microscope was used with crossed polarizers and a motorized stage for flexible observation. A Thorlab high-speed camera was attached to the microscope to record real-time video at 100 fps, enabling precise tracking of liquid crystal defect formation and motion. The system consists of an LED source, polarizer, LC cell sample, analyzer (perpendicular to polarizer), and camera.\\
 
-\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Computationial Framework}}\\
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Data Collection}}\\
+
+\hspace{1cm}
+
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Computational Framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
+\textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git }}}\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{String density estimation}}\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Pre-processing and Noise Reduction:}\\
 In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the 
-overall quality of the image. The median filter is a non-linear filtering technique that replaces each pixel value 
+overall quality of the image, similar to . The median filter is a non-linear filtering technique that replaces each pixel value 
 with the median of the intensity values within its 3×3 neighborhood. Specifically, for every pixel, a $3\times3$ 
 window is centered on it, and the nine pixel values within this window are sorted in ascending order. The median 
 value from this sorted list is then assigned to the central pixel, effectively suppressing impulsive noise such as 
@@ -62,22 +95,64 @@ effective for applications where edge preservation is crucial.
     \label{fig:placeholder}
 \end{figure}
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Ridge detection operation:}\\
+\indent For ridge detection, we implement the Meijering ridge detection filter, a modified Hessian-based \cite{Meijering2004DesignImages} approach specifically designed to detect elongated, tubular structures in noisy images. This method computes the eigenvalues and eigenvectors of a modified Hessian matrix at each pixel, where the local principal ridge directions are determined by the eigenvectors of the matrix computed from intensity values in the local neighborhood. The Meijering filter assigns a ``neuriteness" or vesselness measure $\Phi(x)$ to each pixel according to $\Phi(x) = \lambda(x)/\lambda_{\text{min}}$ for $\lambda(x) \geq 0$ and $\Phi(x) = 0$ otherwise, where $\lambda$ represents the larger eigenvalue in magnitude and $\lambda_{\text{min}}$ is the minimum eigenvalue across all pixels. The eigenvector corresponding to the smaller absolute eigenvalue indicates the longitudinal direction of the ridge, effectively suppressing responses to first-order structures such as background intensity discontinuities while enhancing continuous, filamentous features. This multi-scale approach proves superior to basic Hessian or Laplacian-based detectors for identifying nematic liquid crystal strings, as it maintains connectivity across regions of varying contrast and width while reducing false detections from noise artifacts.
 
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Hysteresis thresholding:}\\
-\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Binary closing and Removing small objects:}\\
+\indent To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}$ and $T_{\text{low}}$, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\linewidth]{figs/test-framework-2s_40V-S3456.png}
+    \includegraphics[width=1.0\linewidth]{figs/test-framework-2s_40V-S345.png}
     \caption{Enter Caption}
     \label{fig:placeholder}
 \end{figure}
+\noindent{\fontsize{12pt}{12pt}\selectfont \underline{Binary closing and Removing small objects:}\\
+\indent To further refine the segmentation, binary morphological closing  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected string regions, followed by connected component analysis to remove small objects below a chosen area threshold; together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Skeletonizing:}\\
+\indent The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected string to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of string lengths and facilitates reliable analysis of defect network topology even when original regions are wide or noisy
 
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Calculating string density:}\\
+\indent To quantify the defect network from processed images, the total string length is estimated by extracting the skeletonized form of each defect and analyzing it with the \textit{Skan} library, which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields the projected string length $L$. To obtain the string density $\rho$, this total length is divided by the sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. \\
 
-\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{}}\\
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Late-Time Coarsening Dynamics}}\\
+
+\begin{figure}[h]
+    \centering
+    % First row of subfigures
+    \subfloat[Caption for Subfigure A]{\includegraphics[width=0.35\textwidth]{figs/60V_dyn_0.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure B]{\includegraphics[width=0.35\textwidth]{figs/60V_dyn_0e.png}}
+
+    \vspace{0.5cm} % Adds vertical space between rows
+
+    % Second row of subfigures
+    \subfloat[Caption for Subfigure C]{\includegraphics[width=0.35\textwidth]{figs/60V_dyn_50e.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure D]{\includegraphics[width=0.35\textwidth]{figs/60V_dyn_200e.png}}
+
+    \caption{Overall caption for the 2x2 grid of figures.}
+    \label{fig:2x2subfigures}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    % First row of subfigures
+    \subfloat[Caption for Subfigure A]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure B]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
+
+    \vspace{0.5cm} % Adds vertical space between rows
+
+    % Second row of subfigures
+    \subfloat[Caption for Subfigure C]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure D]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
+
+    \caption{Overall caption for the 2x2 grid of figures.}
+    \label{fig:2x2subfigures}
+\end{figure}
 
 
 
