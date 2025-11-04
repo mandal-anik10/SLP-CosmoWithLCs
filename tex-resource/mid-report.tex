@@ -3,7 +3,7 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 
-\usepackage{geometry, hyperref, amsmath, fontspec, enumitem, graphicx}
+\usepackage{geometry, hyperref, amsmath, fontspec, enumitem, graphicx, subfig}
 \usepackage[dvipsnames]{xcolor}
 
 \setmainfont{Georgia}
@@ -19,7 +19,7 @@
 \begin{document}
 \noindent
 {\LARGE Mid-project Report\hrulefill}\\[5pt]
-{\Large \textbf{Laboratory Studies \cite{Chuang1991CosmologyCrystals,Chuang1991Late-timeCrystal} of Cosmology inspired\cite{Kibble2007Phase-transitionUniverse} Defect Dynamics in Liquid Crystals}}\\[5pt]
+{\Large \textbf{Laboratory Studies of Cosmology inspired Defect Dynamics in Liquid Crystals}}\\[5pt]
 Anik Mandal$^{1,*}$ \\
 SLP guide : Prof. Pramoda Kumar$^{1}$\\
 Supervisor : Prof. Somak Raychaudhury$^{1}$\\[0.5em]
@@ -30,22 +30,22 @@ $^{*}$Email: \href{mailto:anik.mandal_phd24@ashoka.edu.in}{anik.mandal\_phd24@as
 \rule{\linewidth}{0.4pt}
 
 \noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Introduction}}\\
-\indent Topological defects such as domain walls, cosmic strings, monopoles, and textures are predicted by theories of symmetry-breaking phase transitions, which played a crucial role as the early universe cooled after the Big Bang. While these defects impact the large-scale structure of the universe, the vast scales involved make them impossible to study directly. Fortunately, symmetry-breaking and defect formation can also be created and investigated in laboratory systems, such as nematic liquid crystals, which serve as accessible analogs for cosmological processes\\
+\indent Topological defects such as domain walls, cosmic strings, monopoles, and textures are predicted by theories of symmetry-breaking phase transitions \cite{Kibble2007Phase-transitionUniverse, Kibble1976TopologyStrings, CentreTransitions, CentreDefects}, which played a crucial role as the early universe cooled after the Big Bang. While these defects impact the large-scale structure of the universe \cite{CentreStructure}, the vast scales involved make them impossible to study directly. Fortunately, symmetry-breaking and defect formation can also be created and investigated in laboratory systems \cite{Zurek1985CosmologicalHelium, Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal}, such as nematic liquid crystals \cite{Gennes1993TheCrystals}, which serve as accessible analogs for cosmological processes.\\
 \indent The Kibble-Zurek mechanism (KZM) predicts that when a system is rapidly quenched through a phase transition, defect density at formation scales inversely with the square root of the quench rate:
 
 \begin{equation}
 \rho_0 \propto \tau_Q^{-1/2}
 \end{equation}
 
-where $\rho_0$ is the defect density and $\tau_Q$ is the quench timescale. This inverse law demonstrates that faster transitions result in greater numbers of defects.
+where $\rho_0$ is the defect density and $\tau_Q$ is the quench timescale. This inverse law demonstrates that faster transitions result in greater numbers of defects \cite{Fowler2017KibbleZurekCrystal}.
 
-Following initial defect formation, the string network enters a late-time coarsening regime governed by defect annihilation and mutual interactions. In this phase, the defect density evolves according to the one-scale model:
+Following initial defect formation, the string network enters a late-time coarsening regime governed by defect annihilation and mutual interactions \cite{CentreEvolution}. In this phase, the defect density evolves according to the one-scale model:
 
 \begin{equation}
-\rho(t) \propto \frac{1}{t}
+\rho(t) \propto t^{-1}
 \end{equation}
 
-This inverse-time scaling law describes how characteristic length scales separate defects and grow linearly with time, causing density to decrease. The coarsening is driven by attractive interactions between opposite-charge defects (e.g., string-antistring annihilation), reducing total energy. This behavior has been experimentally verified in nematic systems and provides universal predictions applicable to cosmological defect networks.\\
+This inverse-time scaling law describes how characteristic length scales separate defects and grow linearly with time, causing density to decrease. The coarsening is driven by attractive interactions between opposite-charge defects (e.g., string-antistring annihilation), reducing total energy. This behavior has been experimentally verified \cite{Chuang1991Late-timeCrystal} in nematic systems and provides universal predictions applicable to cosmological defect networks.\\
 
 \vspace{1cm}
 \noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Experimental Setup}}\\
@@ -58,7 +58,7 @@ This inverse-time scaling law describes how characteristic length scales separat
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Post Etching Treatment:}}\\
 \indent The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Applying Surfactant (DMOAP):}}\\
-\indent 0.2\% DMOAP surfactant solution is prepared by mixing 160 μL DMOAP with 80 mL distilled water. Both glass slabs are held vertically with coated sides facing the same direction and dipped into the surfactant solution for 5 minutes. The surfactant forms a thin layer that promotes homeotropic (vertical) alignment. The slabs are rinsed with distilled water and dried with nitrogen gas.\\
+\indent 0.2\% DMOAP surfactant solution is prepared by mixing 160 μL DMOAP with 80 mL distilled water. Both glass slabs are held vertically, with the coated sides facing the same direction, and dipped into the surfactant solution for 5 minutes. The surfactant forms a thin layer that promotes homeotropic (vertical) alignment. The slabs are rinsed with distilled water and dried with nitrogen gas.\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Cell Assembly:}}\\
 \indent Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.\\
 
@@ -76,7 +76,8 @@ $d = \epsilon_0\epsilon_r A/C$, with $\epsilon_0$ being the vacuum permittivity,
 
 \hspace{1cm}
 
-\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Computational Framework}}\\
+\noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Computational Framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
+\textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git }}}\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \textbf{String density estimation}}\\
 \noindent{\fontsize{12pt}{12pt}\selectfont \underline{Pre-processing and Noise Reduction:}\\
 In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the 
@@ -117,7 +118,23 @@ effective for applications where edge preservation is crucial.
 
 \noindent{\fontsize{15pt}{12pt}\selectfont \textbf{Late-Time Coarsening Dynamics}}\\
 
+\begin{figure}[h]
+    \centering
+    % First row of subfigures
+    \subfloat[Caption for Subfigure A]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure B]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
 
+    \vspace{0.5cm} % Adds vertical space between rows
+
+    % Second row of subfigures
+    \subfloat[Caption for Subfigure C]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
+    \hspace{0.05\textwidth} % Adds horizontal space between subfigures
+    \subfloat[Caption for Subfigure D]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
+
+    \caption{Overall caption for the 2x2 grid of figures.}
+    \label{fig:2x2subfigures}
+\end{figure}
 
 \bibliographystyle{naturemag}
 \bibliography{references}
