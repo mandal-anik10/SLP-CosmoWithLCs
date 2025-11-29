@@ -60,7 +60,6 @@
     \vspace{1.5cm}
     {\large
     \textbf{Anik Mandal}$^{1,*}$ \\[0.5em]
-    
     \begin{tabular}{r l}
         SLP Guide &:  Prof. Pramoda Kumar$^{1}$ \\
         SLP Co-guide &: Ankit Gupta$^{1}$ \\
@@ -70,7 +69,9 @@
   
     $^1$\university, \location \\
     $^{*}$Email: \href{mailto:anik.mandal_phd24@ashoka.edu.in}{anik.mandal\_phd24@ashoka.edu.in}
-    }
+    }\\
+    \vspace{2cm}
+    \includegraphics[width=0.2\linewidth]{tex-resource/ashoka-logo.png}
     \vfill
     {\large \today\par}
 \end{titlepage}
@@ -88,17 +89,18 @@
 % Main content
 \section{Introduction}
 
+\subsection{Symmetry-breaking in early Universe}
 
-\subsection{Kibble-Zurek Mechanism}
+\subsection{Cosmological defects dynamics}
 
-\subsection{Topological Defects in Cosmology}
+\subsection{Kibble-Zurek mechanism}
 
-\subsection{Project Objectives}
+\subsection{Project objectives}
 
 \section{Experimental Setup}
-\subsubsection*{Nematic Liquid Crystals}
+\subsubsection*{Nematic liquid crystals}
 
-\subsubsection*{Homeotropic Alignment}
+\subsubsection*{Homeotropic alignment}
 % \subsection{apparatus}
 \subsection{Preparing empty cell}
 Preparation of liquid crystal cells follows a series of well-established, standardized steps. The standard workflow is outlined below.\\
@@ -109,16 +111,16 @@ ITO-coated glass slides are cut and patterned to create defined electrode region
 \subsubsection*{Etching:}
 In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and transferred to the cleaning stage.\\
 
-\subsubsection*{Post Etching Treatment:}
+\subsubsection*{Post etching treatment:}
  The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains\\
 
-\subsubsection*{Applying Surfactant (DMOAP):}
+\subsubsection*{Applying surfactant (DMOAP):}
 0.2\% DMOAP surfactant solution is prepared by mixing 160 μL DMOAP with 80 mL distilled water. Both glass slabs are held vertically, with the coated sides facing the same direction, and dipped into the surfactant solution for 5 minutes. The surfactant forms a thin layer that promotes homeotropic (vertical) alignment. The slabs are rinsed with distilled water and dried with nitrogen gas.\\
 
-\subsubsection*{Cell Assembly:}
+\subsubsection*{Cell assembly:}
 Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.\\
 
-\subsection{Capacitance-Based Cell Thickness Measurement}
+\subsection{Capacitance-nased cell thickness measurement}
 The thickness of the liquid crystal cell is determined using a capacitance measurement method. The cell acts as a parallel plate capacitor, where the measured capacitance (C) is related to the thickness (d) by the formula,
 $d = \epsilon_0\epsilon_r A/C$, with $\epsilon_0$ being the vacuum permittivity, $\epsilon_r$ the relative permittivity($\approx1$ for air), and $A$ the effective electrode area. A precision LCR meter is used to measure the cell’s capacitance, and to accurately calculate the effective area, only the region of overlap between the patterned ITO electrodes is considered, excluding the edge regions and spacers. The measured thickness of the cell is $31.09\pm0.44 \mu m$.\\
 
@@ -132,7 +134,7 @@ The assembled LC cell is placed on a temperature control device programmed with 
 
 Once the device reaches $55\degree C$, a small drop of MBBA liquid crystal is carefully placed on the cell edge using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, where capillary action draws it throughout the cell gap. The lid is closed, and the cell is left undisturbed for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under crossed polarizers to verify uniform alignment and is then ready for experimental use or stored in a sealed container at room temperature.\\
 
-\subsection{Optical Microscopy System}
+\subsection{Optical microscopy system}
 Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
 $27.5\degree C$, dynamic data of defect formation were recorded under 
 $10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For each voltage, the experiment was repeated using three different optical configurations:
@@ -145,12 +147,11 @@ $10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For each vo
 
 \section{Computational Framework}
 
-\subsection{String density estimation}
 \indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed workflow and framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
 \textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git }\\ 
 for this analytical pipeline are described below.\\
 
-\subsubsection*{Pre-processing and Noise Reduction:}
+\subsection{Pre-processing and noise reduction}
 In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the overall quality of the image. The median filter is a non-linear filtering technique that replaces each pixel value 
 with the median of the intensity values within its 3×3 neighborhood. Specifically, for every pixel, a $3\times3$ 
 window is centered on it, and the nine pixel values within this window are sorted in ascending order. The median 
@@ -165,11 +166,11 @@ effective for applications where edge preservation is crucial.
     \label{fig:test_fw_012}
 \end{figure}
 
-\subsubsection*{Ridge detection operation:}
+\subsection{Ridge detection operation}
 For ridge detection, we implement the Meijering ridge detection filter, a modified Hessian-based \cite{Meijering2004DesignImages} approach specifically designed to detect elongated, tubular structures in noisy images. This method computes the eigenvalues and eigenvectors of a modified Hessian matrix at each pixel, where the local principal ridge directions are determined by the eigenvectors of the matrix computed from intensity values in the local neighborhood. The Meijering filter assigns a ``neuriteness" or ``vesselness" measure $\Phi(x)$ to each pixel according to $\Phi(x) = \lambda(x)/\lambda_{\text{min}}$ for $\lambda(x) \geq 0$ and $\Phi(x) = 0$ otherwise, where $\lambda$ represents the larger eigenvalue in magnitude and $\lambda_{\text{min}}$ is the minimum eigenvalue across all pixels. The eigenvector corresponding to the smaller absolute eigenvalue indicates the longitudinal direction of the ridge, effectively suppressing responses to first-order structures such as background intensity discontinuities while enhancing continuous, filamentous features. This multi-scale approach proves superior to basic Hessian or Laplacian-based detectors for identifying nematic liquid crystal strings, as it maintains connectivity across regions of varying contrast and width while reducing false detections from noise artifacts.
 
 
-\subsubsection*{Hysteresis thresholding:}
+\subsection{Hysteresis thresholding}
 To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}(0.2)$ and $T_{\text{low}}(0.08)$, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
 
 \begin{figure}[h]
@@ -178,13 +179,13 @@ To distinguish true ridge structures from spurious noise artifacts in the ridge-
     \caption{Images after hysteresis thresholding, binary closing, removing small objects, and skeletonizing. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.}
     \label{fig:test_fw_345}
 \end{figure}
-\subsubsection*{Binary closing and Removing small objects:}
+\subsection{Binary closing and removing small objects}
 To further refine the segmentation, binary morphological closing  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected string regions, followed by connected component analysis to remove small objects below a chosen length threshold ($16px$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
 
-\subsubsection*{Skeletonizing:}
+\subsection{Skeletonizing}
  The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected string to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of string lengths and facilitates reliable analysis of defect network topology, even when original regions are wide or noisy.
 
-\subsubsection*{Calculating string density:} 
+\subsection{Calculating string density} 
 To quantify the defect network from processed images, the total string length is estimated by extracting the skeletonized form of each defect and analyzing it with the \textit{Skan} \cite{Skeleton0.13.0} library, which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields the projected string length $L$. To obtain the string density $\rho$, this total length is divided by the sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. \\
 
 
@@ -193,6 +194,7 @@ To quantify the defect network from processed images, the total string length is
 \section{Defect Dynamics}
 \subsubsection*{The Freedericksz Transition}
 \subsection{Electric Field Quench}
+\subsection{Temperature Quench}
 \subsection{Magnetic Field Quench}
 
 \section{Conclusion}
@@ -204,6 +206,7 @@ To quantify the defect network from processed images, the total string length is
 % Appendices (if needed)
 \appendix
 \section{Supplementary Materials}
+\section{Acknowledgements}
 
 % Add any supplementary materials, equations, or detailed procedures here
 
