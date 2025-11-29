@@ -1,37 +1,55 @@
+%============================================================================================================
+%
+%============================================================================================================
+
 \documentclass[12pt]{beamer}
+\usepackage{tikz}
 
-\usetheme[progressbar=foot,numbering=fraction, sectionpage=none]{metropolis}
+\usetheme[sectionpage=none, numbering=fraction, progressbar=foot, block=fill, background=light ]{metropolis}
 \useoutertheme{miniframes}
+\setbeamerfont{footnote}{size=\scriptsize}
+\addtobeamertemplate{footline}{\vspace{-1cm}}{}
+\setbeamersize{text margin left=.5cm, text margin right=.5cm}
 
-\usepackage{appendixnumberbeamer}
+%=====| Adding custom thickness progress bar |===============================================================
 \makeatletter
 \setlength{\metropolis@progressinheadfoot@linewidth}{2pt} % Set thickness
 \makeatother
-
-
-% Include section navigation bar at the top
 \setbeamercolor{progress bar}{fg=red}
-\setbeamerfont{section in head/foot}{series=\bfseries}
-% \setbeamertemplate{headline}{%
-%   \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1ex]{section in head/foot}
-%     \insertsectionnavigationhorizontal{\paperwidth}{}{}
-%   \end{beamercolorbox}
-% }
-\useoutertheme{miniframes}
 
+%=====| Adding section navigation bar at the top |===========================================================
+\setbeamerfont{section in head/foot}{series=\bfseries}
 \setbeamertemplate{headline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1ex]{section in head/foot}
-    \centering
-    \insertsectionnavigationhorizontal{\paperwidth}{}{\vspace{1pt}}
-    \vspace{1pt}
-    \insertsubsectionnavigationhorizontal{\paperwidth}{}{}
+    \insertsectionnavigationhorizontal{\paperwidth}{}{}
   \end{beamercolorbox}
 }
 
+%=====| Adding custom reference in frames |==================================================================
 
-% Title page informations ############################################################################
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+\DeclareCiteCommand{\footcite}[\footnote]
+  {\usebibmacro{prenote}}
+  {\printnames{labelname}\space(\printfield{year})\space\printfield{doi}}
+  {}
+  {\usebibmacro{postnote}}
+
+
+
+%=====| Adding custom Author–Date box in bottom-right corner |===============================================
+\addtobeamertemplate{footline}{}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east, xshift=-2pt, yshift=2pt] at (current page.south east) {
+       \scalebox{.75}{\textcolor{gray}{\insertauthor; \insertdate}}
+    };
+  \end{tikzpicture}
+}
+
+% Title page informations ###################################################################################
 \title{SLP Presentation}
-\subtitle{Laboratory Studies of Cosmology inspired Defect Dynamics in Liquid Crystals}
+\subtitle{Laboratory Studies of Cosmology-Inspired Defect Dynamics in Liquid Crystals}
 \date{2025, November 30}
 \author{Anik Mandal}
 \institute{Ashoka University}
@@ -55,10 +73,11 @@
 \end{frame}
 
 \begin{frame}[fragile]{Cosmological Defects}
-  khb
+  khb\footcite{Kibble1976TopologyStrings}\\
+  jlhsc\footcite{Chuang1991Late-timeCrystal}\footcite{Bennett1990High-resolutionEvolution}
 \end{frame}
 \begin{frame}[fragile]{Kibble-Zurek Mechanism}
-hk
+hk\footcite{Chuang1991CosmologyCrystals}\footcite{Meijering2004DesignImages}\footcite{Palffy-Muhoray2007TheCrystals}
 \end{frame}
 
 \section{Experimental Setup}
@@ -68,17 +87,9 @@ hk
 \section{Defect Dynamics}
 
 \section{Conclusion}
+\begin{frame}[fragile]{Conclusion}
+hk
 
-
-\begin{frame}[fragile]{Backup slides}
-jln
 \end{frame}
-
-% \begin{frame}[allowframebreaks]{References}
-
-%   \bibliography{references}
-%   \bibliographystyle{abbrv}
-
-% \end{frame}
 
 \end{document}
