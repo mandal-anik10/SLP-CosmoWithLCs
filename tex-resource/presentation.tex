@@ -4,6 +4,7 @@
 
 \documentclass[12pt]{beamer}
 \usepackage{tikz}
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,  decorations.pathreplacing,decorations.pathmorphing,shapes,  matrix,shapes.symbols}
 
 \usetheme[sectionpage=none, numbering=fraction, progressbar=foot, block=fill, background=light ]{metropolis}
 \useoutertheme{miniframes}
@@ -81,6 +82,21 @@ hk\footcite{Chuang1991CosmologyCrystals}\footcite{Meijering2004DesignImages}\foo
 \end{frame}
 
 \section{Experimental Setup}
+\begin{frame}{Frame Title}
+\tikzstyle{block} = [rectangle, draw, text width=1em, text centered, rounded corners, minimum height=2em]
+\begin{tikzpicture}
+ [node distance=2.5cm,
+ start chain=going below,]
+\node (n1) at (0,0) [block]  {Patterning};
+\node (n2) [block, right of=n1] {Etching};
+\node (n3) [block, right of=n2] {Post etching treatment};
+\node (n4) [block, right of=n3] {Applying surfactant (DMOAP))};
+% Connectors
+\draw [->] (n1.east) -- (n2.west);
+\draw [->] (n2.east) -- (n3.west);
+\draw [->] (n3.east) -- (n4.west);
+\end{tikzpicture}
+\end{frame}
 
 \section{Computational Framework}
 

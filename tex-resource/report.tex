@@ -4,10 +4,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amsfonts,amssymb}
 % \usepackage{geometry, hyperref, fancyhdr, titlesec, setspace, abstract, indentfirst, booktabs, multirow, array, caption, subcaption, fontspec, enumitem}
-\usepackage{geometry, hyperref, fontspec, enumitem, graphicx, subfig, gensymb, abstract, fancyhdr}
+\usepackage{indentfirst, geometry, hyperref, fontspec, enumitem, graphicx, subfig, gensymb, abstract, fancyhdr, wrapfig}
 
 \setlength{\headheight}{14.5pt}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{textcomp}
 
 
 
@@ -34,6 +35,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=RoyalBlue,
+    citecolor=Green,
     filecolor=magenta,      
     urlcolor=RoyalBlue,
     pdftitle={Laboratory Studies of Cosmology-Inspired Defect Dynamics in Liquid Crystals},
@@ -88,90 +90,514 @@
 
 % Main content
 \section{Introduction}
+Spontaneous symmetry breaking is a fundamental phenomenon where the lowest energy state (ground state) of a 
+system exhibits less symmetry than the physical laws governing it. At high temperatures or energy levels, the 
+system exists in a symmetric, disordered state. However, as the system cools below a critical threshold, it 
+becomes energetically favorable to transition to an ordered state. To do so, the system must spontaneously 
+select a specific orientation from a set of equally valid possibilities.
+
+A classic analogy is a ball sitting at the peak of a ``Mexican hat" potential: while the shape of the potential 
+itself is perfectly symmetric, the ball must eventually roll down into the valley to minimize its energy. In 
+doing so, it chooses a random direction, thereby breaking the rotational symmetry. In the context of both 
+cosmology and condensed matter physics, this ``choice" happens independently in different regions of space. When these disparate regions eventually meet, their orientations often fail to align smoothly, leading to the 
+formation of stable discontinuities known as topological defects\cite{Kibble1976TopologyStrings}.
 
 \subsection{Symmetry-breaking in early Universe}
+\begin{wrapfigure}[24]{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figs/imported/brief_histUniv.png} 
+    \caption{Brief history of the universe: different symmetry-breaking epochs at early universe. (\href{https://www.ctc.cam.ac.uk/outreach/origins/big_bang_three.php}{Source})}
+    \label{fig:brief_histUniv}
+\end{wrapfigure}
 
-\subsection{Cosmological defects dynamics}
+Current cosmological models indicate that during the Planck epoch and the earliest high-energy 
+stages of cosmic evolution, all fundamental interactions were unified into a single force. At these extreme 
+energy scales, the Universe existed in a maximally symmetric state in which the distinctions between the 
+strong, weak, and electromagnetic interactions were absent. As the Universe expanded and cooled below a series 
+of critical temperatures, it underwent successive phase transitions driven by spontaneous symmetry breaking 
+\cite{CentreTransitions, EarlyAl.}. These transitions are not merely abstract mathematical adjustments; they 
+represent fundamental restructuring of the vacuum state of the cosmos, analogous to phase changes in condensed 
+matter systems, such as the transition from water to ice or the onset of ferromagnetism.
+
+In particle physics, the unification of weak and electromagnetic interactions into an electroweak gauge theory 
+based on $SU(2)\times U(1)$ is well established. Together with Quantum Chromodynamics (QCD), the $SU(3)$ theory 
+of strong interactions, this naturally motivates Grand Unified Theories (GUTs), in which the Standard Model 
+forces are embedded within a larger simple gauge group, $G$. This unification is possible because the strengths 
+of the fundamental forces are not fixed but run with energy scale. At higher energies, such as those present in 
+the early Universe, these couplings (or, strength of the forces) become more similar, allowing the different 
+forces to behave as a single unified interaction at a grand unification scale of order $10^{15}$ GeV ($\sim 
+10^{-4}$ of the Planck mass) \cite{Kibble1982PhaseUniverse}. 
+
+The subsequent evolution of the Universe therefore involved a hierarchy of symmetry-breaking events. A 
+convenient and physically transparent way to describe symmetry breaking during these cosmological phase 
+transitions is through a Higgs-type scalar field $\phi$. For illustrative purposes, consider a simple theory 
+with symmetry group $G=U(1)$ and a complex scalar field governed by the self-interaction potential
+\cite{Vilenkin1985CosmicWalls},
+
+\begin{equation}
+V(\phi)=\frac{\lambda}{4}\left(\phi^\dagger\phi-\eta^2\right)^2 .
+\end{equation}
+
+At zero temperature, the minima of this potential occur at nonzero field values $|\phi|=\eta$, indicating 
+spontaneous symmetry breaking. The field acquires a vacuum expectation value $\langle\phi\rangle=\eta 
+e^{i\theta}$, where the magnitude is fixed but the phase $\theta$ is arbitrary. Consequently, the set of 
+degenerate vacuum states forms a continuous vacuum manifold, which in this case corresponds to a circle in the 
+complex $\phi$ plane.
+
+In the hot early Universe, however, thermal effects play a crucial role. At finite temperature, the effective 
+potential for $\phi$ receives additional contributions from interactions with the thermal bath. In the high-
+temperature limit, this effective potential can be written as,
+
+\begin{equation} \label{eq:eff_potential_T}
+V_T(\phi)=A T^2\phi^\dagger\phi + V(\phi),
+\end{equation}
+
+which introduces a temperature-dependent mass term (quadratic term of equation-\ref{eq:eff_potential_T}) 
+$m^2(T)=A T^2-\lambda\eta^2$. Here the dimensionless constant $A$ is a combination of the self-coupling 
+$\lambda$ and other couplings of the field $\phi$ (e.g., Yukawa couplings and gauge coupling). For temperatures 
+above the critical value $T_c=\eta\sqrt{\lambda/A}$, the mass squared is positive and the effective potential 
+is minimized at $|\langle\phi (T>T_c)\rangle|=0$, corresponding to a symmetric phase. As the Universe cools and the 
+temperature drops below $T_c$, the mass squared becomes negative, rendering the symmetric state unstable and 
+driving the field toward a new minimum with a non-zero expectation value given by,
+
+\begin{equation}
+|\langle\phi(T<T_c)\rangle|^2=\left( \eta^2-\frac{A}{\lambda}T^2\right) =\eta^2 \left(1 -\frac{T^2}{T_c^2}\right) \  \{A>0\}
+\end{equation}
+
+This marks the onset of spontaneous symmetry breaking and a qualitative change in the vacuum structure.
+
+\begin{wrapfigure}[16]{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figs//imported/higgs_broken.png}
+    \caption{Spontaneous symmetry breaking of the Higgs field below the critical temperature, resulting in the generation of massive excitations via the Higgs mechanism. (\href{https://medium.com/@symmetrybreaking/spontanteous-symmetry-breaking-the-mass-creation-mechanism-9a37fb725080}{Source})}
+    \label{fig:higgs_broken}
+\end{wrapfigure}
+
+The first major transition involved the breakdown of the GUT symmetry to the Standard Model symmetries, 
+likely depositing massive topological defects. This was followed much later by electroweak symmetry breaking at 
+an energy scale of approximately $100$ GeV \cite{Kibble1982PhaseUniverse}. These transitions represent dramatic 
+changes in the vacuum structure of the Universe and underpin several fundamental phenomena, including the 
+generation of particle masses through the Higgs mechanism (see Fig. \ref{fig:higgs_broken}) and the emergence 
+of the observed baryon asymmetry through mechanisms involving CP violation. A fundamental constraint governing 
+these transitions is causality; physical effects cannot propagate faster than the speed of light, $c$. 
+Consequently, at any given time $t$, regions of the Universe separated by a distance greater than the horizon 
+distance $d=ct$ are causally disconnected.
+
+During a symmetry-breaking phase transition, these isolated regions must independently decay into a specific 
+minimum energy state within the vacuum, $\mathcal{M}$. Due to the stochastic nature of this process, causally 
+separated regions often settle into different vacuum states, much like crystallizing ice forming misaligned 
+grains. The boundaries between these misaligned regions manifest as topological defects \cite{CentreDefects}. 
+These are stable configurations of energy, formed where the vacuum choices of neighboring regions cannot be 
+smoothly reconciled. 
+
+To understand the variety of defects that can emerge, one must look at the specific geometry of the potential 
+landscape. In a simplified model with two distinct minima (e.g., positive and negative states), a domain wall 
+forms at the interface. In theories where the vacuum manifold has a complex topology, specifically containing 
+holes or non-contractible loops, the underlying field can wrap around these topological features. This wrapping 
+creates a mismatch in the field's orientation, resulting in stable, linear defects of trapped high energy known 
+as cosmic strings \cite{Vilenkin1985CosmicWalls}. The specific nature of these defects, whether they manifest 
+as surfaces (domain walls), lines (cosmic strings), or points (monopoles), depends strictly on the topology of 
+the broken symmetry group.
+
+Mathematically, this dependency is classified using homotopy groups, $\pi_n(\mathcal{M})$, which describe the 
+connectivity of the vacuum manifold defined as the quotient space, $\mathcal{M} = G/H$. Here, $G$ represents 
+the full, underlying symmetry group of the high-energy theory and $H$ denotes the subgroup of symmetries that 
+remain unbroken in the vacuum state. For instance, a disconnected manifold ($\pi_0(\mathcal{M}) \neq 
+\mathbb{I}$) yields domain walls, a manifold with non-contractible loops ($\pi_1(\mathcal{M}) \neq \mathbb{I}$) 
+produces cosmic strings, and non-contractible 2-spheres ($\pi_2(\mathcal{M}) \neq \mathbb{I}$) result 
+monopoles. Furthermore, if the manifold supports non-trivial mappings of the 3-sphere ($\pi_3(\mathcal{M}) \neq 
+\mathbb{I}$), the resulting defects are known as textures, which manifest as unstable, twisted field 
+configurations rather than singular boundaries.
+
+\begin{figure}[h]
+    \centering
+    \subfloat[The Kibble mechanism for the formation of domain walls \cite{CentreDefects}]{\includegraphics[width=0.45\textwidth]{figs/imported/domain_wall.png}}
+    \hspace{0.05\textwidth}
+    \subfloat[The Kibble mechanism for the formation of cosmic strings \cite{CentreDefects}]{\includegraphics[width=0.45\textwidth]{figs/imported/string_defect.png}}
+    \label{fig:kibble_defect_form}
+\end{figure}
+
+The cosmological implications of topological defects are strictly dependent on the specific symmetry 
+broken. Defects such as domain walls and magnetic monopoles possess such massive energy densities that 
+their existence would dominate the universal energy budget, leading to evolution scenarios that 
+contradict observational data \cite{CentreDefects}; models predicting these are therefore largely ruled out. 
+Conversely, cosmic strings are cosmologically viable. They may have served as gravitational ``seeds" for 
+large-scale structure formation \cite{Vilenkin1985CosmicWalls, Shellard1988ClustersStrings}, contributed to 
+anisotropies in the Cosmic Microwave Background (CMB), and could potentially account for a portion of the 
+universe's dark matter.
+
+Consequently, topological defects provide a unique observational window 
+\cite{Kibble2007Phase-transitionUniverse} into the physics of the extremely early Universe, an energy 
+scale inaccessible to terrestrial particle accelerators. However, to rigorously evaluate these scenarios, 
+a precise understanding of defect dynamics is required. Before current observations can be used to 
+constrain high-energy theory, it is imperative to develop a robust model of how cosmic strings evolve and 
+interact throughout cosmic history.
 
 \subsection{Kibble-Zurek mechanism}
 
+The Kibble-Zurek mechanism (KZM) is a theoretical framework that unifies the non-equilibrium dynamics of 
+symmetry-breaking phase transitions across vastly different energy scales. Originally proposed by T.W.B. 
+Kibble to explain the formation of cosmic strings in the early universe\cite{Kibble1976TopologyStrings}, the 
+theory was later extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium}. By 
+relying on the universality of critical dynamics, the KZM links cosmological topological defects to accessible 
+laboratory analogues like vortices in superfluids or disclinations in liquid 
+crystals\cite{Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal}.
+
+\noindent{\textbf{Defect formation dynamics:}} The core quantitative prediction of the KZM describes how the density of resulting defects scales with the 
+speed of the transition. Consider a continuous phase transition driven by a control parameter $\epsilon(t)$, 
+such as reduced temperature $|T-T_c|/T_c$, pressure, electric or magnetic field, that varies linearly with 
+time $t$ across the critical point at $t=0$:
+
+\begin{equation}
+\epsilon(t) = \frac{|t|}{\tau_Q}
+\end{equation}
+
+Here, $\tau_Q$ represents the characteristic quench timescale; a smaller $\tau_Q$ implies a faster transition.
+
+As the system approaches the critical point, its internal dynamics slow down significantly. According to 
+Landau-Ginzburg theory, the equilibrium relaxation time $\tau(t)$ and the correlation length $\xi(t)$ diverge 
+as functions of the control parameter,
+
+\begin{align}
+\tau(t) &\propto |\epsilon(t)|^{-\nu z} \\
+\xi(t) &\propto |\epsilon(t)|^{-\nu}
+\end{align}
+
+where $\nu$ is the correlation-length critical exponent and $z$ is the dynamical critical exponent. 
+
+The system can maintain equilibrium only as long as its relaxation time $\tau(t)$ is faster than the time 
+scale on which the environment is changing, represented by the time remaining until the transition $|t|$. As 
+$\tau(t)$ diverges near the critical point, it inevitably overtakes $|t|$. At this moment, the system's 
+reaction time becomes too slow to adapt to the changing conditions, and the domain structure effectively 
+``freezes''. This ``freeze-out'' occurs at a characteristic time $\hat{t}$ when the two timescales become 
+comparable,
+
+\begin{equation}
+\tau(\hat{t}) \approx \hat{t}
+\end{equation}
+
+By substituting the power-law dependence of the relaxation time into this condition, we can solve for the 
+freeze-out time $\hat{t}$ in terms of the quench rate,
+
+\begin{equation}
+\tau(\hat{t})=\left( \frac{\hat{t}}{\tau_Q} \right)^{-\nu z} \propto \hat{t} \implies \hat{t} \propto  \tau_Q^{(\frac{\nu z}{1+\nu z})}
+\end{equation}
+
+Consequently, the control parameter at freeze-out scales as,
+\begin{equation}
+\hat{\epsilon} = \epsilon(\hat{t}) \propto \tau_Q^{-(\frac{1}{1+\nu z})}
+\end{equation}
+
+The density of the resulting topological defects is determined by the configuration of the system at the 
+moment of freeze-out. The characteristic size of the ordered domains is set by the correlation length 
+$\hat{\xi}$ at time $\hat{t}$,
+\begin{equation}
+\hat{\xi} = \xi(\hat{t}) \propto |\hat{\epsilon}|^{-\nu} \propto \left(\tau_Q^{-(\frac{1}{1+\nu z})}\right)^{-\nu} \propto \tau_Q^{(\frac{\nu}{1+\nu z})}
+\end{equation}
+
+Assuming that defects form at the boundaries of these domains, the initial defect density $\rho$ scales inversely with the volume (or area) of the domains. If $d$ is the effective dimension of the defect (where $d = D_{\text{space}} - D_{\text{defect}}$), then $\rho \propto \hat{\xi}^{-d}$. This yields the Kibble-Zurek scaling law for defect formation,
+
+\begin{equation}
+    \boxed{\rho \propto \tau_Q^{-\frac{d\nu}{1+\nu z}}}
+\end{equation}
+
+This equation predicts a universal power-law dependence on the quench rate. For example, in a mean-field transition (where $\nu=1/2$ and $z=2$) producing line defects in three dimensions ($d=2$), the exponent simplifies to the standard result often cited in literature\cite{Fowler2017KibbleZurekCrystal, Kibble2007Phase-transitionUniverse},
+
+\begin{equation}
+    \rho \propto \tau_Q^{-1/2}
+\end{equation}
+
+This scaling law has been experimentally verified in diverse systems, providing strong evidence for the universality of the mechanism.
+
+\vspace{1cm}
+
+% In the ``one-scale" model, the defect network is characterized by a single length scale $\xi(t)$, representing both the average separation between defects and their radius of curvature.
+
+% For a system where dynamics are dominated by friction (overdamped motion), we balance the tension force $F_T$ and the friction force $F_f$. The tension force per unit length due to curvature $\xi$ is,
+
+% \begin{equation}
+% F_T \approx \frac{T}{\xi}
+% \end{equation}
+
+% The friction force per unit length opposing the velocity $v$ is,
+
+% \begin{equation}
+% F_f \approx \Gamma v
+% \end{equation}
+
+% Where $T$ is the string tension and $\Gamma$ is the friction coefficient. Equating these forces ($F_T \approx F_f$) gives the characteristic velocity of the network,
+
+% \begin{equation}
+% v \approx \frac{T}{\Gamma \xi}
+% \end{equation}
+
+% The rate of energy loss per unit volume $W$ is the work done against friction. Using the defect density $\rho \approx \xi^{-d}$,
+
+% \begin{equation}
+% \frac{dW}{dt} \approx - (F_f) \cdot v \cdot \rho \approx - (\Gamma v) \cdot v \cdot \frac{1}{\xi^d}
+% \end{equation}
+
+% Substituting $v \approx \frac{T}{\Gamma \xi}$,
+
+% \begin{equation}
+% \frac{dW}{dt} \approx - \frac{T^2}{\Gamma \xi^{d+2}}
+% \end{equation}
+
+% The energy density of the network is $W \approx T \rho$. We can relate the energy loss directly to the change in density,
+
+% \begin{equation}
+% \frac{dW}{dt} = T \frac{d\rho}{dt}
+% \end{equation}
+
+% Equating the two expressions for energy loss and noting that $\xi^{-(d+2)} = \rho^{(\frac{d+2}{d})}$,
+
+% % \begin{equation}
+% % T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^2 \implies \frac{d\rho}{dt} \propto -\rho^2
+% % \end{equation}
+% \begin{equation}
+% T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^{(\frac{d+2}{d})} \implies \frac{d\rho}{dt} \propto -\rho^{(\frac{d+2}{d})}
+% \end{equation}
+
+% Integrating this differential equation for line defect in three dimensions ($d=2$) yields the scaling law for late-time dynamics,
+% \begin{equation}
+% \rho(t) \propto t^{-1}
+% \end{equation}
+
+% The universality of symmetry-breaking phenomena offers a remarkable opportunity: scientists can explore the vast time and space scales of the early universe through small-scale laboratory experiments that preserve the essential physics. In this spirit, Zurek proposed a test in 1985 for the Kibble mechanism, a key cosmological theory regarding defect formation, using superfluid Helium-4\cite{Zurek1985CosmologicalHelium}. He predicted that a rapid phase transition (quench) in the fluid would create vortex lines analogous to cosmic strings, providing valuable clues about their behavior. Unfortunately, this specific experiment was never successfully performed.
+
+\noindent{\textbf{Late-time coarsening dynamics:}} Following their formation, the defect network evolves to 
+minimize the system's free energy. This process is effectively described by the ``one-scale" model, which 
+simplifies the complex network by assuming it is defined by just one characteristic length, $\xi(t)$, that 
+changes with time. This scale $\xi(t)$ simultaneously represents the typical radius of curvature of the 
+defects and the average separation distance between them.
+
+In condensed matter systems, such as nematic liquid crystals, the motion of defects is typically overdamped, 
+meaning that frictional forces dominate over inertial effects. The dynamics are therefore governed by the 
+balance between two competing forces per unit length. The tension force $F_T$, which acts to straighten curved 
+defect segments, scales inversely with the local curvature radius $\xi$,
+
+\begin{equation}
+F_T \approx \frac{T}{\xi}
+\end{equation}
+
+where $T$ is the string tension. Opposing this motion is the frictional drag force $F_f$, which is proportional to the defect velocity $v$,
+
+\begin{equation}
+F_f \approx \Gamma v
+\end{equation}
+
+where $\Gamma$ is the friction coefficient per unit length. By equating these forces ($F_T \approx F_f$), we determine the characteristic terminal velocity \cite{Chuang1991CosmologyCrystals} of the defect network,
+
+\begin{equation}
+v \approx \frac{T}{\Gamma \xi}
+\end{equation}
+
+As the network coarsens, energy is dissipated through friction. The rate of energy loss per unit volume, $dW/dt$, corresponds to the work done against the frictional force. For a defect network with density $\rho \approx \xi^{-d}$ (where $d$ is an effective dimension scaling exponent), the power dissipated is,
+
+\begin{equation}
+\frac{dW}{dt} \approx - (F_f v) \rho \approx - (\Gamma v^2) \frac{1}{\xi^d}
+\end{equation}
+
+Substituting the expression for the characteristic velocity we have,
+
+\begin{equation}
+\frac{dW}{dt} \approx - \Gamma \left( \frac{T}{\Gamma \xi} \right)^2 \frac{1}{\xi^d} = - \frac{T^2}{\Gamma \xi^{d+2}}
+\end{equation}
+
+The total energy density of the network is given by $W \approx T \rho$. Consequently, the rate of energy loss is directly proportional to the rate of change in defect density,
+
+\begin{equation}
+\frac{dW}{dt} = T \frac{d\rho}{dt}
+\end{equation}
+
+By equating the two expressions for energy dissipation and expressing the length scale in terms of density (noting that $\xi^{-(d+2)} = (\rho^{1/d})^{d+2} = \rho^{\frac{d+2}{d}}$), we obtain the evolution equation,
+
+\begin{equation}
+T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^{\frac{d+2}{d}} \implies \frac{d\rho}{dt} \propto -\rho^{\frac{d+2}{d}}
+\end{equation}
+
+For the specific case of line defects (strings) in three dimensions, the defect density is defined as length per unit volume, which corresponds to $d=2$ (since $\rho \propto \xi^{-2}$). Substituting $d=2$ into the evolution equation yields $d\rho/dt \propto -\rho^2$. Integrating this differential equation leads to the universal scaling law for late-time dynamics,
+
+\begin{equation}
+\boxed{\rho(t) \propto t^{-1}}
+\end{equation}
+
+For domain walls ($d=1$) in two or, three dimensions this becomes,
+\begin{equation}
+\boxed{\rho(t) \propto t^{-\frac{1}{2}}}
+\end{equation}
+
+
 \subsection{Project objectives}
 
-\section{Experimental Setup}
-\subsubsection*{Nematic liquid crystals}
+This work establishes nematic liquid crystals \cite{Gennes1993TheCrystals} as a robust laboratory platform for 
+investigating the dynamics of topological line defects (strings), providing a direct analogue to those 
+predicted in early-universe cosmology. The primary objective is to experimentally validate the Kibble-Zurek 
+mechanism (KZM), which governs defect production during symmetry-breaking phase transitions, and the one-scale 
+scaling model, characterized by the defect density decay law $\rho(t)\propto t^{-1}$.
 
-\subsubsection*{Homeotropic alignment}
-% \subsection{apparatus}
+We specifically test quantitative KZM predictions by performing electric-field quenches at varying rates 
+$\tau_{Q}$, aiming to confirm the defect density scaling $\rho(0)\propto\tau_{Q}^{-1/2}$. High-speed 
+videography is employed to capture the full temporal evolution of the defect network, from initial formation 
+through late-time coarsening. The experimental methodology is detailed in Section \ref{sec:Exp}, followed by 
+the computational image analysis framework in Section \ref{sec:Comp}. Finally, we present our quantitative 
+outcomes in Section \ref{sec:Result} and conclude with a discussion of implications in Section \ref{sec:Conc}.
+
+
+\newpage
+\section{Experimental Setup}\label{sec:Exp}
+
+Liquid crystals \cite{Gennes1993TheCrystals, Chuang1991CosmologyCrystals} constitute a class of organic systems that exhibit distinct mesophases intermediate between isotropic liquids and crystalline solids, characterized by long-range orientational order described by a director field $\mathbf{n}(\mathbf{r})$. We employ liquid crystals for this study because they occupy a unique experimental advantage. Unlike ordinary fluids (e.g., water), which lack internal directional structure and thus cannot support topological defects in the fluid phase, liquid crystals possess the continuous symmetry breaking essential for simulating cosmic string formation.  Furthermore, unlike quantum fluids (e.g., superfluid helium), which require extreme cryogenic environments, liquid crystals exhibit defect dynamics on accessible macroscopic timescales under ambient conditions.
+
+The experiment utilizes a homeotropic alignment, where molecules are anchored perpendicular to the substrate. In this uniform state, the system appears optically isotropic. However, during rapid phase transitions (quenches), topological defects form where the local order is disrupted. Due to the material's birefringence, the rapidly twisting director field near these defects creates sharp refractive index gradients. These gradients act as cylindrical lenses, refracting incident light away from the microscope's collection aperture, manifesting as distinct dark strings against a bright background. This high-contrast visualization enables precise tracking of the defect network. Because the topological constraints of liquid crystals map directly onto high-energy field theories, this system serves as a rigorous laboratory analogue for verifying the Kibble-Zurek mechanism and the non-equilibrium dynamics of cosmic strings.
+
 \subsection{Preparing empty cell}
-Preparation of liquid crystal cells follows a series of well-established, standardized steps. The standard workflow is outlined below.\\
+Preparation of liquid crystal cells follows a series of well-established, standardized steps. The standard workflow is outlined below.
 
-\subsubsection*{Patterning:}
-ITO-coated glass slides are cut and patterned to create defined electrode regions. The glass is placed on a cutting mat and the non-coated side is cut to 4 cm × 2 cm dimensions. A multimeter verifies the coated side. The coated surface is then marked with 1 cm wide cello tape, leaving 0.5 cm gaps at both ends. This protects the desired conducting area.\\
+\subsubsection{Patterning:}
+ITO-coated glass slides are cut and patterned to create defined electrode regions. The glass is placed on a cutting mat and the non-coated side is cut to 4 cm × 2 cm dimensions. A multimeter verifies the coated side. The coated surface is then marked with 1 cm wide cello tape, leaving 0.5 cm gaps at both ends. This protects the desired conducting area.
 
-\subsubsection*{Etching:}
-In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and transferred to the cleaning stage.\\
+\subsubsection{Etching:}
+In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and transferred to the cleaning stage.
 
-\subsubsection*{Post etching treatment:}
- The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains\\
+\subsubsection{Post etching treatment:}
+ The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains.
+ 
+\begin{wrapfigure}[9]{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figs/imported/DMOAP.png} 
+    \caption{DMOAP structure\hfill\\ ($C_{26}H_{58}CLNO_3Si$) (\href{https://pubchem.ncbi.nlm.nih.gov/compound/Quat-silsesquioxane}{Source})}
+    \label{fig:DMOAP}
+\end{wrapfigure}
 
-\subsubsection*{Applying surfactant (DMOAP):}
-0.2\% DMOAP surfactant solution is prepared by mixing 160 μL DMOAP with 80 mL distilled water. Both glass slabs are held vertically, with the coated sides facing the same direction, and dipped into the surfactant solution for 5 minutes. The surfactant forms a thin layer that promotes homeotropic (vertical) alignment. The slabs are rinsed with distilled water and dried with nitrogen gas.\\
+\subsubsection{Applying surfactant (DMOAP):}
+A 0.2\% DMOAP surfactant solution is prepared by mixing 160 $\mu$L of DMOAP with 80 mL of distilled water. The 
+glass slabs are held vertically and dipped into this solution for 5 minutes, allowing the methoxy groups of the 
+surfactant to hydrolyze and form hydrogen bonds with the hydroxyl groups naturally present on the glass 
+surface. The slabs are then rinsed with distilled water, dried with nitrogen gas, returned to the petri dish, 
+and baked in a hot air oven at 110$^\circ$C for 60 minutes. This thermal treatment drives a condensation 
+reaction that converts the initial hydrogen bonds into robust, covalent siloxane (Si-O-Si) linkages.  These 
+bonds rigidly anchor the long alkyl chains perpendicular to the substrate, creating a steric barrier that 
+induces the desired homeotropic alignment of the liquid crystal molecules.
 
-\subsubsection*{Cell assembly:}
-Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.\\
+\subsubsection{Cell assembly:}
+Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.
 
-\subsection{Capacitance-nased cell thickness measurement}
-The thickness of the liquid crystal cell is determined using a capacitance measurement method. The cell acts as a parallel plate capacitor, where the measured capacitance (C) is related to the thickness (d) by the formula,
-$d = \epsilon_0\epsilon_r A/C$, with $\epsilon_0$ being the vacuum permittivity, $\epsilon_r$ the relative permittivity($\approx1$ for air), and $A$ the effective electrode area. A precision LCR meter is used to measure the cell’s capacitance, and to accurately calculate the effective area, only the region of overlap between the patterned ITO electrodes is considered, excluding the edge regions and spacers. The measured thickness of the cell is $31.09\pm0.44 \mu m$.\\
+\subsection{Capacitance-based cell thickness measurement}
+The thickness of the liquid crystal cell was determined using a capacitance-based measurement technique. 
+The cell was modeled as a parallel-plate capacitor, for which the capacitance \(C\) is related to the cell 
+thickness \(d\) by
+\begin{equation}
+    d = \frac{\varepsilon_0 \varepsilon_r A}{C},
+\end{equation}
+where \(\varepsilon_0\) is the vacuum permittivity, \(\varepsilon_r\) is the relative permittivity (taken 
+to be \(\approx 1\) for air), and \(A\) denotes the effective electrode area.
+
+Capacitance measurements were performed using a precision LCR meter. 
+To accurately estimate the effective area, only the region of overlap between the patterned ITO electrodes 
+was considered, while edge regions and spacer areas were excluded to minimize systematic errors.
+
+For an effective electrode area of \((8.0 \pm 0.4)\times 10^{-5}\,\mathrm{m}^2\), the measured capacitance 
+was \(C = 16.23\,\mathrm{pF}\). 
+Substituting these values into above equation yields a cell thickness of
+\begin{equation}
+    d = 43.62 \pm 2.18\,\mu\mathrm{m}.
+\end{equation}
+
+\newpage
+\begin{wrapfigure}[8]{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figs/imported/MBBA.png}
+    \caption{MBBA (\href{https://en.wikipedia.org/wiki/MBBA}{Source})}
+    \label{fig:placeholder}
+\end{wrapfigure}
 
 \subsection{Preparing homeotropic cell}
 The assembled LC cell is placed on a temperature control device programmed with a three-stage thermal protocol: 
 \begin{enumerate}
-    \item heat to $55\degree C$ at $20\degree C/min$ for 10 min,
-    \item cool to $45\degree C$ at $1\degree C/min$,
-    \item cool to  $32\degree C$ at $0.1\degree C/min$ over 999 min $(\sim16.6\  hours)$
+    \item heat to $50\degree C$ at a rate $20\degree C/min$ and hold for 10 mins,
+    \item cool to $36\degree C$ at a rate $1\degree C/min$ and hold for 5 mins,
+    \item cool to  $25\degree C$ at a rate $0.1\degree C/min$ and hold.
 \end{enumerate}
+\begin{figure}
 
-Once the device reaches $55\degree C$, a small drop of MBBA liquid crystal is carefully placed on the cell edge using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, where capillary action draws it throughout the cell gap. The lid is closed, and the cell is left undisturbed for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under crossed polarizers to verify uniform alignment and is then ready for experimental use or stored in a sealed container at room temperature.\\
+\end{figure}
+
+Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is carefully placed on the cell edge using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, where capillary action draws it throughout the cell gap. The lid is closed, and the cell is left undisturbed for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under crossed polarizers to verify uniform alignment and is then ready for experimental use or stored in a sealed container at room temperature.,
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figs/imported/conoscopic_2_50X.png}
+    \caption{Conoscopic image confirming the homeotropic alignment of the liquid crystal cell.}
+    \label{fig:conoscopicr}
+\end{figure}
 
 \subsection{Optical microscopy system}
 Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
 $27.5\degree C$, dynamic data of defect formation were recorded under 
-$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For each voltage, the experiment was repeated using three different optical configurations:
-\begin{itemize}
-\item Polarized illumination without an analyzer,
-\item Polarized illumination with analyzer at a relative angle of $0\degree$
-\item Polarized illumination with analyzer at a relative angle of $90\degree$
-\end{itemize}
+$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V.
 
+\newpage
+\section{Computational Framework}\label{sec:Comp} %------------------------------------------------------------
 
-\section{Computational Framework}
-
-\indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed workflow and framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
-\textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git }\\ 
-for this analytical pipeline are described below.\\
+\indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed analysis framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
+\textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git} is described below.
 
 \subsection{Pre-processing and noise reduction}
-In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and improve the overall quality of the image. The median filter is a non-linear filtering technique that replaces each pixel value 
-with the median of the intensity values within its 3×3 neighborhood. Specifically, for every pixel, a $3\times3$ 
-window is centered on it, and the nine pixel values within this window are sorted in ascending order. The median 
-value from this sorted list is then assigned to the central pixel, effectively suppressing impulsive noise such as 
-salt-and-pepper noise while preserving important image details. Unlike linear filters that tend to blur edges by 
-averaging pixel values, the median filter maintains sharp boundaries and fine structures, making it particularly 
-effective for applications where edge preservation is crucial.
+In the first step of image processing, we have implemented a $3\times3$ median filter to reduce noise and 
+improve the overall quality of the image. The median filter is a non-linear filtering technique that 
+replaces each pixel value with the median of the intensity values within its 3×3 neighborhood. Specifically, 
+for every pixel, a $3\times3$ window is centered on it, and the nine pixel values within this window are 
+sorted in ascending order. The median value from this sorted list is then assigned to the central pixel, 
+effectively suppressing impulsive noise such as salt-and-pepper noise while preserving important image 
+details. Unlike linear filters that tend to blur edges by averaging pixel values, the median filter 
+maintains sharp boundaries and fine structures, making it particularly effective for applications where edge 
+preservation is crucial.
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\linewidth]{figs/test-framework-2s_40V-S012.png}
-    \caption{Images after $3\times3$ median noise filter and Meijering ridge detection. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.}
+    \caption{Images after $3\times3$ median noise filter and Meijering ridge detection. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.} 
     \label{fig:test_fw_012}
 \end{figure}
 
 \subsection{Ridge detection operation}
-For ridge detection, we implement the Meijering ridge detection filter, a modified Hessian-based \cite{Meijering2004DesignImages} approach specifically designed to detect elongated, tubular structures in noisy images. This method computes the eigenvalues and eigenvectors of a modified Hessian matrix at each pixel, where the local principal ridge directions are determined by the eigenvectors of the matrix computed from intensity values in the local neighborhood. The Meijering filter assigns a ``neuriteness" or ``vesselness" measure $\Phi(x)$ to each pixel according to $\Phi(x) = \lambda(x)/\lambda_{\text{min}}$ for $\lambda(x) \geq 0$ and $\Phi(x) = 0$ otherwise, where $\lambda$ represents the larger eigenvalue in magnitude and $\lambda_{\text{min}}$ is the minimum eigenvalue across all pixels. The eigenvector corresponding to the smaller absolute eigenvalue indicates the longitudinal direction of the ridge, effectively suppressing responses to first-order structures such as background intensity discontinuities while enhancing continuous, filamentous features. This multi-scale approach proves superior to basic Hessian or Laplacian-based detectors for identifying nematic liquid crystal strings, as it maintains connectivity across regions of varying contrast and width while reducing false detections from noise artifacts.
+For ridge detection, we implement the Meijering ridge detection filter \cite{Meijering2004DesignImages}, a 
+modified Hessian-based approach specifically designed to detect elongated, tubular structures in noisy 
+images. In this implementation, the required second-order image derivatives $f_{ij}(\mathbf{x})$ are 
+computed by convolving the image $f$ with the second-order derivatives of a normalized Gaussian kernel $G$, 
+expressed as $f_{ij}(\mathbf{x}) = (f \ast G_{ij})(\mathbf{x})$, where $G_{ij}(\mathbf{x}) = \left( 
+\frac{\partial^{2}}{\partial_{i} \partial_{j}} G \right)(\mathbf{x})$ and $\mathbf{x} = (x, y)$ denotes the 
+pixel position. The eigenvectors and eigenvalues are determined not from a standard Hessian, but from a 
+modified matrix $\mathbf{H}'_{f}(\mathbf{x})$:
 
+$$\mathbf{H}'_{f}(\mathbf{x}) = 
+\begin{bmatrix} 
+f_{xx}(\mathbf{x}) + \alpha f_{yy}(\mathbf{x}) & (1 - \alpha)f_{xy}(\mathbf{x}) \\ (1 - \alpha)f_{xy}
+(\mathbf{x}) & f_{yy}(\mathbf{x}) + \alpha f_{xx}(\mathbf{x}) 
+\end{bmatrix}$$
 
-\subsection{Hysteresis thresholding}
-To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}(0.2)$ and $T_{\text{low}}(0.08)$, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
+where $\alpha$ is a weighting parameter (typically set to $1/3$ for 2D images 
+(\href{https://github.com/scikit-image/scikit-image/blob/e8a42ba85aaf5fd9322ef9ca51bc21063b22fcae/skimage/filters/ridges.py#L76}{Source})) that ensures 
+the filter is maximally flat in the longitudinal direction of the ridge. The normalized eigenvectors 
+$\mathbf{v}'_{i}(\mathbf{x})$ of this modified matrix remain identical to the standard Hessian eigenvectors 
+$\mathbf{v}_{i}(\mathbf{x})$, while the modified eigenvalues $\lambda'_{i}(\mathbf{x})$ are calculated as 
+$\lambda'_{1}(\mathbf{x}) = \lambda_{1}(\mathbf{x}) + \alpha \lambda_{2}(\mathbf{x})$ and $\lambda'_{2}
+(\mathbf{x}) = \lambda_{2}(\mathbf{x}) + \alpha \lambda_{1}(\mathbf{x})$. The filter assigns a 
+``neuriteness'' or ``vesselness'' measure $\Phi(x)$ to each pixel according to $\Phi(x) = 
+\lambda(x)/\lambda_{\text{min}}$ for $\lambda(x) \geq 0$ and $\Phi(x) = 0$ otherwise, where $\lambda$ 
+represents the larger modified eigenvalue in magnitude and $\lambda_{\text{min}}$ is the minimum eigenvalue 
+across all pixels. By utilizing the eigenvector corresponding to the smaller absolute eigenvalue to 
+indicate the longitudinal direction, this method effectively suppresses responses to background intensity 
+discontinuities while enhancing continuous, filamentous features. This multi-scale approach proves superior 
+to basic Hessian or Laplacian-based detectors for identifying nematic liquid crystal defects, as it 
+maintains connectivity across regions of varying contrast and width while significantly reducing false 
+detections from noise artifacts.
+
+\subsection{Calculating defect density}
+A sequence of processing operations was applied to the ridge maps to robustly isolate defect lines from the background and to accurately quantify their total length and resulting line density.
+\subsubsection{Hysteresis thresholding:}
+To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}(\textbf{0.25})$ and $T_{\text{low}}(\textbf{0.15})$, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
 
 \begin{figure}[h]
     \centering
@@ -179,25 +605,115 @@ To distinguish true ridge structures from spurious noise artifacts in the ridge-
     \caption{Images after hysteresis thresholding, binary closing, removing small objects, and skeletonizing. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.}
     \label{fig:test_fw_345}
 \end{figure}
-\subsection{Binary closing and removing small objects}
-To further refine the segmentation, binary morphological closing  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected string regions, followed by connected component analysis to remove small objects below a chosen length threshold ($16px$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
+\subsubsection{Binary closing and removing small objects:}
+To further refine the segmentation, binary morphological closing  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected defect regions, followed by connected component analysis to remove small objects below a chosen length threshold ($\textbf{64px}$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
 
-\subsection{Skeletonizing}
- The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected string to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of string lengths and facilitates reliable analysis of defect network topology, even when original regions are wide or noisy.
+\subsubsection{Skeletonizing:}
+ The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected defect lines to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of defect lengths and facilitates reliable analysis of defect network
+ topology, even when original regions are wide or noisy.
 
-\subsection{Calculating string density} 
-To quantify the defect network from processed images, the total string length is estimated by extracting the skeletonized form of each defect and analyzing it with the \textit{Skan} \cite{Skeleton0.13.0} library, which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields the projected string length $L$. To obtain the string density $\rho$, this total length is divided by the sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. \\
+To quantify the defect network from processed images, the total defect length is estimated by extracting the skeletonized form of each defect line and analyzing it with the \textit{Skan} \cite{Skeleton0.13.0} library, which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields the projected defect length $L$. To obtain the defect density $\rho$, this total length is divided by the sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. 
 
+\subsection{Error analysis}
 
+\subsubsection{Error in time}
 
+Temporal uncertainty arises from a significant $\textbf{30\%}$ frame drop rate observed during the $100\,\text{fps}$ recording process. This data loss is attributed to hardware bandwidth limitations, where the data write speed was insufficient to sustain the continuous storage of the high-frequency video stream. To reconstruct the true temporal evolution, a Monte Carlo resampling method was employed. The observed frame sequence was sequentially sampled $1000$ times in the corrected time range (scaled by $100/70$) to account for the stochastic nature of the drops. For each frame $i$, the mean ($\mu_{t_i}$) of the simulated arrival times was assigned as the corrected timestamp, while the standard deviation ($\sigma_{t_i}$) represents the temporal error:
 
-\section{Defect Dynamics}
-\subsubsection*{The Freedericksz Transition}
-\subsection{Electric Field Quench}
-\subsection{Temperature Quench}
-\subsection{Magnetic Field Quench}
+\[
+    t_i = \mu_{t_i} \pm \sigma_{t_i}
+\]
 
-\section{Conclusion}
+This statistical reconstruction mitigates the non-linear distortion introduced by the write-speed bottleneck.
+
+Although the temporal uncertainty $\sigma_{t_i}$ was rigorously calculated for every data point, horizontal error bars are omitted from the final plots to maintain graphical clarity. However, the analysis explicitly incorporates the corrected timestamps ($\mu_{t_i}$) derived from the resampling procedure for the time axis. This ensures that the reported dynamics are grounded in the statistically reconstructed timeline, effectively acknowledging the latency-induced distortions.
+
+\subsubsection{Error in defect density}
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Systematic errors:}} The accuracy of the string defect density measurement is fundamentally limited by the precision of the geometric parameters used in the capacitance method. Specifically, a unit length measurement error of $2\,\text{mm}$ introduces an uncertainty of $4\,\text{mm}^2$ in the unit area determination. Given the total measured sample area($A$) of $80\,\text{mm}^2$, this corresponds to a relative fractional error of $5\%$. This geometric uncertainty propagates linearly through the analysis; the fractional error in the area measurement translates directly to the uncertainty in the calculated cell thickness ($t$) and subsequently to the string defect density ($\rho$). Consequently, the system exhibits a uniform error propagation described by the relationship:
+
+\[
+    \frac{dA}{A} = \frac{dt}{t} = \frac{d\rho}{\rho} \approx 0.05
+\]
+
+Further, the pixel-to-length calibration was established by equating a physical length of $80\,\text{mm}$ to $1174\,\text{pixels}$. The precision of this calibration is limited by the finite thickness of the scale notation bars, which exhibit a standard deviation width of approximately $1.8\,\text{pixels}$. Accounting for the measurement uncertainty at both endpoints of the scale, the total pixel error accumulates to $\approx 3.6\,\text{pixels}$. Consequently, the relative error in the calibration factor($C$) is estimated as:
+
+\[
+    \frac{\delta C}{C} = \frac{\delta L_{\text{px}}}{L_{\text{px}}} = \frac{3.6}{1174} \approx 0.3\%
+\]
+
+This calibration uncertainty propagates to the string density calculation. Since the calculated cell volume (V) scales with the square of the calibration factor ($V \propto C^2$) while the measured string length scales linearly ($L \propto C$), the defect density depends inversely on the calibration factor ($\rho \propto C^{-1}$). Consequently, the magnitude of the relative error in density is equivalent to that of the calibration factor:
+
+\[
+    \frac{d\rho}{\rho} \approx \frac{dC}{C} \approx 0.3\%
+\]
+
+This results in a total systematic uncertainty of $5.3\%$ in the estimated string density.
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Random error:}} To quantify the random error inherent in the experimental setup, three independent measurements were conducted on the same sample under identical conditions. The observed variations in the measured values are attributed to stochastic fluctuations in the detection mechanism and manual selection processes. These datasets were analyzed to compute the arithmetic mean ($\bar{x}$) and the standard deviation ($\sigma$), which serves as the primary metric for the random uncertainty. The final experimental result is reported as the mean with the standard deviation representing the measurement precision:
+
+\[
+    x = \bar{x} \pm \sigma = \frac{1}{N}\sum_{i=1}^{N} x_i \pm \sqrt{\frac{\sum_{i=1}^{N}(x_i - \bar{x})^2}{N-1}}
+\]
+
+where $N=3$ represents the number of trials. This statistical variation captures the reproducibility of the system, distinct from the systematic calibration errors discussed previously.
+
+Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the relative standard deviation remained below $\textbf{5\%}$ of the mean value:
+
+\[
+    \frac{\sigma(t)}{\bar{x}(t)} < \textbf{0.05}
+\]
+
+Data points falling outside this stability criterion were discarded to prevent transient fluctuations from biasing the extracted scaling parameters.
+
+\newpage
+\section{Defect Dynamics}\label{sec:Result}
+\subsection{The Fréedericksz transition}
+The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which the initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
+    \caption{Fréedericksz Transition (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
+    \label{fig:Fréedericksz_Transition}
+\end{figure}
+
+For an electric-field--driven transition in a homeotropic nematic cell, the critical voltage \(V_c\) is given, within the one-constant approximation, by
+\begin{equation}
+V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
+\end{equation}
+where \(K\) is the Frank elastic constant, \(\varepsilon_0\) is the vacuum permittivity, and \(\Delta \varepsilon\) is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture, making the Fréedericksz transition a central mechanism in electro-optic switching and a powerful experimental tool for investigating elastic and dielectric properties of homeotropically aligned nematic systems.
+
+\subsection{Late-time coarsening dynamics}
+\indent Late-time coarsening dynamics were analyzed for 10V, 20V, 40V, and 60V datasets, acquired at 
+$10\times$ magnification without an analyzer. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
+\begin{itemize}
+\item 10V: -1.20
+\item 20V: -0.80
+\item 40V: -0.98
+\item 60V: -1.02
+\end{itemize}
+\indent These slopes are close to the theoretically predicted value of -1, consistent with the expected 
+$\rho(t)\propto 1/t$ scaling in the coarsening regime. The slightly higher error for the 10V and 20V cases may be attributed to a lower density of robust defect lines and increased uncertainty in defect length estimation within these data sets.,
+
+\begin{figure}[h]
+    \centering
+    \subfloat[Late-time coarsening dynamics for 10V]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
+    \hspace{0.05\textwidth}
+    \subfloat[Late-time coarsening dynamics for 20V]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
+    \vspace{0.5cm} 
+    \subfloat[Late-time coarsening dynamics for 40V]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
+    \hspace{0.05\textwidth} 
+    \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
+    \caption{Late-time coarsening dynamics for 10V, 20V, 40V, 60V with $10\times$ without analyzer datasets.}
+    \label{fig:dyn_string_density}
+\end{figure}
+
+\subsection{Defect formation dynamics}
+
+\section{Conclusion}\label{sec:Conc}
+\begin{itemize}
+    \item Defect formation dynamics will be studied next.
+\end{itemize}
 
 % Bibliography
 \bibliographystyle{naturemag}
@@ -205,9 +721,8 @@ To quantify the defect network from processed images, the total string length is
 
 % Appendices (if needed)
 \appendix
-\section{Supplementary Materials}
 \section{Acknowledgements}
 
-% Add any supplementary materials, equations, or detailed procedures here
+
 
 \end{document}
