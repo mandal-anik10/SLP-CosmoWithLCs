@@ -18,13 +18,23 @@ from skimage.filters import meijering, apply_hysteresis_threshold, gaussian, med
 from skimage.morphology import binary_closing, disk, remove_small_objects, skeletonize
 from skan import Skeleton, summarize
 
+import sys
+sys.path.append('../scripts/')
+from frame_time import corrected_time, N_frames, start_frames
+
 import warnings
 warnings.filterwarnings('ignore')
 
+f_name = '60_5'
+file_path = '../exp-data/20251201/28/'+f_name
+output_file = '28-{:}-3500-analysed'.format(f_name) 
+total_frames = N_frames['{:}'.format(f_name)]
+start_frame = start_frames['{:}'.format(f_name)]
 
-file_path = '../exp-data/20251201/28_ramp/1000_1'
-output_file = '1000_1_28_processed'
-num_imgs = 1000
+t_avg, t_sd = corrected_time(end_frame=(total_frames-start_frame))
+
+num_imgs = 4000
+
 
 # Calibration scale
 calib_scale = 0.068e-3    # mm/px
@@ -33,7 +43,7 @@ C = 16.23e-12    # f
 cell_thickness = (effectiv_cell_area * 8.85e-12 / C) * 1e3    # mm
 
 
-def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_th=[0.08, 0.2], closing_footprint=3, obj_th=64, skleton_img=False):
+def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_th=[0.10, 0.25], closing_footprint=3, obj_th=64, skleton_img=False):
     '''
     Main image analysis framework function which processes a given image.
     '''
@@ -70,13 +80,16 @@ def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_
 
 def perform_processing(idx):
     t_frame = idx/100
-    fig_name = file_path + "/{:.2f}s.tif".format(t_frame)
-    try: 
-        img = io.imread(fig_name, as_gray=True)
-        out = framework(img, hysteresis_th=[0.15, 0.25])
-        return [t_frame, out]
-    except:
-        return
+    if idx >= start_frame:
+        t_ = t_avg[idx-start_frame]
+        t_err = t_sd[idx-start_frame]
+        fig_name = file_path + "/{:.2f}s.tif".format(t_frame)
+        try: 
+            img = io.imread(fig_name, as_gray=True)
+            out = framework(img, hysteresis_th=[0.10, 0.25])
+            return [t_, t_err, out]
+        except:
+            return
 
 
 ## processing::====================================================================================
