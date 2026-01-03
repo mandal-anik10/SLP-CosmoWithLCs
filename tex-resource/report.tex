@@ -230,14 +230,14 @@ Consequently, topological defects provide a unique observational window
 \cite{Kibble2007Phase-transitionUniverse} into the physics of the extremely early Universe, an energy 
 scale inaccessible to terrestrial particle accelerators. However, to rigorously evaluate these scenarios, 
 a precise understanding of defect dynamics is required. Before current observations can be used to 
-constrain high-energy theory, it is imperative to develop a robust model of how cosmic strings evolve and 
+constrain high-energy theory, it is imperative to develop a robust model of how cosmological defects evolve and 
 interact throughout cosmic history.
 
 \subsection{Kibble-Zurek mechanism}
 
 The Kibble-Zurek mechanism (KZM) is a theoretical framework that unifies the non-equilibrium dynamics of 
 symmetry-breaking phase transitions across vastly different energy scales. Originally proposed by T.W.B. 
-Kibble to explain the formation of cosmic strings in the early universe\cite{Kibble1976TopologyStrings}, the 
+Kibble to explain the formation of cosmological defects in the early universe\cite{Kibble1976TopologyStrings}, the 
 theory was later extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium}. By 
 relying on the universality of critical dynamics, the KZM links cosmological topological defects to accessible 
 laboratory analogues like vortices in superfluids or disclinations in liquid 
@@ -311,60 +311,6 @@ This scaling law has been experimentally verified in diverse systems, providing 
 
 \vspace{1cm}
 
-% In the ``one-scale" model, the defect network is characterized by a single length scale $\xi(t)$, representing both the average separation between defects and their radius of curvature.
-
-% For a system where dynamics are dominated by friction (overdamped motion), we balance the tension force $F_T$ and the friction force $F_f$. The tension force per unit length due to curvature $\xi$ is,
-
-% \begin{equation}
-% F_T \approx \frac{T}{\xi}
-% \end{equation}
-
-% The friction force per unit length opposing the velocity $v$ is,
-
-% \begin{equation}
-% F_f \approx \Gamma v
-% \end{equation}
-
-% Where $T$ is the string tension and $\Gamma$ is the friction coefficient. Equating these forces ($F_T \approx F_f$) gives the characteristic velocity of the network,
-
-% \begin{equation}
-% v \approx \frac{T}{\Gamma \xi}
-% \end{equation}
-
-% The rate of energy loss per unit volume $W$ is the work done against friction. Using the defect density $\rho \approx \xi^{-d}$,
-
-% \begin{equation}
-% \frac{dW}{dt} \approx - (F_f) \cdot v \cdot \rho \approx - (\Gamma v) \cdot v \cdot \frac{1}{\xi^d}
-% \end{equation}
-
-% Substituting $v \approx \frac{T}{\Gamma \xi}$,
-
-% \begin{equation}
-% \frac{dW}{dt} \approx - \frac{T^2}{\Gamma \xi^{d+2}}
-% \end{equation}
-
-% The energy density of the network is $W \approx T \rho$. We can relate the energy loss directly to the change in density,
-
-% \begin{equation}
-% \frac{dW}{dt} = T \frac{d\rho}{dt}
-% \end{equation}
-
-% Equating the two expressions for energy loss and noting that $\xi^{-(d+2)} = \rho^{(\frac{d+2}{d})}$,
-
-% % \begin{equation}
-% % T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^2 \implies \frac{d\rho}{dt} \propto -\rho^2
-% % \end{equation}
-% \begin{equation}
-% T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^{(\frac{d+2}{d})} \implies \frac{d\rho}{dt} \propto -\rho^{(\frac{d+2}{d})}
-% \end{equation}
-
-% Integrating this differential equation for line defect in three dimensions ($d=2$) yields the scaling law for late-time dynamics,
-% \begin{equation}
-% \rho(t) \propto t^{-1}
-% \end{equation}
-
-% The universality of symmetry-breaking phenomena offers a remarkable opportunity: scientists can explore the vast time and space scales of the early universe through small-scale laboratory experiments that preserve the essential physics. In this spirit, Zurek proposed a test in 1985 for the Kibble mechanism, a key cosmological theory regarding defect formation, using superfluid Helium-4\cite{Zurek1985CosmologicalHelium}. He predicted that a rapid phase transition (quench) in the fluid would create vortex lines analogous to cosmic strings, providing valuable clues about their behavior. Unfortunately, this specific experiment was never successfully performed.
-
 \noindent{\textbf{Late-time coarsening dynamics:}} Following their formation, the defect network evolves to 
 minimize the system's free energy. This process is effectively described by the ``one-scale" model, which 
 simplifies the complex network by assuming it is defined by just one characteristic length, $\xi(t)$, that 
@@ -434,7 +380,7 @@ This work establishes nematic liquid crystals \cite{Gennes1993TheCrystals} as a 
 investigating the dynamics of topological line defects (strings), providing a direct analogue to those 
 predicted in early-universe cosmology. The primary objective is to experimentally validate the Kibble-Zurek 
 mechanism (KZM), which governs defect production during symmetry-breaking phase transitions, and the one-scale 
-scaling model, characterized by the defect density decay law $\rho(t)\propto t^{-1}$.
+scaling model.
 
 We specifically test quantitative KZM predictions by performing electric-field quenches at varying rates 
 $\tau_{Q}$, aiming to confirm the defect density scaling $\rho(0)\propto\tau_{Q}^{-1/2}$. High-speed 
@@ -541,7 +487,7 @@ $10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V.
 \newpage
 \section{Computational Framework}\label{sec:Comp} %------------------------------------------------------------
 
-\indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed analysis framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{https://github.com/mandal-anik10/SLP-CosmoWithLCs}\\
+\indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed analysis framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{Repository}\\
 \textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git} is described below.
 
 \subsection{Pre-processing and noise reduction}
@@ -556,8 +502,8 @@ maintains sharp boundaries and fine structures, making it particularly effective
 preservation is crucial.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\linewidth]{figs/test-framework-2s_40V-S012.png}
-    \caption{Images after $3\times3$ median noise filter and Meijering ridge detection. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.} 
+    \includegraphics[width=1.0\linewidth]{figs/test-framework-1_50s_28_60V_5-S012.png}
+    \caption{Images after $3\times3$ median noise filter and Meijering ridge detection. The sample image is a single frame from 60V at $10\times$ magnification.} 
     \label{fig:test_fw_012}
 \end{figure}
 
@@ -597,16 +543,17 @@ detections from noise artifacts.
 \subsection{Calculating defect density}
 A sequence of processing operations was applied to the ridge maps to robustly isolate defect lines from the background and to accurately quantify their total length and resulting line density.
 \subsubsection{Hysteresis thresholding:}
-To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}(\textbf{0.25})$ and $T_{\text{low}}(\textbf{0.15})$, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
+To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply
+hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}$\footnote{\label{config_file}Choosen thereshold parameter values and footprint size is given in the configuration file in the \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{repository}.} and $T_{\text{low}}$\footref{config_file}, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\linewidth]{figs/test-framework-2s_40V-S345.png}
-    \caption{Images after hysteresis thresholding, binary closing, removing small objects, and skeletonizing. The sample image is a single frame from 40V $10\times$ without analyzer dynamical data.}
+    \includegraphics[width=1.0\linewidth]{figs/test-framework-1_50s_28_60V_5-S345.png}
+    \caption{Images after hysteresis thresholding, binary closing, removing small objects, and skeletonizing. The sample image is a single frame from 60V at $10\times$ magnification.}
     \label{fig:test_fw_345}
 \end{figure}
 \subsubsection{Binary closing and removing small objects:}
-To further refine the segmentation, binary morphological closing  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected defect regions, followed by connected component analysis to remove small objects below a chosen length threshold ($\textbf{64px}$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
+To further refine the segmentation, binary morphological closing\footref{config_file}  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected defect regions, followed by connected component analysis to remove small objects below a chosen length threshold ($\textbf{64px}$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
 
 \subsubsection{Skeletonizing:}
  The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected defect lines to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of defect lengths and facilitates reliable analysis of defect network
@@ -618,7 +565,7 @@ To quantify the defect network from processed images, the total defect length is
 
 \subsubsection{Error in time}
 
-Temporal uncertainty arises from a significant $\textbf{30\%}$ frame drop rate observed during the $100\,\text{fps}$ recording process. This data loss is attributed to hardware bandwidth limitations, where the data write speed was insufficient to sustain the continuous storage of the high-frequency video stream. To reconstruct the true temporal evolution, a Monte Carlo resampling method was employed. The observed frame sequence was sequentially sampled $1000$ times in the corrected time range (scaled by $100/70$) to account for the stochastic nature of the drops. For each frame $i$, the mean ($\mu_{t_i}$) of the simulated arrival times was assigned as the corrected timestamp, while the standard deviation ($\sigma_{t_i}$) represents the temporal error:
+Temporal uncertainty arises from a significant $\textbf{30\%}$ frame drop rate observed during the $100\,\text{fps}$ recording process. This data loss is attributed to hardware bandwidth limitations, where the data write speed was insufficient to sustain the continuous storage of the high-frequency video stream. To reconstruct the true temporal evolution, a Monte Carlo resampling method was employed. The observed frame sequence was sequentially sampled $1000$ times in the corrected time range (scaled by $100/70$) to account for the stochastic nature of the drops. For each frame $i$, the median ($\mu_{t_i}$) of the simulated arrival times was assigned as the corrected timestamp, while the standard deviation ($\sigma_{t_i}$) represents the temporal error:
 
 \[
     t_i = \mu_{t_i} \pm \sigma_{t_i}
@@ -650,21 +597,21 @@ This calibration uncertainty propagates to the string density calculation. Since
 
 This results in a total systematic uncertainty of $5.3\%$ in the estimated string density.
 
-\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Random error:}} To quantify the random error inherent in the experimental setup, three independent measurements were conducted on the same sample under identical conditions. The observed variations in the measured values are attributed to stochastic fluctuations in the detection mechanism and manual selection processes. These datasets were analyzed to compute the arithmetic mean ($\bar{x}$) and the standard deviation ($\sigma$), which serves as the primary metric for the random uncertainty. The final experimental result is reported as the mean with the standard deviation representing the measurement precision:
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Random error:}} To quantify the random error inherent in the experimental setup, five (three in the case of defect formation study) independent measurements were conducted on the same sample under identical conditions. The observed variations in the measured values are attributed to stochastic fluctuations in the detection mechanism and manual selection processes. These datasets were analyzed to compute the arithmetic mean ($\bar{x}$) and the standard deviation ($\sigma$), which serves as the primary metric for the random uncertainty. The final experimental result is reported as the mean with the standard deviation representing the measurement precision:
 
 \[
     x = \bar{x} \pm \sigma = \frac{1}{N}\sum_{i=1}^{N} x_i \pm \sqrt{\frac{\sum_{i=1}^{N}(x_i - \bar{x})^2}{N-1}}
 \]
 
-where $N=3$ represents the number of trials. This statistical variation captures the reproducibility of the system, distinct from the systematic calibration errors discussed previously.
+where $N=5$ represents the number of trials. This statistical variation captures the reproducibility of the system, distinct from the systematic calibration errors discussed previously.
 
-Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the relative standard deviation remained below $\textbf{5\%}$ of the mean value:
+Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the 20-point median value of relative standard deviation remained below $\textbf{10\%}$ of the mean value:
 
 \[
-    \frac{\sigma(t)}{\bar{x}(t)} < \textbf{0.05}
+    Median \left(\frac{\sigma(t_{-10})}{\bar{x}(t_{-10})}, \frac{\sigma(t_{-9})}{\bar{x}(t_{-9})},...,\frac{\sigma(t_{0}=t)}{\bar{x}(t_{0}=t)},..., \frac{\sigma(t_{9})}{\bar{x}(t_{9})}\right)(t) < \textbf{0.1}
 \]
 
-Data points falling outside this stability criterion were discarded to prevent transient fluctuations from biasing the extracted scaling parameters.
+This criterion is introduced to suppress spurious fluctuations and to retain the underlying median trend of the data. Data points that violate this stability condition are discarded to ensure that transient deviations do not bias the extracted scaling parameters.
 
 \newpage
 \section{Defect Dynamics}\label{sec:Result}
@@ -673,19 +620,19 @@ The Fréedericksz transition is a fundamental field-induced reorientation phenom
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
-    \caption{Fréedericksz Transition (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
+    \caption{Fréedericksz Transition in homeotropically alligned liquid crystal (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
     \label{fig:Fréedericksz_Transition}
 \end{figure}
 
-For an electric-field--driven transition in a homeotropic nematic cell, the critical voltage \(V_c\) is given, within the one-constant approximation, by
+For an electric-field driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation by,
 \begin{equation}
 V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
 \end{equation}
-where \(K\) is the Frank elastic constant, \(\varepsilon_0\) is the vacuum permittivity, and \(\Delta \varepsilon\) is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture, making the Fréedericksz transition a central mechanism in electro-optic switching and a powerful experimental tool for investigating elastic and dielectric properties of homeotropically aligned nematic systems.
+where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. This tunable instability makes the Fréedericksz transition an ideal experimental control parameter.
 
 \subsection{Late-time coarsening dynamics}
 \indent Late-time coarsening dynamics were analyzed for 10V, 20V, 40V, and 60V datasets, acquired at 
-$10\times$ magnification without an analyzer. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
+$10\times$ magnification. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
 \begin{itemize}
 \item 10V: -1.20
 \item 20V: -0.80
@@ -723,6 +670,25 @@ $\rho(t)\propto 1/t$ scaling in the coarsening regime. The slightly higher error
 \appendix
 \section{Acknowledgements}
 
+I would like to express my sincere gratitude to Prof. Pramoda for providing me with the opportunity to 
+conduct this research in his laboratory. I am also deeply thankful to Ankit for his invaluable 
+mentorship and unwavering support throughout the study.
 
+I extend my gratitude to Prof. Somak and my SRC members for encouraging me to pursue this semester-long 
+project and for granting me the academic autonomy to explore these ideas.
+
+I also wish to thank Shri Gowri, Kurshid da, and all other members of our small physics family for the 
+fruitful discussions and for helping me gain conceptual clarity. Their willingness to assist whenever I 
+needed help was essential to the completion of this project.
+
+I gratefully acknowledge the Departments of Chemistry and Biology for providing access to their 
+laboratory facilities.
+
+Finally, I would like to acknowledge the developers of the open-source software and digital tools that 
+significantly streamlined this work. Specifically, I thank the creators of GitHub for managing project 
+repositories, Overleaf for the seamless typesetting environment, and Mendeley for bibliography 
+management. I also appreciate the utility of generative artificial intelligence tools, particularly for 
+their artificial intelligence-assisted search prompts, which accelerated the literature review and 
+documentation process.
 
 \end{document}

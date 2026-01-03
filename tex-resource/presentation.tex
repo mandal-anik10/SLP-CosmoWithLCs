@@ -2,7 +2,7 @@
 %
 %============================================================================================================
 
-\documentclass[12pt]{beamer}
+\documentclass[10pt]{beamer}
 \usepackage{tikz}
 \usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,  decorations.pathreplacing,decorations.pathmorphing,shapes,  matrix,shapes.symbols}
 
@@ -51,7 +51,7 @@
 % Title page informations ###################################################################################
 \title{SLP Presentation}
 \subtitle{Laboratory Studies of Cosmology-Inspired Defect Dynamics in Liquid Crystals}
-\date{2025, November 30}
+\date{\today}
 \author{Anik Mandal}
 \institute{Ashoka University}
 \titlegraphic{\hfill\includegraphics[height=1.5cm]{../tex-resource/ashoka-logo.png}}
@@ -60,6 +60,14 @@
 \begin{document}
 
 \maketitle
+\begin{frame}{Project objectives}
+\begin{itemize}
+    \item akjd
+    \item ajkdn
+    \item skdjn
+\end{itemize}
+    
+\end{frame}
 
 \begin{frame}{Table of contents}
   \setbeamertemplate{section in toc}[sections numbered]
@@ -69,42 +77,684 @@
 
 \section[Intro]{Introduction}
 
-\begin{frame}[fragile]{Project Objectives}
-    hkj
+\begin{frame}{Symmetry-breaking in early Universe}
+\scriptsize{abc}
+    
 \end{frame}
 
-\begin{frame}[fragile]{Cosmological Defects}
-  khb\footcite{Kibble1976TopologyStrings}\\
-  jlhsc\footcite{Chuang1991Late-timeCrystal}\footcite{Bennett1990High-resolutionEvolution}
-\end{frame}
 \begin{frame}[fragile]{Kibble-Zurek Mechanism}
 hk\footcite{Chuang1991CosmologyCrystals}\footcite{Meijering2004DesignImages}\footcite{Palffy-Muhoray2007TheCrystals}
 \end{frame}
 
 \section{Experimental Setup}
-\begin{frame}{Frame Title}
-\tikzstyle{block} = [rectangle, draw, text width=1em, text centered, rounded corners, minimum height=2em]
-\begin{tikzpicture}
- [node distance=2.5cm,
- start chain=going below,]
-\node (n1) at (0,0) [block]  {Patterning};
-\node (n2) [block, right of=n1] {Etching};
-\node (n3) [block, right of=n2] {Post etching treatment};
-\node (n4) [block, right of=n3] {Applying surfactant (DMOAP))};
-% Connectors
-\draw [->] (n1.east) -- (n2.west);
-\draw [->] (n2.east) -- (n3.west);
-\draw [->] (n3.east) -- (n4.west);
+\begin{frame}{Experimental Setup}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15, font=\small},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[highlight] (1) {Patterning};
+\node[highlight, below=of 1] (2) {Etching};
+\node[highlight, below=of 2] (3) {Post etching treatment};
+\node[highlight, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[highlight, below=of 4] (5) {Cell assembly};
+\node[highlight, below=of 5] (6) {Cell thickness measurement};
+\node[highlight, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
 \end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+    
+\end{frame}
+% Patterning----------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[highlight] (1) {Patterning};
+\node[faded, below=0.5cm of 1] (2) {Etching};
+\node[faded, below=of 2] (3) {Post etching treatment};
+\node[faded, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=of 4] (5) {Cell assembly};
+\node[faded, below=of 5] (6) {Cell thickness measurement};
+\node[faded, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Eatching------------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[highlight, below=0.5cm of 1] (2) {Etching};
+\node[faded, below=0.5cm of 2] (3) {Post etching treatment};
+\node[faded, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=of 4] (5) {Cell assembly};
+\node[faded, below=of 5] (6) {Cell thickness measurement};
+\node[faded, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Post etching--------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[faded, below=of 1] (2) {Etching};
+\node[highlight, below=0.5cm of 2] (3) {Post etching treatment};
+\node[faded, below=0.5cm of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=of 4] (5) {Cell assembly};
+\node[faded, below=of 5] (6) {Cell thickness measurement};
+\node[faded, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% DMOAP---------------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[faded, below=of 1] (2) {Etching};
+\node[faded, below=of 2] (3) {Post etching treatment};
+\node[highlight, below=0.5cm of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=0.5cm of 4] (5) {Cell assembly};
+\node[faded, below=of 5] (6) {Cell thickness measurement};
+\node[faded, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Cell assembly-------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[faded, below=of 1] (2) {Etching};
+\node[faded, below=of 2] (3) {Post etching treatment};
+\node[faded, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[highlight, below=0.5cm of 4] (5) {Cell assembly};
+\node[faded, below=0.5cm of 5] (6) {Cell thickness measurement};
+\node[faded, below=of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Cell thickness------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[faded, below=of 1] (2) {Etching};
+\node[faded, below=of 2] (3) {Post etching treatment};
+\node[faded, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=of 4] (5) {Cell assembly};
+\node[highlight, below=0.5cm of 5] (6) {Cell thickness measurement};
+\node[faded, below=0.5cm of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Cell thickness------------------------------------------------------------------------------------
+\begin{frame}{\small{Preparing Homeotropic Cell}}
+
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Patterning};
+\node[faded, below=of 1] (2) {Etching};
+\node[faded, below=of 2] (3) {Post etching treatment};
+\node[faded, below=of 3] (4) {Applying surfactant (DMOAP)};
+\node[faded, below=of 4] (5) {Cell assembly};
+\node[faded, below=of 5] (6) {Cell thickness measurement};
+\node[highlight, below=0.5cm of 6] (7) {LC filling and cooling};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+\draw[arrow] (6) -- (7);
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{\small{Optical microscopy system}}
+    
 \end{frame}
 
 \section{Computational Framework}
 
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15, font=\small},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[highlight] (1) {Pre-processing and noise reduction};
+\node[highlight, below=of 1] (2) {Ridge detection};
+\node[highlight, below=of 2] (3) {Hysteresis thresholding};
+\node[highlight, below=of 3] (4) {Binary closing and cleaning};
+\node[highlight, below=of 4] (5) {Skeletonizing};
+\node[highlight, below=of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S012.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Noise reduction-----------------------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[highlight] (1) {Pre-processing and noise reduction};
+\node[faded, below=0.5cm of 1] (2) {Ridge detection};
+\node[faded, below=of 2] (3) {Hysteresis thresholding};
+\node[faded, below=of 3] (4) {Binary closing and cleaning};
+\node[faded, below=of 4] (5) {Skeletonizing};
+\node[faded, below=of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S012.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Ridge detection-----------------------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Pre-processing and noise reduction};
+\node[highlight, below=0.5cm of 1] (2) {Ridge detection};
+\node[faded, below=0.5cm of 2] (3) {Hysteresis thresholding};
+\node[faded, below=of 3] (4) {Binary closing and cleaning};
+\node[faded, below=of 4] (5) {Skeletonizing};
+\node[faded, below=of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S012.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Hysteresis thresholding---------------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Pre-processing and noise reduction};
+\node[faded, below=of 1] (2) {Ridge detection};
+\node[highlight, below=0.5cm of 2] (3) {Hysteresis thresholding};
+\node[faded, below=0.5cm of 3] (4) {Binary closing and cleaning};
+\node[faded, below=of 4] (5) {Skeletonizing};
+\node[faded, below=of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S345.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Binary closing and cleaning-----------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Pre-processing and noise reduction};
+\node[faded, below=of 1] (2) {Ridge detection};
+\node[faded, below=of 2] (3) {Hysteresis thresholding};
+\node[highlight, below=0.5cm of 3] (4) {Binary closing and cleaning};
+\node[faded, below=0.5cm of 4] (5) {Skeletonizing};
+\node[faded, below=of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S345.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Skletonizing--------------------------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Pre-processing and noise reduction};
+\node[faded, below=of 1] (2) {Ridge detection};
+\node[faded, below=of 2] (3) {Hysteresis thresholding};
+\node[faded, below=of 3] (4) {Binary closing and cleaning};
+\node[highlight, below=0.5cm of 4] (5) {Skeletonizing};
+\node[faded, below=0.5cm of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+\vspace{\fill}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1\linewidth]{figs/test-framework-1_50s_28_60V_5-S345.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% Defect density------------------------------------------------------------------------------------
+\begin{frame}{Computational Framework}
+\begin{columns}
+
+\begin{column}{0.25\textwidth}
+
+\centering
+\begin{tikzpicture}[
+    node distance=0.25cm,
+    every node/.style={draw, rectangle, rounded corners, minimum width=0.5cm, minimum height=0.5cm, text width=2.7cm, align=center},
+    highlight/.style={draw=black, thick, fill=black!15},
+    faded/.style={draw=black!40, text=black!40, font=\scriptsize},
+    arrow/.style={->, thick, draw=black!40}
+]
+\node[faded] (1) {Pre-processing and noise reduction};
+\node[faded, below=of 1] (2) {Ridge detection};
+\node[faded, below=of 2] (3) {Hysteresis thresholding};
+\node[faded, below=of 3] (4) {Binary closing and cleaning};
+\node[faded, below=of 4] (5) {Skeletonizing};
+\node[highlight, below=0.5cm of 5] (6) {Estimating defect density};
+
+\draw[arrow] (1) -- (2);
+\draw[arrow] (2) -- (3);
+\draw[arrow] (3) -- (4);
+\draw[arrow] (4) -- (5);
+\draw[arrow] (5) -- (6);
+
+\end{tikzpicture}
+
+\end{column}
+
+\begin{column}{0.75\textwidth}
+Here you explain what happens at stage C.
+You can add equations, figures, or intuition here.\\
+
+
+\end{column}
+\end{columns}
+
+\end{frame}
+\begin{frame}{\small{Error Analysis}}
+
+    
+\end{frame}
+
 \section{Defect Dynamics}
+\begin{frame}{Late time dynamics}
+    
+\end{frame}
+
+\begin{frame}{Formation dynamics}
+    
+\end{frame}
 
 \section{Conclusion}
 \begin{frame}[fragile]{Conclusion}
 hk
+
+\end{frame}
+
+\begin{frame}{Acknowledgement}
 
 \end{frame}
 
