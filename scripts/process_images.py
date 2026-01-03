@@ -25,9 +25,13 @@ from frame_time import corrected_time, N_frames, start_frames
 import warnings
 warnings.filterwarnings('ignore')
 
-f_name = '60_5'
+with open('config.json', 'r') as f:
+    config =json.load(f)
+
+
+f_name = '20_5'
 file_path = '../exp-data/20251201/28/'+f_name
-output_file = '28-{:}-3500-analysed'.format(f_name) 
+output_file = '28-{:}-4000-analysed'.format(f_name) 
 total_frames = N_frames['{:}'.format(f_name)]
 start_frame = start_frames['{:}'.format(f_name)]
 
@@ -41,6 +45,10 @@ calib_scale = 0.068e-3    # mm/px
 effectiv_cell_area = 8e-5    # m^2
 C = 16.23e-12    # f
 cell_thickness = (effectiv_cell_area * 8.85e-12 / C) * 1e3    # mm
+
+hysteresis_th_high = config[f_name[:2]+'V']['hysteresis_th-high']
+hysteresis_th_low = config[f_name[:2]+'V']['hysteresis_th-low']
+closing_fp = config[f_name[:2]+'V']['closing_footprint']
 
 
 def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_th=[0.10, 0.25], closing_footprint=3, obj_th=64, skleton_img=False):
@@ -86,13 +94,14 @@ def perform_processing(idx):
         fig_name = file_path + "/{:.2f}s.tif".format(t_frame)
         try: 
             img = io.imread(fig_name, as_gray=True)
-            out = framework(img, hysteresis_th=[0.10, 0.25])
+            out = framework(img, hysteresis_th=[hysteresis_th_low, hysteresis_th_high], closing_footprint=closing_fp)
             return [t_, t_err, out]
         except:
             return
 
 
 ## processing::====================================================================================
+print('processing... '+file_path)
 if __name__ == '__main__':
     cores = multiprocessing.cpu_count()   # Define number of cores for multiprocessing.
     

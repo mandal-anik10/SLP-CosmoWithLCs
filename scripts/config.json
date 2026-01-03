@@ -1,0 +1,22 @@
+{
+    "10V": {
+        "hysteresis_th-high": 0.25,
+        "hysteresis_th-low": 0.10,
+        "closing_footprint" : 3
+    },
+    "20V": {
+        "hysteresis_th-high": 0.25,
+        "hysteresis_th-low": 0.15,
+        "closing_footprint" : 5
+    },
+    "40V": {
+        "hysteresis_th-high": 0.25,
+        "hysteresis_th-low": 0.10,
+        "closing_footprint" : 5
+    },
+    "60V": {
+        "hysteresis_th-high": 0.25,
+        "hysteresis_th-low": 0.10,
+        "closing_footprint" : 3
+  }
+}
