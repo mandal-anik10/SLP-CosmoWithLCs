@@ -25,11 +25,8 @@ from frame_time import corrected_time, N_frames, start_frames
 import warnings
 warnings.filterwarnings('ignore')
 
-with open('config.json', 'r') as f:
-    config =json.load(f)
 
-
-f_name = '20_5'
+f_name = '10_5'
 file_path = '../exp-data/20251201/28/'+f_name
 output_file = '28-{:}-4000-analysed'.format(f_name) 
 total_frames = N_frames['{:}'.format(f_name)]
@@ -46,9 +43,13 @@ effectiv_cell_area = 8e-5    # m^2
 C = 16.23e-12    # f
 cell_thickness = (effectiv_cell_area * 8.85e-12 / C) * 1e3    # mm
 
-hysteresis_th_high = config[f_name[:2]+'V']['hysteresis_th-high']
-hysteresis_th_low = config[f_name[:2]+'V']['hysteresis_th-low']
-closing_fp = config[f_name[:2]+'V']['closing_footprint']
+if __name__ == '__main__':
+    with open('config.json', 'r') as f:
+        config =json.load(f)
+
+    hysteresis_th_high = config[f_name[:2]+'V']['hysteresis_th-high']
+    hysteresis_th_low = config[f_name[:2]+'V']['hysteresis_th-low']
+    closing_fp = config[f_name[:2]+'V']['closing_footprint']
 
 
 def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_th=[0.10, 0.25], closing_footprint=3, obj_th=64, skleton_img=False):
@@ -86,9 +87,9 @@ def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_
         return string_density
           
 
-def perform_processing(idx):
+def _perform_processing(idx):
     t_frame = idx/100
-    if idx >= start_frame:
+    if idx >= start_frame and idx < total_frames:
         t_ = t_avg[idx-start_frame]
         t_err = t_sd[idx-start_frame]
         fig_name = file_path + "/{:.2f}s.tif".format(t_frame)
@@ -101,12 +102,12 @@ def perform_processing(idx):
 
 
 ## processing::====================================================================================
-print('processing... '+file_path)
 if __name__ == '__main__':
     cores = multiprocessing.cpu_count()   # Define number of cores for multiprocessing.
     
+    print('processing... '+file_path)
     with multiprocessing.Pool(cores) as pool:
-        outs = [result for result in tqdm(pool.imap(perform_processing, range(0, num_imgs, 1)), total=num_imgs) 
+        outs = [result for result in tqdm(pool.imap(_perform_processing, range(0, num_imgs, 1)), total=num_imgs) 
                 if result is not None]
 
 ## Storing data::==================================================================================

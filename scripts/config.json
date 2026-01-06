@@ -1,8 +1,8 @@
 {
     "10V": {
         "hysteresis_th-high": 0.25,
-        "hysteresis_th-low": 0.10,
-        "closing_footprint" : 3
+        "hysteresis_th-low": 0.15,
+        "closing_footprint" : 7
     },
     "20V": {
         "hysteresis_th-high": 0.25,
