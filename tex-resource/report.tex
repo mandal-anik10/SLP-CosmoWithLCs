@@ -64,7 +64,7 @@
     \textbf{Anik Mandal}$^{1,*}$ \\[0.5em]
     \begin{tabular}{r l}
         SLP Guide &:  Prof. Pramoda Kumar$^{1}$ \\
-        SLP Co-guide &: Ankit Gupta$^{1}$ \\
+          & \ \& Ankit Gupta$^{1}$ \\
         PhD Supervisor &:  Prof. Somak Raychaudhury$^{1}$ \\[1em]
     \end{tabular}
 
@@ -99,7 +99,8 @@ select a specific orientation from a set of equally valid possibilities.
 A classic analogy is a ball sitting at the peak of a ``Mexican hat" potential: while the shape of the potential 
 itself is perfectly symmetric, the ball must eventually roll down into the valley to minimize its energy. In 
 doing so, it chooses a random direction, thereby breaking the rotational symmetry. In the context of both 
-cosmology and condensed matter physics, this ``choice" happens independently in different regions of space. When these disparate regions eventually meet, their orientations often fail to align smoothly, leading to the 
+cosmology and condensed matter physics, this choice happens independently in different regions of space. When 
+these disparate regions eventually meet, their orientations often fail to align smoothly, leading to the 
 formation of stable discontinuities known as topological defects\cite{Kibble1976TopologyStrings}.
 
 \subsection{Symmetry-breaking in early Universe}
@@ -238,8 +239,8 @@ interact throughout cosmic history.
 The Kibble-Zurek mechanism (KZM) is a theoretical framework that unifies the non-equilibrium dynamics of 
 symmetry-breaking phase transitions across vastly different energy scales. Originally proposed by T.W.B. 
 Kibble to explain the formation of cosmological defects in the early universe\cite{Kibble1976TopologyStrings}, the 
-theory was later extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium}. By 
-relying on the universality of critical dynamics, the KZM links cosmological topological defects to accessible 
+theory was later extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium, Zurek1996CosmologicalSystems}. 
+By relying on the universality of critical dynamics, the KZM links cosmological topological defects to accessible 
 laboratory analogues like vortices in superfluids or disclinations in liquid 
 crystals\cite{Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal}.
 
@@ -393,7 +394,7 @@ outcomes in Section \ref{sec:Result} and conclude with a discussion of implicati
 \newpage
 \section{Experimental Setup}\label{sec:Exp}
 
-Liquid crystals \cite{Gennes1993TheCrystals, Chuang1991CosmologyCrystals} constitute a class of organic systems that exhibit distinct mesophases intermediate between isotropic liquids and crystalline solids, characterized by long-range orientational order described by a director field $\mathbf{n}(\mathbf{r})$. We employ liquid crystals for this study because they occupy a unique experimental advantage. Unlike ordinary fluids (e.g., water), which lack internal directional structure and thus cannot support topological defects in the fluid phase, liquid crystals possess the continuous symmetry breaking essential for simulating cosmic string formation.  Furthermore, unlike quantum fluids (e.g., superfluid helium), which require extreme cryogenic environments, liquid crystals exhibit defect dynamics on accessible macroscopic timescales under ambient conditions.
+Liquid crystals \cite{Gennes1993TheCrystals, Palffy-Muhoray2007TheCrystals, Chuang1991CosmologyCrystals} constitute a class of organic systems that exhibit distinct mesophases intermediate between isotropic liquids and crystalline solids, characterized by long-range orientational order described by a director field $\mathbf{n}(\mathbf{r})$. We employ liquid crystals for this study because they occupy a unique experimental advantage. Unlike ordinary fluids (e.g., water), which lack internal directional structure and thus cannot support topological defects in the fluid phase, liquid crystals possess the continuous symmetry breaking essential for simulating cosmic string formation.  Furthermore, unlike quantum fluids (e.g., superfluid helium), which require extreme cryogenic environments, liquid crystals exhibit defect dynamics on accessible macroscopic timescales under ambient conditions.
 
 The experiment utilizes a homeotropic alignment, where molecules are anchored perpendicular to the substrate. In this uniform state, the system appears optically isotropic. However, during rapid phase transitions (quenches), topological defects form where the local order is disrupted. Due to the material's birefringence, the rapidly twisting director field near these defects creates sharp refractive index gradients. These gradients act as cylindrical lenses, refracting incident light away from the microscope's collection aperture, manifesting as distinct dark strings against a bright background. This high-contrast visualization enables precise tracking of the defect network. Because the topological constraints of liquid crystals map directly onto high-energy field theories, this system serves as a rigorous laboratory analogue for verifying the Kibble-Zurek mechanism and the non-equilibrium dynamics of cosmic strings.
 
@@ -605,6 +606,13 @@ This results in a total systematic uncertainty of $5.3\%$ in the estimated strin
 
 where $N=5$ represents the number of trials. This statistical variation captures the reproducibility of the system, distinct from the systematic calibration errors discussed previously.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/datapoint_selection_criteria.png}
+    \caption{This example figure(60V data) shows the region selected based on the criteria given below.}
+    \label{fig:sel_criteria}
+\end{figure}
+
 Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the 20-point median value of relative standard deviation remained below $\textbf{10\%}$ of the mean value:
 
 \[
@@ -632,7 +640,7 @@ where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittiv
 
 \subsection{Late-time coarsening dynamics}
 \indent Late-time coarsening dynamics were analyzed for 10V, 20V, 40V, and 60V datasets, acquired at 
-$10\times$ magnification. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
+$10\times$ magnification at $28\degree C$. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
 \begin{itemize}
 \item 10V: -1.20
 \item 20V: -0.80
@@ -653,6 +661,19 @@ $\rho(t)\propto 1/t$ scaling in the coarsening regime. The slightly higher error
     \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
     \caption{Late-time coarsening dynamics for 10V, 20V, 40V, 60V with $10\times$ without analyzer datasets.}
     \label{fig:dyn_string_density}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \subfloat[Frame at time=0s without 60V electric field applied]{\includegraphics[width=0.45\textwidth]{figs/60V_dyn_0.png}}
+    \hspace{0.05\textwidth}
+    \subfloat[Frame at time=0s with 60V electric field applied]{\includegraphics[width=0.45\textwidth]{figs/60V_dyn_0e.png}}
+    \vspace{0.5cm}
+    \subfloat[Frame at time=0.5ss with 60V electric field applied]{\includegraphics[width=0.45\textwidth]{figs/60V_dyn_50e.png}}
+    \hspace{0.05\textwidth} 
+    \subfloat[Frame at time=2.0s with 60V electric field applied]{\includegraphics[width=0.45\textwidth]{figs/60V_dyn_200e.png}}
+    \caption{Topological defects at different time stamps for 60V $10\times$ without analyzer. Red curves are the defect lines detected by the implemented framework.}
+    \label{fig:60V_frames}
 \end{figure}
 
 \subsection{Defect formation dynamics}
