@@ -482,8 +482,8 @@ Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is ca
 
 \subsection{Optical microscopy system}
 Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
-$28\degree C$, dynamic data of defect formation were recorded under 
-$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V.
+$28\degree C$, dynamic data of defect dynamics were recorded under 
+$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For defect formation studies, an electric-field ramp was implemented using a 10 kHz sawtooth waveform, with the peak-to-peak voltage $V_{\mathrm{pp}}$ systematically varied across 200, 300, 400, 500, 600, 700, 800, and 900 mV to enable controlled traversal of the instability threshold.
 
 \newpage
 \section{Computational Framework}\label{sec:Comp} %------------------------------------------------------------
@@ -623,20 +623,43 @@ This criterion is introduced to suppress spurious fluctuations and to retain the
 
 \newpage
 \section{Defect Dynamics}\label{sec:Result}
+
+In the present study, the Fréedericksz transition was deliberately induced in a homeotropically aligned MBBA nematic liquid crystal cell in order to investigate defect formation and subsequent coarsening dynamics under an applied electric field. By using the electric field as a controlled external parameter, the transition provides a well-defined route to drive the system out of equilibrium or symmetry and probe the emergence and evolution of topological defects.
+
 \subsection{The Fréedericksz transition}
-The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which the initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness.
+% The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which the initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
+%     \caption{Fréedericksz Transition in homeotropically alligned liquid crystal (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
+%     \label{fig:Fréedericksz_Transition}
+% \end{figure}
+
+% For an electric-field driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation by,
+% \begin{equation}
+% V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
+% \end{equation}
+% where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. This tunable instability makes the Fréedericksz transition an ideal experimental control parameter.
+
+The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which an initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external electric field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness (Fig.~\ref{fig:Fréedericksz_Transition}).
+
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
-    \caption{Fréedericksz Transition in homeotropically alligned liquid crystal (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
-    \label{fig:Fréedericksz_Transition}
+\centering
+\includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
+\caption{Fréedericksz transition in a homeotropically aligned nematic liquid crystal (\href{https://doi.org/10.1039/B308098F}{Source}).}
+
+\label{fig:Fréedericksz_Transition}
 \end{figure}
 
-For an electric-field driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation by,
+The nature of the field-induced reorientation depends critically on the dielectric anisotropy of the nematic, defined as $\Delta\varepsilon = \varepsilon_{\parallel} - \varepsilon_{\perp}$. For materials with positive dielectric anisotropy ($\Delta\varepsilon > 0$), the director tends to align parallel to the applied electric field, as this configuration minimizes the dielectric energy. In contrast, for materials with negative dielectric anisotropy ($\Delta\varepsilon < 0$), the director prefers to orient perpendicular to the applied field.
+
+MBBA is a nematic liquid crystal with negative dielectric anisotropy, and therefore the applied electric field destabilizes the homeotropic alignment by favoring director orientations lying perpendicular to the field direction. When the field is applied parallel to the substrates, this preference directly competes with the initial homeotropic anchoring, leading to a Fréedericksz transition above a critical voltage.
+
+For an electric-field-driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation, by
 \begin{equation}
-V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
+V_c = \pi \sqrt{\frac{K}{\varepsilon_0 |\Delta \varepsilon|}},
 \end{equation}
-where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. This tunable instability makes the Fréedericksz transition an ideal experimental control parameter.
+where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above this threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. The controllable instability associated with the Fréedericksz transition therefore provides an effective experimental parameter for probing defect formation and nonequilibrium dynamics in nematic liquid crystals.
 
 \subsection{Late-time coarsening dynamics}
 \subsubsection*{Observation and interpretation : } At the initial stage of this study, the nematic liquid crystal cell (thickness $31.09 \pm 0.44,\mu$m) we prepared contained a significant number of permanent defects arising from sample preparation. These quenched inhomogeneities acted as effective nucleation sites for field-induced topological defects upon application of an electric field. As a consequence, defect formation was dominated by the emergence of point defects ($\pm \tfrac{1}{2}$ and $\pm 1$) connected by extended line defects, as shown in Fig.~\ref{fig:old_60V_frames}. The subsequent evolution was governed primarily by elastic interactions and annihilation between these line defects. The extracted late-time scaling exponents ($10$V: $-1.20$, $20$V: $-0.80$, $40$V: $-0.98$, $60$V: $-1.02$) are in good agreement with the theoretically expected inverse-time scaling for string-dominated coarsening dynamics. The larger deviations observed at $10$V and $20$V can be attributed to the reduced optical contrast and increased fuzziness of defect lines under weaker electric fields, which limits the robustness of the line-detection algorithm. Random errors for this dataset could not be reliably estimated, as only a single experimental realization was available for this sample.
@@ -693,11 +716,29 @@ In contrast, at $10$V the weaker electric field provides less dielectric stabili
 
 \subsubsection*{Observation and interpretation : }
 
-\section{Conclusion}\label{sec:Conc}
-\begin{itemize}
-    \item Defect formation dynamics will be studied next.
-\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/formation_dyn.png}
+    \caption{Analysis result from formation dynamics study. Defect densities have been plotted against the applied electric field ramp rate at 4 different initial time stamps.}
+    \label{fig:formation_dyn}
+\end{figure}
 
+For defect formation studies, an electric-field ramp was implemented using a $10\,\text{kHz}$ sawtooth waveform, with the peak-to-peak voltage ($V_{pp}$) systematically varied across $200$, $300$, $400$, $500$, $600$, $700$, $800$, and $900\,\text{mV}$ to enable controlled traversal of the instability threshold. However, at this high frequency, the oscillation period of the electric field is significantly shorter than the characteristic relaxation time of the nematic director. Consequently, the system cannot react effectively to the instantaneous peak voltage, as the molecules are unable to reorient within the rapid oscillation cycles. This timescale mismatch causes the director field to fail to adiabatically follow the ramp, leading to an effective ``freeze-out" of the dynamics. Instead of evolving through a critical phase transition, the system gets locked into a non-equilibrium state at a random finite length scale. As a result, the final defect structure is ``immature," governed principally by stochastic local factors rather than intrinsic physical laws. This mechanism explains the significant scatter in the defect density data observed in Fig.~\ref{fig:formation_dyn} and the absence of the power-law scaling expected from the Kibble-Zurek mechanism.
+
+
+
+To overcome this freeze-out and allow the molecules sufficient time to respond to the field, the driving frequency was lowered. However, at these lower frequencies ($1\text{--}10\,\text{Hz}$), the system enters a regime dominated by electroconvection. In this state, ions within the liquid crystal have ample time to migrate and accumulate, creating space-charge regions that couple to the electric field. This coupling drives macroscopic fluid vortices that violently disrupt the molecular alignment, causing the chaotic, turbulent texture known as the Dynamic Scattering Mode (as shown in the figure-\ref{fig:electroconvection}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figs/electro_convection_2025-12-01T20-15-08.641.png}
+    \caption{Electroconvection observed in the prepared MBBA Liquid crystal cell at applied electric field frequency of order $\sim Hz$ }
+    \label{fig:electroconvection}
+\end{figure}
+
+\section{Conclusion}\label{sec:Conc}
+
+The experiment is effectively bounded by two limiting regimes. At $10\,\text{kHz}$, the field is too fast, causing the system to freeze out before it can react to the critical transition dynamics. Conversely, at low frequencies, the ion-driven fluid turbulence destroys the ordered defect structures. Thus, in this specific sample configuration, there is no stable intermediate window to observe the predicted defect scaling laws.
 % Bibliography
 \bibliographystyle{naturemag}
 \bibliography{references}
