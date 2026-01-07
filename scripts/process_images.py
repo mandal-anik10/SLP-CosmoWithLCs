@@ -26,15 +26,15 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-f_name = '10_5'
+f_name = '60_5'
 file_path = '../exp-data/20251201/28/'+f_name
-output_file = '28-{:}-4000-analysed'.format(f_name) 
+output_file = '28-{:}-all-analysed'.format(f_name) 
 total_frames = N_frames['{:}'.format(f_name)]
 start_frame = start_frames['{:}'.format(f_name)]
 
 t_avg, t_sd = corrected_time(end_frame=(total_frames-start_frame))
 
-num_imgs = 4000
+num_imgs = 10000
 
 
 # Calibration scale
@@ -47,9 +47,11 @@ if __name__ == '__main__':
     with open('config.json', 'r') as f:
         config =json.load(f)
 
-    hysteresis_th_high = config[f_name[:2]+'V']['hysteresis_th-high']
-    hysteresis_th_low = config[f_name[:2]+'V']['hysteresis_th-low']
-    closing_fp = config[f_name[:2]+'V']['closing_footprint']
+    set_config = f_name    # late-time
+    # set_config = '10V_1'     # formation
+    hysteresis_th_high = config[set_config[:2]+'V']['hysteresis_th-high']
+    hysteresis_th_low = config[set_config[:2]+'V']['hysteresis_th-low']
+    closing_fp = config[set_config[:2]+'V']['closing_footprint']
 
 
 def framework(image, median_footprint=3, ridge_sigma=range(1, 4, 1), hysteresis_th=[0.10, 0.25], closing_footprint=3, obj_th=64, skleton_img=False):
