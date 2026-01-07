@@ -482,7 +482,7 @@ Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is ca
 
 \subsection{Optical microscopy system}
 Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
-$27.5\degree C$, dynamic data of defect formation were recorded under 
+$28\degree C$, dynamic data of defect formation were recorded under 
 $10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V.
 
 \newpage
@@ -609,7 +609,7 @@ where $N=5$ represents the number of trials. This statistical variation captures
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/datapoint_selection_criteria.png}
-    \caption{This example figure(60V data) shows the region selected based on the criteria given below.}
+    \caption{This example figure(60V data) shows the region selected based on the criteria given below. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
     \label{fig:sel_criteria}
 \end{figure}
 
@@ -639,16 +639,22 @@ V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
 where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. This tunable instability makes the Fréedericksz transition an ideal experimental control parameter.
 
 \subsection{Late-time coarsening dynamics}
-\indent Late-time coarsening dynamics were analyzed for 10V, 20V, 40V, and 60V datasets, acquired at 
-$10\times$ magnification at $28\degree C$. A linear best-fit was applied to the log-log plots of defect length versus time, resulting in the following slopes \ref{fig:dyn_string_density}:
-\begin{itemize}
-\item 10V: -0.75
-\item 20V: -0.21
-\item 40V: -0.22
-\item 60V: -0.33
-\end{itemize}
-\indent 
+\subsubsection*{Observation and interpretation : } At the initial stage of this study, the nematic liquid crystal cell (thickness $31.09 \pm 0.44,\mu$m) we prepared contained a significant number of permanent defects arising from sample preparation. These quenched inhomogeneities acted as effective nucleation sites for field-induced topological defects upon application of an electric field. As a consequence, defect formation was dominated by the emergence of point defects ($\pm \tfrac{1}{2}$ and $\pm 1$) connected by extended line defects, as shown in Fig.~\ref{fig:old_60V_frames}. The subsequent evolution was governed primarily by elastic interactions and annihilation between these line defects. The extracted late-time scaling exponents ($10$V: $-1.20$, $20$V: $-0.80$, $40$V: $-0.98$, $60$V: $-1.02$) are in good agreement with the theoretically expected inverse-time scaling for string-dominated coarsening dynamics. The larger deviations observed at $10$V and $20$V can be attributed to the reduced optical contrast and increased fuzziness of defect lines under weaker electric fields, which limits the robustness of the line-detection algorithm. Random errors for this dataset could not be reliably estimated, as only a single experimental realization was available for this sample.
 
+\begin{figure}[h]
+\centering
+\subfloat[Late-time coarsening dynamics for 10V]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
+\hspace{0.05\textwidth}
+\subfloat[Late-time coarsening dynamics for 20V]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
+\vspace{0.5cm}
+\subfloat[Late-time coarsening dynamics for 40V]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
+\hspace{0.05\textwidth}
+\subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
+\caption{\textbf{Old cell with permanent defects}: Log-log plot showing the late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification. The solid orange line represents the estimated defect length. The green line depicts the best power-law fit within the scaling regime.}
+\label{fig:dyn_string_density}
+\end{figure}
+
+To isolate the intrinsic defect formation and evolution dynamics, the experiment was repeated using a newly prepared liquid crystal cell with no observable permanent defects. In the absence of predefined nucleation sites, the system predominantly generated closed-loop, domain-wall-like defects in order to conserve topological charge. Such loop-dominated defect networks are expected to exhibit slower coarsening dynamics, with a theoretical scaling exponent close to $-0.5$. However, the measured exponents were substantially smaller ($20$V: $-0.21$, $40$V: $-0.22$, $60$V: $-0.33$), indicating that the early and intermediate-time dynamics are governed by fluctuation-dominated loop evolution rather than simple curvature-driven collapse.
 
 \begin{figure}[h]
     \centering
@@ -659,11 +665,33 @@ $10\times$ magnification at $28\degree C$. A linear best-fit was applied to the 
     \subfloat[Late-time coarsening dynamics for 40V]{\includegraphics[width=0.45\textwidth]{figs/28_new_40V_scalling.png}}
     \hspace{0.05\textwidth} 
     \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/28_new_60V_scalling.png}}
-    \caption{Observed late-time coarsening dynamics for 10V, 20V, 40V, 60V with $10\times$.}
+    \caption{ \textbf{New cell without permanent defects}: Log-log plot showing the late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification. The solid blue line represents the average of the estimated defect length, with the surrounding shaded region indicating the $1\sigma$ limits of random error. The orange line depicts the best power-law fit within the scaling regime. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10–25 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
     \label{fig:dyn_string_density}
 \end{figure}
 
+At higher applied voltages, the strong dielectric torque confines the director more rigidly along the field direction, stabilizing the closed-loop topology and suppressing interactions with the cell boundaries. Consequently, these loop structures persist for extended durations (up to $\sim 15$–$20$s), as illustrated in Figs.~\ref{fig:20V_frames}, \ref{fig:40V_frames}, and \ref{fig:60V_frames}. At much later times ($\gtrsim 20$s), the loops occasionally open, most likely due to residual interactions with the substrates or weak quenched disorder in the bulk. This opening process converts closed loops into point defects connected by line defects, triggering a crossover to faster, string-dominated coarsening dynamics. However, by this stage, the defect density is already very low, rendering statistical estimates of the scaling exponent unreliable.
+
+In contrast, at $10$V the weaker electric field provides less dielectric stabilization, allowing enhanced director fluctuations and earlier interactions with the cell boundaries. As a result, closed loops open at comparatively early times (Fig.~\ref{fig:10V_frames}), leading to a premature crossover to line-defect dynamics and a corresponding increase in the observed scaling exponent to $-0.74$. Overall, these results show that the applied voltage controls how defect dynamics evolve, causing a transition from closed-loop defects to open line defects. This crossover is governed by the strength of the electric field, the presence of quenched disorder, and interactions with the cell boundaries, all of which determine the dominant coarsening mechanism and the observed scaling behavior.
+
+% At the initial stage of the project, the liquid crystal cell (of thickness $31.09\pm0.44\mu m$) we prepared had lots of permanent defects, and those defect points acted as nucleation points for topological defects formed after the application of electric field. And those nucleation points helped develop a lot of point defects ($\pm\frac{1}{2}, \pm1$ strings) connected by line defects (ref. figure=\ref{fig:old_60V_frames}) and defect scaling factors we found($10V: -1.20, 20V: -0.80, 40V: -0.98, 60V: -1.02$), which agrees well with the theoretical string defect scaling law. The substantial deviation in 10V and 20V is due to the incapability of the framework to find prominent defect lines, as the lines are a bit fussy in the presence of a relatively weak electric field. The random error for the first dataset has not been estimated, as only one set of data has been collected with the sample. 
+% \begin{figure}[h]
+%     \centering
+%     \subfloat[Late-time coarsening dynamics for 10V]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
+%     \hspace{0.05\textwidth}
+%     \subfloat[Late-time coarsening dynamics for 20V]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
+%     \vspace{0.5cm} 
+%     \subfloat[Late-time coarsening dynamics for 40V]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
+%     \hspace{0.05\textwidth} 
+%     \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
+%     \caption{Late-time coarsening dynamics for 10V, 20V, 40V, 60V with $10\times$ without analyzer datasets.}
+%     \label{fig:dyn_string_density}
+% \end{figure}
+
+% With the hope of finding better result, similar study has been performed with the new liquid crystal sample, which doesn't have any observable permanent defects. In the absence of a definite nucleation point, the defects that have been formed are ``domain wall-like'' closed loop defects to conserve the topological charge. which is expected to scale as $-0.5$, but the result we got is substantially below $-0.5$ ($20V: -0.21, 40V:-0.22, 60V:-0.33$). In a relatively strong field the system tend to maintain this topological structure for a long time(upto around 15s-20s) (ref. figure-\ref{fig:20V_frames}, \ref{fig:40V_frames}, \ref{fig:60V_frames}). But at a very late stage (more than $\sim20s$), possibly due to interaction with the cell boundary or impurities in the liquid crystal, the loop structure opens, creating point defects connected by line defects, and the scaling factor fastens, but in those late stage the number of defects left out to form point defects is very small, making random error unreliable to work with. For $10V$, I found the open line defect to form relatively early (ref. figure-\ref{fig:10V_frames}) as the applied field is relatively weak, and that gives a scalling factor of $-0.74$.
+
 \subsection{Defect formation dynamics}
+
+\subsubsection*{Observation and interpretation : }
 
 \section{Conclusion}\label{sec:Conc}
 \begin{itemize}
