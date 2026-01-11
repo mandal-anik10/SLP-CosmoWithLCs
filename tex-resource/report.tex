@@ -1,15 +1,14 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
 
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amsfonts,amssymb}
-% \usepackage{geometry, hyperref, fancyhdr, titlesec, setspace, abstract, indentfirst, booktabs, multirow, array, caption, subcaption, fontspec, enumitem}
-\usepackage{indentfirst, geometry, hyperref, fontspec, enumitem, graphicx, subfig, gensymb, abstract, fancyhdr, wrapfig}
+\usepackage{indentfirst, geometry, hyperref, fontspec, enumitem, graphicx, subfig, gensymb, abstract, wrapfig}
+\usepackage{cite}
 
-\setlength{\headheight}{14.5pt}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{textcomp}
-
 
 
 \setmainfont{Georgia}
@@ -18,7 +17,7 @@
 % Page setup
 \pagestyle{fancy}
 \fancyhf{}
-\addtolength{\headwidth}{\marginparwidth}
+\setlength{\headwidth}{1.12\textwidth}
 \fancyhead[R]{\thepage}
 \fancyhead[L]{\leftmark}
 \renewcommand{\headrulewidth}{1pt}
@@ -64,7 +63,7 @@
     \textbf{Anik Mandal}$^{1,*}$ \\[0.5em]
     \begin{tabular}{r l}
         SLP Guide &:  Prof. Pramoda Kumar$^{1}$ \\
-          & \ \& Ankit Gupta$^{1}$ \\
+        SLP Mentor &: Ankit Gupta$^{1}$ \\
         PhD Supervisor &:  Prof. Somak Raychaudhury$^{1}$ \\[1em]
     \end{tabular}
 
@@ -80,7 +79,21 @@
 
 % Abstract
 \begin{abstract}
-
+Spontaneous symmetry breaking in the early universe is expected to generate topological defects whose dynamics 
+encode high-energy physics beyond the reach of terrestrial accelerators, a phenomenon modeled here using 
+nematic liquid crystals to test the Kibble–Zurek mechanism (KZM) and one-scale coarsening models. In this 
+work, a homeotropically aligned MBBA cell was driven across the Fréedericksz transition using controlled AC 
+electric fields, while high-speed optical microscopy recorded defect formation and evolution. A dedicated 
+computational framework was developed to extract defect line density as a function of time and control 
+parameters. For late-time dynamics in a cell with pre-existing defects, the defect density exhibits a power-law 
+decay $\rho(t) \propto t^{-1}$ within uncertainties, consistent with string-dominated one-scale coarsening, 
+whereas a newly prepared, defect-free cell initially forms closed-loop structures with substantially slower 
+effective exponents, reflecting a crossover from loop-dominated to line-dominated regimes. Attempts to probe KZ 
+scaling in defect formation using high-frequency (10 kHz) sawtooth field ramps revealed a freeze-out of 
+director dynamics and strong stochasticity, while lowering the frequency led to electroconvection; these 
+results delineate the practical parameter space for cosmology-inspired experiments in nematic liquid crystals, 
+highlighting the robustness of late-time coarsening scaling while identifying specific challenges in accessing 
+defect-formation scaling in electrically driven MBBA cells.
 \end{abstract}
 
 % Table of Contents
@@ -114,18 +127,19 @@ formation of stable discontinuities known as topological defects\cite{Kibble1976
 Current cosmological models indicate that during the Planck epoch and the earliest high-energy 
 stages of cosmic evolution, all fundamental interactions were unified into a single force. At these extreme 
 energy scales, the Universe existed in a maximally symmetric state in which the distinctions between the 
-strong, weak, and electromagnetic interactions were absent. As the Universe expanded and cooled below a series 
+strong, weak, and electromagnetic interactions were absent. As the universe expanded and cooled below a series 
 of critical temperatures, it underwent successive phase transitions driven by spontaneous symmetry breaking 
-\cite{CentreTransitions, EarlyAl.}. These transitions are not merely abstract mathematical adjustments; they 
-represent fundamental restructuring of the vacuum state of the cosmos, analogous to phase changes in condensed 
-matter systems, such as the transition from water to ice or the onset of ferromagnetism.
+\cite{CentreTransitions, EarlyAl.}. These transitions are not merely abstract mathematical constructs; rather, they 
+play a fundamental role in reshaping the vacuum state of the universe. In this sense, they are closely analogous to 
+phase transitions in condensed matter systems, such as the freezing of water into ice or the emergence of 
+ferromagnetic order.
 
 In particle physics, the unification of weak and electromagnetic interactions into an electroweak gauge theory 
 based on $SU(2)\times U(1)$ is well established. Together with Quantum Chromodynamics (QCD), the $SU(3)$ theory 
 of strong interactions, this naturally motivates Grand Unified Theories (GUTs), in which the Standard Model 
 forces are embedded within a larger simple gauge group, $G$. This unification is possible because the strengths 
-of the fundamental forces are not fixed but run with energy scale. At higher energies, such as those present in 
-the early Universe, these couplings (or, strength of the forces) become more similar, allowing the different 
+of the fundamental forces are not fixed but run with the energy scale. At higher energies, such as those present in 
+the early Universe, these couplings (or, the strength of the forces) become more similar, allowing the different 
 forces to behave as a single unified interaction at a grand unification scale of order $10^{15}$ GeV ($\sim 
 10^{-4}$ of the Planck mass) \cite{Kibble1982PhaseUniverse}. 
 
@@ -146,8 +160,8 @@ degenerate vacuum states forms a continuous vacuum manifold, which in this case 
 complex $\phi$ plane.
 
 In the hot early Universe, however, thermal effects play a crucial role. At finite temperature, the effective 
-potential for $\phi$ receives additional contributions from interactions with the thermal bath. In the high-
-temperature limit, this effective potential can be written as,
+potential for $\phi$ receives additional contributions from interactions with the thermal bath. In the 
+high-temperature limit, this effective potential can be written as,
 
 \begin{equation} \label{eq:eff_potential_T}
 V_T(\phi)=A T^2\phi^\dagger\phi + V(\phi),
@@ -178,7 +192,7 @@ The first major transition involved the breakdown of the GUT symmetry to the Sta
 likely depositing massive topological defects. This was followed much later by electroweak symmetry breaking at 
 an energy scale of approximately $100$ GeV \cite{Kibble1982PhaseUniverse}. These transitions represent dramatic 
 changes in the vacuum structure of the Universe and underpin several fundamental phenomena, including the 
-generation of particle masses through the Higgs mechanism (see Fig. \ref{fig:higgs_broken}) and the emergence 
+generation of particle masses through the Higgs mechanism (see figure-\ref{fig:higgs_broken}) and the emergence 
 of the observed baryon asymmetry through mechanisms involving CP violation. A fundamental constraint governing 
 these transitions is causality; physical effects cannot propagate faster than the speed of light, $c$. 
 Consequently, at any given time $t$, regions of the Universe separated by a distance greater than the horizon 
@@ -212,9 +226,9 @@ configurations rather than singular boundaries.
 
 \begin{figure}[h]
     \centering
-    \subfloat[The Kibble mechanism for the formation of domain walls \cite{CentreDefects}]{\includegraphics[width=0.45\textwidth]{figs/imported/domain_wall.png}}
+    \subfloat[The Kibble mechanism for the formation of domain walls. (Source-\cite{CentreDefects})]{\includegraphics[width=0.45\textwidth]{figs/imported/domain_wall.png}}
     \hspace{0.05\textwidth}
-    \subfloat[The Kibble mechanism for the formation of cosmic strings \cite{CentreDefects}]{\includegraphics[width=0.45\textwidth]{figs/imported/string_defect.png}}
+    \subfloat[The Kibble mechanism for the formation of cosmic strings. (Source-\cite{CentreDefects})]{\includegraphics[width=0.45\textwidth]{figs/imported/string_defect.png}}
     \label{fig:kibble_defect_form}
 \end{figure}
 
@@ -234,20 +248,63 @@ a precise understanding of defect dynamics is required. Before current observati
 constrain high-energy theory, it is imperative to develop a robust model of how cosmological defects evolve and 
 interact throughout cosmic history.
 
+
 \subsection{Kibble-Zurek mechanism}
 
-The Kibble-Zurek mechanism (KZM) is a theoretical framework that unifies the non-equilibrium dynamics of 
-symmetry-breaking phase transitions across vastly different energy scales. Originally proposed by T.W.B. 
-Kibble to explain the formation of cosmological defects in the early universe\cite{Kibble1976TopologyStrings}, the 
-theory was later extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium, Zurek1996CosmologicalSystems}. 
+The Kibble-Zurek mechanism (KZM) is a theoretical framework that unifies the non-equilibrium dynamics of symmetry-
+breaking phase transitions across vastly different energy scales. Originally proposed by T.W.B. Kibble to explain 
+the formation of cosmological defects in the early universe\cite{Kibble1976TopologyStrings}, the theory was later 
+extended by W.H. Zurek to condensed matter systems\cite{Zurek1985CosmologicalHelium, Zurek1996CosmologicalSystems}. 
 By relying on the universality of critical dynamics, the KZM links cosmological topological defects to accessible 
 laboratory analogues like vortices in superfluids or disclinations in liquid 
-crystals\cite{Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal}.
+crystals\cite{Chuang1991CosmologyCrystals, Chuang1991Late-timeCrystal, Yurke1992CoarseningCrystals, Shen2020AnnihilationCrystals, Blanc2005DynamicsBackflow, Dierking2025MachineNanoparticles}.
 
-\noindent{\textbf{Defect formation dynamics:}} The core quantitative prediction of the KZM describes how the density of resulting defects scales with the 
-speed of the transition. Consider a continuous phase transition driven by a control parameter $\epsilon(t)$, 
-such as reduced temperature $|T-T_c|/T_c$, pressure, electric or magnetic field, that varies linearly with 
-time $t$ across the critical point at $t=0$:
+\vspace{0.5cm}
+
+\noindent{\textbf{The Nematic Order Parameter:}} To apply this universal framework to the specific case of liquid 
+crystals, we must first define the physical system. Liquid crystals \cite{Gennes1993TheCrystals, Palffy-Muhoray2007TheCrystals, Chuang1991CosmologyCrystals} constitute a class of organic systems that exhibit distinct 
+mesophases intermediate between isotropic liquids and crystalline solids, characterized by long-range orientational 
+order described by a director field $\mathbf{n}(\mathbf{r})$.
+
+The key feature of this order parameter is its symmetry. In the high-temperature isotropic phase, the molecules are 
+randomly oriented, possessing full rotational symmetry ($O(3)$). As the system cools into the nematic phase, this 
+symmetry breaks, and the molecules align along a common axis. However, because the molecules are non-polar (head-to-
+tail symmetric), the states $\mathbf{n}$ and $-\mathbf{n}$ are physically indistinguishable. This specific symmetry 
+breaking ($O(3) \to O(2)$) creates a complex ``vacuum manifold'' that allows for the formation of stable topological 
+defects, specifically the $\pm 1/2$ disclination strings.
+
+Any distortion in this alignment costs energy, quantified by the Frank elastic free energy, $F$. In its general 
+form, the free energy density is given by ,
+\begin{equation}
+F = \frac{1}{2} \left\{ K_1 (\nabla \cdot \mathbf{n})^2 + K_2 (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + K_3 |\mathbf{n} \times \nabla \times \mathbf{n}|^2 \right\}
+\end{equation}
+where $K_1$, $K_2$, and $K_3$ are the splay, twist, and bend elastic constants.
+
+Because liquid crystals are highly viscous, inertial effects are negligible. The director field therefore evolves 
+purely to minimize the free energy, balancing viscous drag against elastic forces. The general equation of motion 
+is\cite{Yurke1992CoarseningCrystals},
+
+\begin{equation}
+\gamma \frac{\partial n_{\alpha}}{\partial t} = - \frac{\delta F}{\delta n_{\alpha}}
+\end{equation}
+where $\gamma$ is the rotational viscosity and the derivative includes the constraint $|\mathbf{n}|^2=1$.
+
+By applying the ``one-constant approximation'' ($K_1=K_2=K_3=K$), this simplifies to the \textit{damped nonlinear 
+sigma model} which is similar to the nonlinear sigma model used by cosmologists to study the evolution of a universe
+populated by global defects \cite{Yurke1992CoarseningCrystals}:
+\begin{equation}
+\gamma \frac{\partial n_{\alpha}}{\partial t} = K \left[ \nabla^2 n_{\alpha} + (\nabla n_{\beta}) \cdot (\nabla n_{\beta}) n_{\alpha} \right]
+\end{equation}
+
+This diffusive equation governs the relaxation process that drives the late-time coarsening of the defect network.
+
+\vspace{0.5cm}
+
+\subsubsection{Defect formation dynamics} With the system defined, we can now predict how defects form during the 
+transition. The core quantitative prediction of the KZM describes how the density of resulting defects scales with 
+the speed of the transition. Consider a continuous phase transition driven by a control parameter $\epsilon(t)$, 
+such as reduced temperature $|T-T_c|/T_c$, pressure, or electric field, that varies linearly with time $t$ across 
+the critical point at $t=0$:
 
 \begin{equation}
 \epsilon(t) = \frac{|t|}{\tau_Q}
@@ -255,30 +312,29 @@ time $t$ across the critical point at $t=0$:
 
 Here, $\tau_Q$ represents the characteristic quench timescale; a smaller $\tau_Q$ implies a faster transition.
 
-As the system approaches the critical point, its internal dynamics slow down significantly. According to 
-Landau-Ginzburg theory, the equilibrium relaxation time $\tau(t)$ and the correlation length $\xi(t)$ diverge 
-as functions of the control parameter,
+As the system approaches the critical point, its internal dynamics slow down significantly. According to Landau-
+Ginzburg theory, the equilibrium relaxation time $\tau(t)$ and the correlation length $\xi(t)$ diverge as functions 
+of the control parameter,
 
 \begin{align}
 \tau(t) &\propto |\epsilon(t)|^{-\nu z} \\
 \xi(t) &\propto |\epsilon(t)|^{-\nu}
 \end{align}
 
-where $\nu$ is the correlation-length critical exponent and $z$ is the dynamical critical exponent. 
+where $\nu$ is the correlation-length critical exponent and $z$ is the dynamical critical exponent.
 
-The system can maintain equilibrium only as long as its relaxation time $\tau(t)$ is faster than the time 
-scale on which the environment is changing, represented by the time remaining until the transition $|t|$. As 
-$\tau(t)$ diverges near the critical point, it inevitably overtakes $|t|$. At this moment, the system's 
-reaction time becomes too slow to adapt to the changing conditions, and the domain structure effectively 
-``freezes''. This ``freeze-out'' occurs at a characteristic time $\hat{t}$ when the two timescales become 
-comparable,
+The system can maintain equilibrium only as long as its relaxation time $\tau(t)$ is faster than the time scale on 
+which the environment is changing, represented by the time remaining until the transition $|t|$. As $\tau(t)$ 
+diverges near the critical point, it inevitably overtakes $|t|$. At this moment, the system's reaction time becomes 
+too slow to adapt to the changing conditions, and the domain structure effectively ``freezes''. This ``freeze-out'' 
+occurs at a characteristic time $\hat{t}$ when the two timescales become comparable,
 
 \begin{equation}
 \tau(\hat{t}) \approx \hat{t}
 \end{equation}
 
-By substituting the power-law dependence of the relaxation time into this condition, we can solve for the 
-freeze-out time $\hat{t}$ in terms of the quench rate,
+By substituting the power-law dependence of the relaxation time into this condition, we can solve for the freeze-out 
+time $\hat{t}$ in terms of the quench rate,
 
 \begin{equation}
 \tau(\hat{t})=\left( \frac{\hat{t}}{\tau_Q} \right)^{-\nu z} \propto \hat{t} \implies \hat{t} \propto  \tau_Q^{(\frac{\nu z}{1+\nu z})}
@@ -289,57 +345,73 @@ Consequently, the control parameter at freeze-out scales as,
 \hat{\epsilon} = \epsilon(\hat{t}) \propto \tau_Q^{-(\frac{1}{1+\nu z})}
 \end{equation}
 
-The density of the resulting topological defects is determined by the configuration of the system at the 
-moment of freeze-out. The characteristic size of the ordered domains is set by the correlation length 
-$\hat{\xi}$ at time $\hat{t}$,
+The density of the resulting topological defects is determined by the configuration of the system at the moment of 
+freeze-out. The characteristic size of the ordered domains is set by the correlation length $\hat{\xi}$ at time 
+$\hat{t}$,
+
 \begin{equation}
 \hat{\xi} = \xi(\hat{t}) \propto |\hat{\epsilon}|^{-\nu} \propto \left(\tau_Q^{-(\frac{1}{1+\nu z})}\right)^{-\nu} \propto \tau_Q^{(\frac{\nu}{1+\nu z})}
 \end{equation}
 
-Assuming that defects form at the boundaries of these domains, the initial defect density $\rho$ scales inversely with the volume (or area) of the domains. If $d$ is the effective dimension of the defect (where $d = D_{\text{space}} - D_{\text{defect}}$), then $\rho \propto \hat{\xi}^{-d}$. This yields the Kibble-Zurek scaling law for defect formation,
+Assuming that defects form at the boundaries of these domains, the initial defect density $\rho$ scales inversely 
+with the volume (or area) of the domains. If $d$ is the effective dimension of the defect (where $d = 
+D_{\text{space}} - D_{\text{defect}}$), then $\rho \propto \hat{\xi}^{-d}$. This yields the Kibble-Zurek scaling law 
+for defect formation,
 
 \begin{equation}
     \boxed{\rho \propto \tau_Q^{-\frac{d\nu}{1+\nu z}}}
 \end{equation}
 
-This equation predicts a universal power-law dependence on the quench rate. For example, in a mean-field transition (where $\nu=1/2$ and $z=2$) producing line defects in three dimensions ($d=2$), the exponent simplifies to the standard result often cited in literature\cite{Fowler2017KibbleZurekCrystal, Kibble2007Phase-transitionUniverse},
+This equation predicts a universal power-law dependence on the quench rate. For example, in a mean-field transition 
+(where $\nu=1/2$ and $z=2$) producing line defects in three dimensions ($d=2$), the exponent simplifies to the 
+standard result often cited in literature\cite{Fowler2017KibbleZurekCrystal, Kibble2007Phase-transitionUniverse},
 
 \begin{equation}
     \rho \propto \tau_Q^{-1/2}
 \end{equation}
 
-This scaling law has been experimentally verified in diverse systems, providing strong evidence for the universality of the mechanism.
+This scaling law has been experimentally verified in diverse systems, providing strong evidence for the universality 
+of the mechanism.
 
-\vspace{1cm}
+\subsubsection{Late-time coarsening dynamics} 
+Following their formation, the defect network evolves to minimize the system's Frank elastic free energy. This 
+process is effectively described by the ``one-scale" model, which simplifies the complex network by assuming it is 
+defined by just one characteristic length, $\xi(t)$, that changes with time. This scale $\xi(t)$ simultaneously 
+represents the typical radius of curvature of the defects and the average separation distance between them.
 
-\noindent{\textbf{Late-time coarsening dynamics:}} Following their formation, the defect network evolves to 
-minimize the system's free energy. This process is effectively described by the ``one-scale" model, which 
-simplifies the complex network by assuming it is defined by just one characteristic length, $\xi(t)$, that 
-changes with time. This scale $\xi(t)$ simultaneously represents the typical radius of curvature of the 
-defects and the average separation distance between them.
+In condensed matter systems, such as nematic liquid crystals, the motion of defects is typically overdamped, meaning 
+that frictional forces dominate over inertial effects. Strictly speaking, the string line tension is proportional to 
+$\ln(R/R_c)$, where $R$ is the radius of the disclination line (essentially the distance to the nearest neighbor, $R 
+\approx \xi$) and $R_c$ is the core radius\cite{Yurke1992CoarseningCrystals}. Similarly, the viscous dissipation is 
+proportional to $\ln(R/R_c)$. However, because these logarithmic dependences are weak functions of $R$, to a good 
+approximation one can model the dynamics of a string as having a constant line tension $T$ and a constant mobility 
+related to the friction coefficient per unit length $\Gamma$.
 
-In condensed matter systems, such as nematic liquid crystals, the motion of defects is typically overdamped, 
-meaning that frictional forces dominate over inertial effects. The dynamics are therefore governed by the 
-balance between two competing forces per unit length. The tension force $F_T$, which acts to straighten curved 
-defect segments, scales inversely with the local curvature radius $\xi$,
+Under this approximation, the dynamics are governed by the balance between two competing forces per unit length. The 
+tension force $F_T$, which acts to straighten curved defect segments, scales inversely with the local curvature 
+radius $\xi$,
 
 \begin{equation}
 F_T \approx \frac{T}{\xi}
 \end{equation}
 
-where $T$ is the string tension. Opposing this motion is the frictional drag force $F_f$, which is proportional to the defect velocity $v$,
+Opposing this motion is the frictional drag force $F_f$, arising from the fluid 
+viscosity, which is proportional to the defect velocity $v$,
 
 \begin{equation}
 F_f \approx \Gamma v
 \end{equation}
 
-where $\Gamma$ is the friction coefficient per unit length. By equating these forces ($F_T \approx F_f$), we determine the characteristic terminal velocity \cite{Chuang1991CosmologyCrystals} of the defect network,
+By equating these forces ($F_T \approx F_f$), we 
+determine the characteristic terminal velocity \cite{Chuang1991CosmologyCrystals} of the defect network,
 
 \begin{equation}
 v \approx \frac{T}{\Gamma \xi}
 \end{equation}
 
-As the network coarsens, energy is dissipated through friction. The rate of energy loss per unit volume, $dW/dt$, corresponds to the work done against the frictional force. For a defect network with density $\rho \approx \xi^{-d}$ (where $d$ is an effective dimension scaling exponent), the power dissipated is,
+As the network coarsens, energy is dissipated through friction. The rate of energy loss per unit volume, $dW/dt$, 
+corresponds to the work done against the frictional force. For a defect network with density $\rho \approx \xi^{-d}$ 
+(where $d$ is an effective dimension scaling exponent), the power dissipated is,
 
 \begin{equation}
 \frac{dW}{dt} \approx - (F_f v) \rho \approx - (\Gamma v^2) \frac{1}{\xi^d}
@@ -351,19 +423,24 @@ Substituting the expression for the characteristic velocity we have,
 \frac{dW}{dt} \approx - \Gamma \left( \frac{T}{\Gamma \xi} \right)^2 \frac{1}{\xi^d} = - \frac{T^2}{\Gamma \xi^{d+2}}
 \end{equation}
 
-The total energy density of the network is given by $W \approx T \rho$. Consequently, the rate of energy loss is directly proportional to the rate of change in defect density,
+The total energy density of the network is given by $W \approx T \rho$. Consequently, the rate of energy loss is 
+directly proportional to the rate of change in defect density,
 
 \begin{equation}
 \frac{dW}{dt} = T \frac{d\rho}{dt}
 \end{equation}
 
-By equating the two expressions for energy dissipation and expressing the length scale in terms of density (noting that $\xi^{-(d+2)} = (\rho^{1/d})^{d+2} = \rho^{\frac{d+2}{d}}$), we obtain the evolution equation,
+By equating the two expressions for energy dissipation and expressing the length scale in terms of density (noting 
+that $\xi^{-(d+2)} = (\rho^{1/d})^{d+2} = \rho^{\frac{d+2}{d}}$), we obtain the evolution equation,
 
 \begin{equation}
 T \frac{d\rho}{dt} \approx - \frac{T^2}{\Gamma} \rho^{\frac{d+2}{d}} \implies \frac{d\rho}{dt} \propto -\rho^{\frac{d+2}{d}}
 \end{equation}
 
-For the specific case of line defects (strings) in three dimensions, the defect density is defined as length per unit volume, which corresponds to $d=2$ (since $\rho \propto \xi^{-2}$). Substituting $d=2$ into the evolution equation yields $d\rho/dt \propto -\rho^2$. Integrating this differential equation leads to the universal scaling law for late-time dynamics,
+For the specific case of line defects (strings) in three dimensions, the defect density is defined as length per 
+unit volume, which corresponds to $d=2$ (since $\rho \propto \xi^{-2}$). Substituting $d=2$ into the evolution 
+equation yields $d\rho/dt \propto -\rho^2$. Integrating this differential equation leads to the universal scaling 
+law for late-time dynamics,
 
 \begin{equation}
 \boxed{\rho(t) \propto t^{-1}}
@@ -373,7 +450,6 @@ For domain walls ($d=1$) in two or, three dimensions this becomes,
 \begin{equation}
 \boxed{\rho(t) \propto t^{-\frac{1}{2}}}
 \end{equation}
-
 
 \subsection{Project objectives}
 
@@ -393,22 +469,45 @@ outcomes in Section \ref{sec:Result} and conclude with a discussion of implicati
 
 \newpage
 \section{Experimental Setup}\label{sec:Exp}
+We employ liquid crystals for this study because they occupy a unique experimental 
+advantage. Unlike ordinary fluids (e.g., water), which lack internal directional structure and thus cannot 
+support topological defects in the fluid phase, liquid crystals possess the continuous symmetry breaking 
+essential for simulating cosmic string formation.  Furthermore, unlike quantum fluids (e.g., superfluid 
+helium), which require extreme cryogenic environments, liquid crystals exhibit defect dynamics on accessible 
+macroscopic timescales under ambient conditions.
 
-Liquid crystals \cite{Gennes1993TheCrystals, Palffy-Muhoray2007TheCrystals, Chuang1991CosmologyCrystals} constitute a class of organic systems that exhibit distinct mesophases intermediate between isotropic liquids and crystalline solids, characterized by long-range orientational order described by a director field $\mathbf{n}(\mathbf{r})$. We employ liquid crystals for this study because they occupy a unique experimental advantage. Unlike ordinary fluids (e.g., water), which lack internal directional structure and thus cannot support topological defects in the fluid phase, liquid crystals possess the continuous symmetry breaking essential for simulating cosmic string formation.  Furthermore, unlike quantum fluids (e.g., superfluid helium), which require extreme cryogenic environments, liquid crystals exhibit defect dynamics on accessible macroscopic timescales under ambient conditions.
-
-The experiment utilizes a homeotropic alignment, where molecules are anchored perpendicular to the substrate. In this uniform state, the system appears optically isotropic. However, during rapid phase transitions (quenches), topological defects form where the local order is disrupted. Due to the material's birefringence, the rapidly twisting director field near these defects creates sharp refractive index gradients. These gradients act as cylindrical lenses, refracting incident light away from the microscope's collection aperture, manifesting as distinct dark strings against a bright background. This high-contrast visualization enables precise tracking of the defect network. Because the topological constraints of liquid crystals map directly onto high-energy field theories, this system serves as a rigorous laboratory analogue for verifying the Kibble-Zurek mechanism and the non-equilibrium dynamics of cosmic strings.
+The experiment utilizes a homeotropic alignment, where molecules are anchored perpendicular to the substrate. 
+In this uniform state, the system appears optically isotropic. However, during rapid phase transitions 
+(quenches), topological defects form where the local order is disrupted. Due to the material's birefringence, 
+the rapidly twisting director field near these defects creates sharp refractive index gradients. These 
+gradients act as cylindrical lenses, refracting incident light away from the microscope's collection aperture, 
+manifesting as distinct dark strings against a bright background. This high-contrast visualization enables 
+precise tracking of the defect network. Because the topological constraints of liquid crystals map directly 
+onto high-energy field theories, this system serves as a rigorous laboratory analogue for verifying the Kibble-
+Zurek mechanism and the non-equilibrium dynamics of cosmic strings.
 
 \subsection{Preparing empty cell}
-Preparation of liquid crystal cells follows a series of well-established, standardized steps. The standard workflow is outlined below.
+Preparation of liquid crystal cells follows a series of well-established, standardized steps. The standard 
+workflow is outlined below.
 
 \subsubsection{Patterning:}
-ITO-coated glass slides are cut and patterned to create defined electrode regions. The glass is placed on a cutting mat and the non-coated side is cut to 4 cm × 2 cm dimensions. A multimeter verifies the coated side. The coated surface is then marked with 1 cm wide cello tape, leaving 0.5 cm gaps at both ends. This protects the desired conducting area.
+ITO-coated glass slides are cut and patterned to create defined electrode regions. The glass is placed on a 
+cutting mat and the non-coated side is cut to 4 cm × 2 cm dimensions. A multimeter verifies the coated side. 
+The coated surface is then marked with 1 cm wide cello tape, leaving 0.5 cm gaps at both ends. This protects 
+the desired conducting area.
 
 \subsubsection{Etching:}
-In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and transferred to the cleaning stage.
+In a fume hood, concentrated HCl and zinc powder are added to a beaker containing the patterned glass (coated 
+side up). The mixture etches the exposed ITO for 30 minutes, removing it from unprotected areas while leaving 
+the tape-covered region intact. After etching, the glass is carefully removed with tweezers and rinsed 
+thoroughly with distilled water and a dilute base to neutralize all acid residue. The glass is dried and 
+transferred to the cleaning stage.
 
 \subsubsection{Post etching treatment:}
- The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh IPA and dried with nitrogen gas, ensuring no residue remains.
+ The etched glass is cut vertically down the middle to produce two symmetric slabs. Both slabs are scrubbed 
+ with soap and isopropyl alcohol (IPA) to remove loose particles. They are then placed in a petri dish with a 
+ soap-water mixture and sonicated for 15 minutes at 40–50°C. After sonication, the slabs are rinsed with fresh 
+ IPA and dried with nitrogen gas, ensuring no residue remains.
  
 \begin{wrapfigure}[9]{r}{0.4\textwidth}
     \centering
@@ -428,7 +527,11 @@ bonds rigidly anchor the long alkyl chains perpendicular to the substrate, creat
 induces the desired homeotropic alignment of the liquid crystal molecules.
 
 \subsubsection{Cell assembly:}
-Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO electrodes by carefully soldering with indium.
+Both treated slabs are assembled as a sandwich with spacer beads (23 μm diameter) placed 1 cm apart around the 
+edges. The spacers create a uniform gap between the glass plates. The assembled cell is pressed moderately for 30 
+minutes to stabilize the spacers. The cell edges are then sealed with epoxy and allowed to cure thoroughly for at 
+least a day to ensure a strong bond. Once the epoxy is fully set, electrical wires are connected to the ITO 
+electrodes by carefully soldering with indium.
 
 \subsection{Capacitance-based cell thickness measurement}
 The thickness of the liquid crystal cell was determined using a capacitance-based measurement technique. 
@@ -470,7 +573,13 @@ The assembled LC cell is placed on a temperature control device programmed with 
 
 \end{figure}
 
-Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is carefully placed on the cell edge using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, where capillary action draws it throughout the cell gap. The lid is closed, and the cell is left undisturbed for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under crossed polarizers to verify uniform alignment and is then ready for experimental use or stored in a sealed container at room temperature.,
+Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is carefully placed on the cell edge 
+using a lab spatula. As the MBBA warms and becomes transparent, it is gently pushed toward the cell center, 
+where capillary action draws it throughout the cell gap. The lid is closed, and the cell is left undisturbed 
+for at least 24 hours during the slow cooling protocol, allowing the liquid crystal to reach the nematic phase 
+and establish uniform homeotropic alignment with minimal defects. Upon completion, the cell is inspected under 
+crossed polarizers to verify uniform alignment and is then ready for experimental use or stored in a sealed 
+container at room temperature.
 
 
 \begin{figure}[h]
@@ -481,14 +590,20 @@ Once the device reaches $50\degree C$, a small drop of MBBA liquid crystal is ca
 \end{figure}
 
 \subsection{Optical microscopy system}
-Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
+Electrodes from the function generator, which delivers an RMS AC sine wave voltage ranging from 10V to 60V at 
+10kHz via an $A800DI$ high voltage linear amplifier, were connected to the cell. At a controlled temperature of 
 $28\degree C$, dynamic data of defect dynamics were recorded under 
-$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For defect formation studies, an electric-field ramp was implemented using a 10 kHz sawtooth waveform, with the peak-to-peak voltage $V_{\mathrm{pp}}$ systematically varied across 200, 300, 400, 500, 600, 700, 800, and 900 mV to enable controlled traversal of the instability threshold.
+$10\times$ magnification for RMS voltages of 10V, 20V, 40V, and 60V. For defect formation studies, an electric-
+field ramp was implemented using a 10 kHz sawtooth waveform, with the peak-to-peak voltage $V_{\mathrm{pp}}$ 
+systematically varied across 200, 300, 400, 500, 600, 700, 800, and 900 mV to enable controlled traversal of 
+the instability threshold.
 
 \newpage
 \section{Computational Framework}\label{sec:Comp} %------------------------------------------------------------
 
-\indent Captured frame images are subsequently processed through a series of image analysis operations using the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed analysis framework \footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{Repository}\\
+\indent Captured frame images are subsequently processed through a series of image analysis operations using 
+the Python Sci-kit Image \cite{VanDerWalt2014Scikit-image:Python} package. The detailed analysis framework 
+\footnote{Framework scripts, notebooks and analysis results can be found here: \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{Repository}\\
 \textbf{Clone:} \$ git clone https://github.com/mandal-anik10/SLP-CosmoWithLCs.git} is described below.
 
 \subsection{Pre-processing and noise reduction}
@@ -542,10 +657,19 @@ maintains connectivity across regions of varying contrast and width while signif
 detections from noise artifacts.
 
 \subsection{Calculating defect density}
-A sequence of processing operations was applied to the ridge maps to robustly isolate defect lines from the background and to accurately quantify their total length and resulting line density.
+A sequence of processing operations was applied to the ridge maps to robustly isolate defect lines from the 
+background and to accurately quantify their total length and resulting line density.
+
 \subsubsection{Hysteresis thresholding:}
 To distinguish true ridge structures from spurious noise artifacts in the ridge-detected images, we apply
-hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}$\footnote{\label{config_file}Choosen thereshold parameter values and footprint size is given in the configuration file in the \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{repository}.} and $T_{\text{low}}$\footref{config_file}, following the methodology established in the Canny edge detection framework \cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
+hysteresis thresholding with two carefully selected thresholds, 
+$T_{\text{high}}$\footnote{\label{config_file}Choosen thereshold parameter values and footprint size are given in 
+the configuration file in the \href{https://github.com/mandal-anik10/SLP-CosmoWithLCs}{repository}.} and 
+$T_{\text{low}}$\footref{config_file}, following the methodology established in the Canny edge detection framework 
+\cite{Canny1986ADetection}. In this dual-threshold approach, pixels with ridge metric values above $T_{\text{high}}$ 
+are immediately classified as definite defect pixels (strong edges), while those below $T_{\text{low}}$ are rejected 
+as background. Critically, pixels with values between $T_{\text{low}}$ and $T_{\text{high}}$ (weak edge pixels) are 
+retained only if they remain connected to already-classified defect pixels through 8-connectivity neighborhoods.
 
 \begin{figure}[h]
     \centering
@@ -554,115 +678,93 @@ hysteresis thresholding with two carefully selected thresholds, $T_{\text{high}}
     \label{fig:test_fw_345}
 \end{figure}
 \subsubsection{Binary closing and removing small objects:}
-To further refine the segmentation, binary morphological closing\footref{config_file}  (a dilation followed by an erosion) is applied to bridge small gaps and holes within detected defect regions, followed by connected component analysis to remove small objects below a chosen length threshold ($\textbf{64px}$); together, these steps ensure that only large, continuous defect structures are retained while isolated noise pixels and spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the underlying defect network.
+To further refine the segmentation, binary morphological closing\footref{config_file}  (a dilation followed by 
+an erosion) is applied to bridge small gaps and holes within detected defect regions, followed by connected 
+component analysis to remove small objects below a chosen length threshold ($\textbf{64px}$); together, these 
+steps ensure that only large, continuous defect structures are retained while isolated noise pixels and 
+spurious fragments are effectively suppressed, resulting in cleaner and more accurate representations of the 
+underlying defect network.
 
 \subsubsection{Skeletonizing:}
- The refined binary image containing identified defect regions is processed through skeletonization, a morphological thinning operation that reduces each detected defect lines to its medial axis; a connected, one-pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that the reduced skeleton maintains the same homotopy as the original object. This compact representation enables precise measurement of defect lengths and facilitates reliable analysis of defect network
- topology, even when original regions are wide or noisy.
+The refined binary image containing identified defect regions is processed through skeletonization, a 
+morphological thinning operation that reduces each detected defect lines to its medial axis; a connected, one-
+pixel-wide representation of the original structure. The skeletonization algorithm iteratively removes 
+boundary pixels from the binary image while preserving connectivity and topological properties, ensuring that 
+the reduced skeleton maintains the same homotopy as the original object. This compact representation enables 
+precise measurement of defect lengths and facilitates reliable analysis of defect network
+topology, even when original regions are wide or noisy.
 
-To quantify the defect network from processed images, the total defect length is estimated by extracting the skeletonized form of each defect line and analyzing it with the \textit{Skan} \cite{Skeleton0.13.0} library, which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields the projected defect length $L$. To obtain the defect density $\rho$, this total length is divided by the sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. 
-
-\subsection{Error analysis}
-
-\subsubsection{Error in time}
-
-Temporal uncertainty arises from a significant $\textbf{30\%}$ frame drop rate observed during the $100\,\text{fps}$ recording process. This data loss is attributed to hardware bandwidth limitations, where the data write speed was insufficient to sustain the continuous storage of the high-frequency video stream. To reconstruct the true temporal evolution, a Monte Carlo resampling method was employed. The observed frame sequence was sequentially sampled $1000$ times in the corrected time range (scaled by $100/70$) to account for the stochastic nature of the drops. For each frame $i$, the median ($\mu_{t_i}$) of the simulated arrival times was assigned as the corrected timestamp, while the standard deviation ($\sigma_{t_i}$) represents the temporal error:
-
-\[
-    t_i = \mu_{t_i} \pm \sigma_{t_i}
-\]
-
-This statistical reconstruction mitigates the non-linear distortion introduced by the write-speed bottleneck.
-
-Although the temporal uncertainty $\sigma_{t_i}$ was rigorously calculated for every data point, horizontal error bars are omitted from the final plots to maintain graphical clarity. However, the analysis explicitly incorporates the corrected timestamps ($\mu_{t_i}$) derived from the resampling procedure for the time axis. This ensures that the reported dynamics are grounded in the statistically reconstructed timeline, effectively acknowledging the latency-induced distortions.
-
-\subsubsection{Error in defect density}
-
-\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Systematic errors:}} The accuracy of the string defect density measurement is fundamentally limited by the precision of the geometric parameters used in the capacitance method. Specifically, a unit length measurement error of $2\,\text{mm}$ introduces an uncertainty of $4\,\text{mm}^2$ in the unit area determination. Given the total measured sample area($A$) of $80\,\text{mm}^2$, this corresponds to a relative fractional error of $5\%$. This geometric uncertainty propagates linearly through the analysis; the fractional error in the area measurement translates directly to the uncertainty in the calculated cell thickness ($t$) and subsequently to the string defect density ($\rho$). Consequently, the system exhibits a uniform error propagation described by the relationship:
-
-\[
-    \frac{dA}{A} = \frac{dt}{t} = \frac{d\rho}{\rho} \approx 0.05
-\]
-
-Further, the pixel-to-length calibration was established by equating a physical length of $80\,\text{mm}$ to $1174\,\text{pixels}$. The precision of this calibration is limited by the finite thickness of the scale notation bars, which exhibit a standard deviation width of approximately $1.8\,\text{pixels}$. Accounting for the measurement uncertainty at both endpoints of the scale, the total pixel error accumulates to $\approx 3.6\,\text{pixels}$. Consequently, the relative error in the calibration factor($C$) is estimated as:
-
-\[
-    \frac{\delta C}{C} = \frac{\delta L_{\text{px}}}{L_{\text{px}}} = \frac{3.6}{1174} \approx 0.3\%
-\]
-
-This calibration uncertainty propagates to the string density calculation. Since the calculated cell volume (V) scales with the square of the calibration factor ($V \propto C^2$) while the measured string length scales linearly ($L \propto C$), the defect density depends inversely on the calibration factor ($\rho \propto C^{-1}$). Consequently, the magnitude of the relative error in density is equivalent to that of the calibration factor:
-
-\[
-    \frac{d\rho}{\rho} \approx \frac{dC}{C} \approx 0.3\%
-\]
-
-This results in a total systematic uncertainty of $5.3\%$ in the estimated string density.
-
-\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Random error:}} To quantify the random error inherent in the experimental setup, five (three in the case of defect formation study) independent measurements were conducted on the same sample under identical conditions. The observed variations in the measured values are attributed to stochastic fluctuations in the detection mechanism and manual selection processes. These datasets were analyzed to compute the arithmetic mean ($\bar{x}$) and the standard deviation ($\sigma$), which serves as the primary metric for the random uncertainty. The final experimental result is reported as the mean with the standard deviation representing the measurement precision:
-
-\[
-    x = \bar{x} \pm \sigma = \frac{1}{N}\sum_{i=1}^{N} x_i \pm \sqrt{\frac{\sum_{i=1}^{N}(x_i - \bar{x})^2}{N-1}}
-\]
-
-where $N=5$ represents the number of trials. This statistical variation captures the reproducibility of the system, distinct from the systematic calibration errors discussed previously.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{figs/datapoint_selection_criteria.png}
-    \caption{This example figure(60V data) shows the region selected based on the criteria given below. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
-    \label{fig:sel_criteria}
-\end{figure}
-
-Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the 20-point median value of relative standard deviation remained below $\textbf{10\%}$ of the mean value:
-
-\[
-    Median \left(\frac{\sigma(t_{-10})}{\bar{x}(t_{-10})}, \frac{\sigma(t_{-9})}{\bar{x}(t_{-9})},...,\frac{\sigma(t_{0}=t)}{\bar{x}(t_{0}=t)},..., \frac{\sigma(t_{9})}{\bar{x}(t_{9})}\right)(t) < \textbf{0.1}
-\]
-
-This criterion is introduced to suppress spurious fluctuations and to retain the underlying median trend of the data. Data points that violate this stability condition are discarded to ensure that transient deviations do not bias the extracted scaling parameters.
+To quantify the defect network from processed images, the total defect length is estimated by extracting the 
+skeletonized form of each defect line and analyzing it with the \textit{Skan} \cite{Skeleton0.13.0} library, 
+which reconstructs the skeleton as a network graph and computes the sum of branch lengths using pixel 
+connectivity and spacing. The cumulative length of all skeleton branches in the field of view directly yields 
+the projected defect length $L$. To obtain the defect density $\rho$, this total length is divided by the 
+sample volume $V$ (the area imaged multiplied by the cell thickness), resulting in $\rho = L / V$. 
 
 \newpage
+
 \section{Defect Dynamics}\label{sec:Result}
-
-In the present study, the Fréedericksz transition was deliberately induced in a homeotropically aligned MBBA nematic liquid crystal cell in order to investigate defect formation and subsequent coarsening dynamics under an applied electric field. By using the electric field as a controlled external parameter, the transition provides a well-defined route to drive the system out of equilibrium or symmetry and probe the emergence and evolution of topological defects.
-
-\subsection{The Fréedericksz transition}
-% The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which the initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness.
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
-%     \caption{Fréedericksz Transition in homeotropically alligned liquid crystal (\href{DOI	https://doi.org/10.1039/B308098F}{Source})}
-%     \label{fig:Fréedericksz_Transition}
-% \end{figure}
-
-% For an electric-field driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation by,
-% \begin{equation}
-% V_c = \pi \sqrt{\frac{K}{\varepsilon_0 \Delta \varepsilon}},
-% \end{equation}
-% where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above the threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. This tunable instability makes the Fréedericksz transition an ideal experimental control parameter.
-
-The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in which an initially uniform director configuration becomes unstable when an external electric or magnetic field exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell planes. When an external electric field is applied parallel to the substrates, the torque exerted by the field on the anisotropic nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane components across the cell thickness (Fig.~\ref{fig:Fréedericksz_Transition}).
+In the present study, the Fréedericksz transition was deliberately induced in a homeotropically aligned MBBA nematic 
+liquid crystal cell in order to investigate defect formation and subsequent coarsening dynamics under an applied 
+electric field. By using the electric field as a controlled external parameter, the transition provides a well-
+defined route to drive the system out of equilibrium and probe the emergence of topological defects. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{figs/imported/Fréedericksz_Transition.png}
 \caption{Fréedericksz transition in a homeotropically aligned nematic liquid crystal (\href{https://doi.org/10.1039/B308098F}{Source}).}
-
 \label{fig:Fréedericksz_Transition}
 \end{figure}
 
-The nature of the field-induced reorientation depends critically on the dielectric anisotropy of the nematic, defined as $\Delta\varepsilon = \varepsilon_{\parallel} - \varepsilon_{\perp}$. For materials with positive dielectric anisotropy ($\Delta\varepsilon > 0$), the director tends to align parallel to the applied electric field, as this configuration minimizes the dielectric energy. In contrast, for materials with negative dielectric anisotropy ($\Delta\varepsilon < 0$), the director prefers to orient perpendicular to the applied field.
+\subsection{The Fréedericksz transition}
+The Fréedericksz transition is a fundamental field-induced reorientation phenomenon in nematic liquid crystals, in 
+which an initially uniform director configuration becomes unstable when an external electric or magnetic field 
+exceeds a critical threshold. In a homeotropically aligned cell, the director is anchored perpendicular to the 
+confining substrates in the absence of an applied field, resulting in a homogeneous alignment normal to the cell 
+planes. When a destabilizing external electric field is applied, the torque exerted by the field on the anisotropic 
+nematic medium competes with the elastic restoring forces associated with splay, twist, and bend deformations. Once 
+the field strength exceeds the Fréedericksz threshold, the elastic energy can no longer sustain the uniform 
+homeotropic state, and the director undergoes a continuous, spatially varying reorientation, developing in-plane 
+components across the cell thickness (Figure~\ref{fig:Fréedericksz_Transition}).
 
-MBBA is a nematic liquid crystal with negative dielectric anisotropy, and therefore the applied electric field destabilizes the homeotropic alignment by favoring director orientations lying perpendicular to the field direction. When the field is applied parallel to the substrates, this preference directly competes with the initial homeotropic anchoring, leading to a Fréedericksz transition above a critical voltage.
+The nature of this field-induced reorientation depends critically on the dielectric anisotropy of the nematic, 
+defined as $\Delta\varepsilon = \varepsilon_{\parallel} - \varepsilon_{\perp}$. For materials with positive 
+dielectric anisotropy ($\Delta\varepsilon > 0$), the director tends to align parallel to the applied electric field 
+to minimize dielectric energy. In contrast, for materials with negative dielectric anisotropy ($\Delta\varepsilon < 
+0$), the director prefers to orient perpendicular to the applied field.
 
-For an electric-field-driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, within the one-constant approximation, by
+MBBA is a nematic liquid crystal with negative dielectric anisotropy; therefore, an applied electric field 
+destabilizes the initial homeotropic alignment by favoring director orientations perpendicular to the field. This 
+setup serves as an ideal model for spontaneous symmetry breaking. Initially, the molecules stand vertically, 
+possessing perfect rotational symmetry. When the applied voltage exceeds the critical threshold ($V > V_c$), this 
+alignment becomes unstable. In a characteristic second-order transition, the magnitude of the director tilt 
+increases continuously above this threshold. The instability is analogous to a ball balanced on the peak of a 
+``Mexican Hat'' potential, while the molecules are energetically compelled to tilt, every azimuthal direction is 
+equally valid. Consequently, random thermal fluctuations cause separate regions to tilt in different 
+directions, and the boundaries where these mismatched domains meet are where topological defects form.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs//imported/pi_wall.png}
+    \caption{(Left) Observed under a cross polarizer, a pair of $\pm1/2$ wedge disclinations connected by a $\pi$-wall when an in-plane electric field is present. (Right) Sketch of the 2D director field; $\theta$ is the angle between the $\pi$-wall and the electric field. (Source-\cite{Blanc2005DynamicsBackflow})}
+    \label{fig:pi-wall}
+\end{figure}
+
+For such an electric-field-driven transition in a homeotropic nematic cell, the critical voltage $V_c$ is given, 
+within the one-constant approximation, by
+
 \begin{equation}
 V_c = \pi \sqrt{\frac{K}{\varepsilon_0 |\Delta \varepsilon|}},
 \end{equation}
-where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the dielectric anisotropy of the liquid crystal. Above this threshold, the magnitude of the director tilt increases continuously with the applied field, reflecting the second-order nature of the transition. This field-induced reorientation produces pronounced changes in optical birefringence and texture. The controllable instability associated with the Fréedericksz transition therefore provides an effective experimental parameter for probing defect formation and nonequilibrium dynamics in nematic liquid crystals.
+
+where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittivity, and $\Delta \varepsilon$ is the 
+dielectric anisotropy of the liquid crystal. 
+
+This field-induced reorientation produces pronounced changes in optical birefringence and texture. The controllable 
+instability associated with the Fréedericksz transition therefore provides an effective experimental parameter for 
+probing defect formation and non-equilibrium dynamics in nematic liquid crystals.
 
 \subsection{Late-time coarsening dynamics}
-\subsubsection*{Observation and interpretation : } At the initial stage of this study, the nematic liquid crystal cell (thickness $31.09 \pm 0.44,\mu$m) we prepared contained a significant number of permanent defects arising from sample preparation. These quenched inhomogeneities acted as effective nucleation sites for field-induced topological defects upon application of an electric field. As a consequence, defect formation was dominated by the emergence of point defects ($\pm \tfrac{1}{2}$ and $\pm 1$) connected by extended line defects, as shown in Fig.~\ref{fig:old_60V_frames}. The subsequent evolution was governed primarily by elastic interactions and annihilation between these line defects. The extracted late-time scaling exponents ($10$V: $-1.20$, $20$V: $-0.80$, $40$V: $-0.98$, $60$V: $-1.02$) are in good agreement with the theoretically expected inverse-time scaling for string-dominated coarsening dynamics. The larger deviations observed at $10$V and $20$V can be attributed to the reduced optical contrast and increased fuzziness of defect lines under weaker electric fields, which limits the robustness of the line-detection algorithm. Random errors for this dataset could not be reliably estimated, as only a single experimental realization was available for this sample.
 
 \begin{figure}[h]
 \centering
@@ -674,10 +776,46 @@ where $K$ is the Frank elastic constant, $\varepsilon_0$ is the vacuum permittiv
 \hspace{0.05\textwidth}
 \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
 \caption{\textbf{Old cell with permanent defects}: Log-log plot showing the late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification. The solid orange line represents the estimated defect length. The green line depicts the best power-law fit within the scaling regime.}
-\label{fig:dyn_string_density}
+\label{fig:old_dyn_string_density}
 \end{figure}
 
-To isolate the intrinsic defect formation and evolution dynamics, the experiment was repeated using a newly prepared liquid crystal cell with no observable permanent defects. In the absence of predefined nucleation sites, the system predominantly generated closed-loop, domain-wall-like defects in order to conserve topological charge. Such loop-dominated defect networks are expected to exhibit slower coarsening dynamics, with a theoretical scaling exponent close to $-0.5$. However, the measured exponents were substantially smaller ($20$V: $-0.21$, $40$V: $-0.22$, $60$V: $-0.33$), indicating that the early and intermediate-time dynamics are governed by fluctuation-dominated loop evolution rather than simple curvature-driven collapse.
+\subsubsection*{Observation and interpretation : }
+
+In the initial phase of this study, the prepared nematic liquid crystal cell (thickness $31.09 \pm 0.44\,\mu$m) 
+exhibited a significant population of permanent defects resulting from the sample preparation process. These pre-
+existing singularities served as effective nucleation sites for field-induced topological structures upon the 
+application of the electric field. Consequently, the resulting defect network was characterized by the emergence of 
+point defects with strength $\pm 1/2$, interconnected by $\pi$-walls (inversion walls), as illustrated in 
+Figure~\ref{fig:pi-wall} and Figure~\ref{fig:old_60V_frames}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figs//imported/domain_dyn.png}
+    \caption{Shape evolution of a single domain at different moments and the corresponding polarizing optical microscope micrographs. (a) At the early stage of the annihilation, where the loop changes its shape drastically. (b) At the late stage of the annihilation, where the loop shrinks slowly with its shape unchanged. Black arrows indicate the velocities of different segments of the loop. The color of the loop indicates the local curvature. The color bar gives a linear scale of curvature $\kappa$. $\kappa_{min} = -1.24 \mu m^{−1}$ and $\kappa_{max} = 0.49 \mu m^{-1}$. (Source-\cite{Shen2020AnnihilationCrystals})}
+    \label{fig:domain_dyn}
+\end{figure}
+
+The subsequent evolution of this network was governed primarily by the elastic interactions and mutual annihilation 
+of these line defects. Analysis of the late-time coarsening dynamics yielded scaling exponents of $-1.20$ at $10$V, 
+$-0.80$ at $20$V, $-0.98$ at $40$V, and $-1.02$ at $60$V (see Figure~\ref{fig:old_dyn_string_density}). These values 
+are in good agreement with the theoretical prediction of inverse-time scaling ($t^{-1}$) characteristic of string-
+dominated dynamics. The notable deviations observed at lower voltages ($10$V and $20$V) can be attributed to reduced 
+optical contrast and increased ``fuzziness'' of the defect lines, which compromised the robustness of the line-
+detection algorithm in this regime.
+
+Regarding the uncertainty analysis for this dataset, it is important to note two limitations. First, random 
+statistical errors could not be reliably estimated, as the data represents a single experimental realization for 
+this sample. Second, uncertainties associated with the time variable were not accounted for in the extraction of the 
+scaling exponents.\\
+
+To isolate the intrinsic defect formation and evolution dynamics, the experiment was repeated using a newly 
+prepared liquid crystal cell with no observable permanent defects. In the absence of predefined nucleation 
+sites, the system predominantly generated closed-loop, domain-wall-like defects in order to conserve 
+topological charge. Such loop-dominated defect networks are expected to exhibit slower coarsening dynamics, 
+with a theoretical scaling exponent close to $-0.5$ \cite{Shen2020AnnihilationCrystals}. However, the measured 
+exponents were substantially smaller ($20$V: $-0.21$, $40$V: $-0.22$, $60$V: $-0.33$), indicating that the early and 
+intermediate-time dynamics are governed by fluctuation-dominated loop evolution rather than simple curvature-driven 
+collapse.
 
 \begin{figure}[h]
     \centering
@@ -692,25 +830,23 @@ To isolate the intrinsic defect formation and evolution dynamics, the experiment
     \label{fig:dyn_string_density}
 \end{figure}
 
-At higher applied voltages, the strong dielectric torque confines the director more rigidly along the field direction, stabilizing the closed-loop topology and suppressing interactions with the cell boundaries. Consequently, these loop structures persist for extended durations (up to $\sim 15$–$20$s), as illustrated in Figs.~\ref{fig:20V_frames}, \ref{fig:40V_frames}, and \ref{fig:60V_frames}. At much later times ($\gtrsim 20$s), the loops occasionally open, most likely due to residual interactions with the substrates or weak quenched disorder in the bulk. This opening process converts closed loops into point defects connected by line defects, triggering a crossover to faster, string-dominated coarsening dynamics. However, by this stage, the defect density is already very low, rendering statistical estimates of the scaling exponent unreliable.
+At higher applied voltages, the strong dielectric torque confines the director more rigidly along the field 
+direction, stabilizing the closed-loop topology and suppressing interactions with the cell boundaries. 
+Consequently, these loop structures persist for extended durations (up to $\sim 15$–$20$s), as illustrated in 
+figures-\ref{fig:20V_frames}, \ref{fig:40V_frames}, and \ref{fig:60V_frames}. At much later times ($\gtrsim 
+20$s), the loops occasionally open, most likely due to residual interactions with the substrates or weak 
+quenched disorder in the bulk. This opening process converts closed loops into point defects connected by 
+$\pi$-wall, triggering a crossover to faster, string-dominated coarsening dynamics. However, by this stage, the 
+defect density is already very low, rendering statistical estimates of the scaling exponent unreliable.
 
-In contrast, at $10$V the weaker electric field provides less dielectric stabilization, allowing enhanced director fluctuations and earlier interactions with the cell boundaries. As a result, closed loops open at comparatively early times (Fig.~\ref{fig:10V_frames}), leading to a premature crossover to line-defect dynamics and a corresponding increase in the observed scaling exponent to $-0.74$. Overall, these results show that the applied voltage controls how defect dynamics evolve, causing a transition from closed-loop defects to open line defects. This crossover is governed by the strength of the electric field, the presence of quenched disorder, and interactions with the cell boundaries, all of which determine the dominant coarsening mechanism and the observed scaling behavior.
-
-% At the initial stage of the project, the liquid crystal cell (of thickness $31.09\pm0.44\mu m$) we prepared had lots of permanent defects, and those defect points acted as nucleation points for topological defects formed after the application of electric field. And those nucleation points helped develop a lot of point defects ($\pm\frac{1}{2}, \pm1$ strings) connected by line defects (ref. figure=\ref{fig:old_60V_frames}) and defect scaling factors we found($10V: -1.20, 20V: -0.80, 40V: -0.98, 60V: -1.02$), which agrees well with the theoretical string defect scaling law. The substantial deviation in 10V and 20V is due to the incapability of the framework to find prominent defect lines, as the lines are a bit fussy in the presence of a relatively weak electric field. The random error for the first dataset has not been estimated, as only one set of data has been collected with the sample. 
-% \begin{figure}[h]
-%     \centering
-%     \subfloat[Late-time coarsening dynamics for 10V]{\includegraphics[width=0.45\textwidth]{figs/10V-rho_dyn.png}}
-%     \hspace{0.05\textwidth}
-%     \subfloat[Late-time coarsening dynamics for 20V]{\includegraphics[width=0.45\textwidth]{figs/20V-rho_dyn.png}}
-%     \vspace{0.5cm} 
-%     \subfloat[Late-time coarsening dynamics for 40V]{\includegraphics[width=0.45\textwidth]{figs/40V-rho_dyn.png}}
-%     \hspace{0.05\textwidth} 
-%     \subfloat[Late-time coarsening dynamics for 60V]{\includegraphics[width=0.45\textwidth]{figs/60V-rho_dyn.png}}
-%     \caption{Late-time coarsening dynamics for 10V, 20V, 40V, 60V with $10\times$ without analyzer datasets.}
-%     \label{fig:dyn_string_density}
-% \end{figure}
-
-% With the hope of finding better result, similar study has been performed with the new liquid crystal sample, which doesn't have any observable permanent defects. In the absence of a definite nucleation point, the defects that have been formed are ``domain wall-like'' closed loop defects to conserve the topological charge. which is expected to scale as $-0.5$, but the result we got is substantially below $-0.5$ ($20V: -0.21, 40V:-0.22, 60V:-0.33$). In a relatively strong field the system tend to maintain this topological structure for a long time(upto around 15s-20s) (ref. figure-\ref{fig:20V_frames}, \ref{fig:40V_frames}, \ref{fig:60V_frames}). But at a very late stage (more than $\sim20s$), possibly due to interaction with the cell boundary or impurities in the liquid crystal, the loop structure opens, creating point defects connected by line defects, and the scaling factor fastens, but in those late stage the number of defects left out to form point defects is very small, making random error unreliable to work with. For $10V$, I found the open line defect to form relatively early (ref. figure-\ref{fig:10V_frames}) as the applied field is relatively weak, and that gives a scalling factor of $-0.74$.
+In contrast, at $10$V the weaker electric field provides less dielectric stabilization, allowing enhanced 
+director fluctuations and earlier interactions with the cell boundaries. As a result, closed loops open at 
+comparatively early times (figure-\ref{fig:10V_frames}), leading to a premature crossover to line-defect 
+dynamics and a corresponding increase in the observed scaling exponent to $-0.74$. Overall, these results show 
+that the applied voltage controls how defect dynamics evolve, causing a transition from closed-loop defects to 
+open line defects. This crossover is governed by the strength of the electric field, the presence of quenched 
+disorder, and interactions with the cell boundaries, all of which determine the dominant coarsening mechanism 
+and the observed scaling behavior.
 
 \subsection{Defect formation dynamics}
 
@@ -718,32 +854,168 @@ In contrast, at $10$V the weaker electric field provides less dielectric stabili
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/formation_dyn.png}
+    \includegraphics[width=\linewidth]{figs/formation_dyn.png}
     \caption{Analysis result from formation dynamics study. Defect densities have been plotted against the applied electric field ramp rate at 4 different initial time stamps.}
     \label{fig:formation_dyn}
 \end{figure}
 
-For defect formation studies, an electric-field ramp was implemented using a $10\,\text{kHz}$ sawtooth waveform, with the peak-to-peak voltage ($V_{pp}$) systematically varied across $200$, $300$, $400$, $500$, $600$, $700$, $800$, and $900\,\text{mV}$ to enable controlled traversal of the instability threshold. However, at this high frequency, the oscillation period of the electric field is significantly shorter than the characteristic relaxation time of the nematic director. Consequently, the system cannot react effectively to the instantaneous peak voltage, as the molecules are unable to reorient within the rapid oscillation cycles. This timescale mismatch causes the director field to fail to adiabatically follow the ramp, leading to an effective ``freeze-out" of the dynamics. Instead of evolving through a critical phase transition, the system gets locked into a non-equilibrium state at a random finite length scale. As a result, the final defect structure is ``immature," governed principally by stochastic local factors rather than intrinsic physical laws. This mechanism explains the significant scatter in the defect density data observed in Fig.~\ref{fig:formation_dyn} and the absence of the power-law scaling expected from the Kibble-Zurek mechanism.
+For defect formation studies, an electric-field ramp was implemented using a $10\,\text{kHz}$ sawtooth 
+waveform, with the peak-to-peak voltage ($V_{pp}$) systematically varied across $200$, $300$, $400$, $500$, 
+$600$, $700$, $800$, and $900\,\text{mV}$ to enable controlled traversal of the instability threshold. However, 
+at this high frequency, the oscillation period of the electric field is significantly shorter than the 
+characteristic relaxation time of the nematic director. Consequently, the system cannot react effectively to 
+the instantaneous peak voltage, as the molecules are unable to reorient within the rapid oscillation cycles. 
+This timescale mismatch causes the director field to fail to adiabatically follow the ramp, leading to an 
+effective ``freeze-out" of the dynamics. Instead of evolving through a critical phase transition, the system 
+gets locked into a non-equilibrium state at a random finite length scale. As a result, the final defect 
+structure is ``immature," governed principally by stochastic local factors rather than intrinsic physical laws. 
+This mechanism explains the significant scatter in the defect density data observed in figure-
+\ref{fig:formation_dyn} and the absence of the power-law scaling expected from the Kibble-Zurek mechanism.
 
-
-
-To overcome this freeze-out and allow the molecules sufficient time to respond to the field, the driving frequency was lowered. However, at these lower frequencies ($1\text{--}10\,\text{Hz}$), the system enters a regime dominated by electroconvection. In this state, ions within the liquid crystal have ample time to migrate and accumulate, creating space-charge regions that couple to the electric field. This coupling drives macroscopic fluid vortices that violently disrupt the molecular alignment, causing the chaotic, turbulent texture known as the Dynamic Scattering Mode (as shown in the figure-\ref{fig:electroconvection}).
+To overcome this freeze-out and allow the liquid crystal molecules sufficient time to respond to the applied 
+field, the driving frequency was reduced. However, at lower frequencies (1–10 Hz), mobile ions within the 
+liquid crystal are able to drift and accumulate, forming regions of excess charge. These charges interact with 
+the electric field and drive fluid motion inside the cell. The resulting flow strongly distorts the molecular 
+alignment, producing irregular and highly fluctuating optical textures that disrupt the ordered defect 
+structures (as shown in the figure-\ref{fig:electroconvection}).
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figs/electro_convection_2025-12-01T20-15-08.641.png}
-    \caption{Electroconvection observed in the prepared MBBA Liquid crystal cell at applied electric field frequency of order $\sim Hz$ }
+    \caption{Electroconvection observed in the prepared MBBA Liquid crystal cell at applied electric field frequency of order $\sim Hz$ and applied voltage of order $\sim10V$.}
     \label{fig:electroconvection}
 \end{figure}
 
+\subsection{Error analysis}
+
+\subsubsection{Error in time}
+
+Temporal uncertainty arises from a significant $\textbf{30\%}$ frame drop rate observed during the 
+$100\,\text{fps}$ recording process. This data loss is attributed to hardware bandwidth limitations, where the 
+data write speed was insufficient to sustain the continuous storage of the high-frequency video stream. To 
+reconstruct the true temporal evolution, a Monte Carlo resampling method was employed. The observed frame 
+sequence was sequentially sampled $1000$ times in the corrected time range (scaled by $100/70$) to account for 
+the stochastic nature of the drops. For each frame $i$, the median ($\mu_{t_i}$) of the simulated arrival times 
+was assigned as the corrected timestamp, while the standard deviation ($\sigma_{t_i}$) represents the temporal 
+error:
+
+\[
+    t_i = \mu_{t_i} \pm \sigma_{t_i}
+\]
+
+This statistical reconstruction mitigates the non-linear distortion introduced by the write-speed bottleneck.
+
+Although the temporal uncertainty $\sigma_{t_i}$ was rigorously calculated for every data point, horizontal 
+error bars are omitted from the final plots to maintain graphical clarity. However, the analysis explicitly 
+incorporates the corrected timestamps ($\mu_{t_i}$) derived from the resampling procedure for the time axis. 
+This ensures that the reported dynamics are grounded in the statistically reconstructed timeline, effectively 
+acknowledging the latency-induced distortions.
+
+\subsubsection{Error in defect density}
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Systematic errors:}} The accuracy of the string defect 
+density measurement is fundamentally limited by the precision of the geometric parameters used in the 
+capacitance method. Specifically, a unit length measurement error of $2\,\text{mm}$ introduces an uncertainty 
+of $4\,\text{mm}^2$ in the unit area determination. Given the total measured sample area($A$) of 
+$80\,\text{mm}^2$, this corresponds to a relative fractional error of $5\%$. This geometric uncertainty 
+propagates linearly through the analysis; the fractional error in the area measurement translates directly to 
+the uncertainty in the calculated cell thickness ($t$) and subsequently to the string defect density ($\rho$). 
+Consequently, the system exhibits a uniform error propagation described by the relationship:
+
+\[
+    \frac{dA}{A} = \frac{dt}{t} = \frac{d\rho}{\rho} \approx 0.05
+\]
+
+Further, the pixel-to-length calibration was established by equating a physical length of $80\,\text{mm}$ to 
+$1174\,\text{pixels}$. The precision of this calibration is limited by the finite thickness of the scale 
+notation bars, which exhibit a standard deviation width of approximately $1.8\,\text{pixels}$. Accounting for 
+the measurement uncertainty at both endpoints of the scale, the total pixel error accumulates to $\approx 
+3.6\,\text{pixels}$. Consequently, the relative error in the calibration factor($C$) is estimated as:
+
+\[
+    \frac{\delta C}{C} = \frac{\delta L_{\text{px}}}{L_{\text{px}}} = \frac{3.6}{1174} \approx 0.3\%
+\]
+
+This calibration uncertainty propagates to the string density calculation. Since the calculated cell volume (V) 
+scales with the square of the calibration factor ($V \propto C^2$) while the measured string length scales 
+linearly ($L \propto C$), the defect density depends inversely on the calibration factor ($\rho \propto 
+C^{-1}$). Consequently, the magnitude of the relative error in density is equivalent to that of the calibration 
+factor:
+
+\[
+    \frac{d\rho}{\rho} \approx \frac{dC}{C} \approx 0.3\%
+\]
+
+This results in a total systematic uncertainty of $5.3\%$ in the estimated string density.
+
+\noindent{\fontsize{12pt}{12pt}\selectfont \textbf{Random error:}} To quantify the random error inherent in the 
+experimental setup, five (three in the case of defect formation study) independent measurements were conducted 
+on the same sample under identical conditions. The observed variations in the measured values are attributed to 
+stochastic fluctuations in the detection mechanism and manual selection processes. These datasets were analyzed 
+to compute the arithmetic mean ($\bar{x}$) and the standard deviation ($\sigma$), which serves as the primary 
+metric for the random uncertainty. The final experimental result is reported as the mean with the standard 
+deviation representing the measurement precision:
+
+\[
+    x = \bar{x} \pm \sigma = \frac{1}{N}\sum_{i=1}^{N} x_i \pm \sqrt{\frac{\sum_{i=1}^{N}(x_i - \bar{x})^2}{N-1}}
+\]
+
+where $N=5$ represents the number of trials. This statistical variation captures the reproducibility of the 
+system, distinct from the systematic calibration errors discussed previously.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/datapoint_selection_criteria.png}
+    \caption{This example figure(60V data) shows the region selected based on the criteria given below. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
+    \label{fig:sel_criteria}
+\end{figure}
+
+Prior to analysis, the three independent measurement series were time-shifted to align with a common temporal 
+reference point ($t=0$). To ensure the robustness of the subsequent model fitting, the dataset was filtered to 
+exclude regimes of high variability. Specifically, the analysis interval was restricted to the range where the 
+20-point median value of relative standard deviation remained below $\textbf{10\%}$ of the mean value:
+
+\[
+    Median \left(\frac{\sigma(t_{-10})}{\bar{x}(t_{-10})}, \frac{\sigma(t_{-9})}{\bar{x}(t_{-9})},...,\frac{\sigma(t_{0}=t)}{\bar{x}(t_{0}=t)},..., \frac{\sigma(t_{9})}{\bar{x}(t_{9})}\right)(t) < \textbf{0.1}
+\]
+
+This criterion is introduced to suppress spurious fluctuations and to retain the underlying median trend of the 
+data. Data points that violate this stability condition are discarded to ensure that transient deviations do 
+not bias the extracted scaling parameters.
+
+\newpage
+
 \section{Conclusion}\label{sec:Conc}
 
-The experiment is effectively bounded by two limiting regimes. At $10\,\text{kHz}$, the field is too fast, causing the system to freeze out before it can react to the critical transition dynamics. Conversely, at low frequencies, the ion-driven fluid turbulence destroys the ordered defect structures. Thus, in this specific sample configuration, there is no stable intermediate window to observe the predicted defect scaling laws.
-% Bibliography
-\bibliographystyle{naturemag}
-\bibliography{references}
+This project developed a reliable experimental and computational approach to study defect dynamics in nematic liquid 
+crystals as a laboratory model for cosmological phase transitions. Although a direct experimental test of the 
+Kibble–Zurek mechanism (KZM) scaling laws was not possible with the present setup, the work provided important 
+insight into late-time defect evolution and the influence of topology and electric fields on nonequilibrium behavior.
 
-% Appendices (if needed)
+In the late-time regime, a clear change in scaling behavior was observed, determined by the structure of the defect 
+network. When permanent nucleation sites were present, the system evolved mainly through the annihilation of open 
+line defects, and the defect density decayed as $\rho(t)\propto t^{-1}$, in agreement with standard one-scale 
+coarsening theory. In contrast, in defect-free cells the system initially formed closed defect loops. Under strong 
+electric fields, these loops were long-lived and decayed much more slowly than expected from simple tension-driven 
+models. Additionally, variations in the $\pi$-wall width were observed during these dynamics, consistent with the 
+expected influence of the electric field on the coherence length.
+
+Efforts to study KZM scaling during defect formation showed that the experiment is limited by two extreme regimes. 
+At high driving frequencies ($10\,\mathrm{kHz}$), the electric field changes too quickly for the liquid crystal 
+molecules to respond, causing the system to freeze before critical dynamics can develop. At lower frequencies, where 
+molecular relaxation is possible, ion motion generates strong fluid flow that disrupts the ordered defect patterns. 
+Because of this, no stable intermediate frequency range exists in the present sample configuration where the 
+predicted KZM defect-scaling laws can be clearly observed.
+
+Overall, these results demonstrate the robustness of late-time coarsening behavior in nematic liquid crystals while 
+revealing practical limits imposed by material response times and electrohydrodynamic effects. Future studies could 
+overcome these limitations by employing magnetic field quenches or rapid temperature quenches with suitable nematic 
+materials to access universal defect-formation scaling. Furthermore, the observation of variable $\pi$-wall widths 
+opens the door to quantitatively testing the inverse scaling of width with applied field strength, as predicted in 
+literature\cite{Blanc2005DynamicsBackflow}. Finally, the complex annihilation dynamics of umbilic defects,
+specifically their predicted S-shaped trajectories, could be resolved with much greater precision by applying 
+sophisticated machine learning approaches to defect tracking\cite{Dierking2025MachineNanoparticles}.
+
 \appendix
 \section{Acknowledgements}
 
@@ -761,14 +1033,26 @@ needed help was essential to the completion of this project.
 I gratefully acknowledge the Departments of Chemistry and Biology for providing access to their 
 laboratory facilities.
 
-Finally, I would like to acknowledge the developers of the open-source software and digital tools that 
-significantly streamlined this work. Specifically, I thank the creators of GitHub for managing project 
-repositories, Overleaf for the seamless typesetting environment, and Mendeley for bibliography 
+Finally, I would like to acknowledge the developers of the open-source software ImageJ and other scientific analysis 
+tools (e.g. scikit-image) that significantly streamlined this work. Specifically, I thank the creators of GitHub for 
+managing project repositories, Overleaf for the seamless typesetting environment, and Mendeley for bibliography 
 management. I also appreciate the utility of generative artificial intelligence tools, particularly for 
 their artificial intelligence-assisted search prompts, which accelerated the literature review and 
 documentation process.
 
+
+\bibliographystyle{naturemag}
+\bibliography{references}
+
+
 \section{Late-time coarsening}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figs/old_60V_dyn.png}
+    \caption{Topological defects at different time stamps for 60V $10\times$ (Old liquid crystal cell of thickness $31.09\pm0.44\mu m$ with permanent defect points). Red curves are the defect lines detected by the implemented framework.}
+    \label{fig:old_60V_frames}
+\end{figure}
+
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figs/28_new_10V_dyn.png}
@@ -795,12 +1079,5 @@ documentation process.
     \includegraphics[width=\linewidth]{figs/28_new_60V_dyn.png}
     \caption{Topological defects at different time stamps for 60V $10\times$. Red curves are the defect lines detected by the implemented framework.}
     \label{fig:60V_frames}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figs/old_60V_dyn.png}
-    \caption{Topological defects at different time stamps for 60V $10\times$ (Old liquid crystal cell of thickness $31.09\pm0.44\mu m$ with permanent defect points). Red curves are the defect lines detected by the implemented framework.}
-    \label{fig:old_60V_frames}
 \end{figure}
 \end{document}

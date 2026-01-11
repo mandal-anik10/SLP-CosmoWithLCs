@@ -77,9 +77,94 @@
 
 \section[Intro]{Introduction}
 
-\begin{frame}{Symmetry-breaking in early Universe}
-\scriptsize{abc}
+\begin{frame}{Spontaneous Symmetry Breaking (SSB)}
+\textbf{Symmetry}
+
+
+
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \textbf{Core Concept:}
+            \begin{itemize}
+                \item Ground state exhibits \textit{less} symmetry than the physical laws governing the system.
+                \item \textbf{High $T$:} System is in a symmetric, disordered state.
+                \item \textbf{Low $T$ ($<T_c$):} System spontaneously selects a specific orientation to minimize energy.
+            \end{itemize}
+            
+            \vspace{0.5em}
+            \textbf{The "Mexican Hat" Analogy:}
+            \begin{itemize}
+                \item The potential is rotationally symmetric.
+                \item The "ball" (state) must roll down to a random valley.
+                \item \textit{Consequence:} Different regions of space make independent choices (Causality).
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+            \centering
+            % Using the path from your text
+            \includegraphics[width=0.9\textwidth]{figs/imported/higgs_broken.png}
+            \captionof{figure}{\footnotesize Symmetry breaking of the Higgs field.}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- SLIDE 2: The Math of Early Universe ---
+\begin{frame}{Phase Transitions in the Early Universe}
+    \textbf{The Mechanism:}
+    Modeled by a Higgs-type scalar field $\phi$ with a temperature-dependent effective potential:
     
+    \begin{equation*}
+        V_T(\phi) = \underbrace{(A T^2 - \lambda\eta^2)}_{\text{Effective Mass } m^2(T)} \phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2
+    \end{equation*}
+
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \begin{enumerate}
+                \item \textbf{$T > T_c$:} $m^2 > 0$. Minimum at $|\phi| = 0$ (Symmetric).
+                \item \textbf{$T < T_c$:} $m^2 < 0$. Symmetric state becomes unstable.
+            \end{enumerate}
+            \vspace{0.5em}
+            The field rolls to a new vacuum expectation value (VEV):
+            \begin{equation*}
+                |\langle\phi\rangle|^2 = \eta^2 \left(1 -\frac{T^2}{T_c^2}\right)
+            \end{equation*}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figs/imported/brief_histUniv.png}
+            \captionof{figure}{\footnotesize Cooling history of the Universe.}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- SLIDE 3: Topological Defects ---
+\begin{frame}{Formation of Topological Defects}
+    \textbf{The Kibble Mechanism:}
+    \begin{itemize}
+        \item Causally disconnected regions settle into different vacua.
+        \item Boundaries between misaligned regions form stable energy discontinuities.
+    \end{itemize}
+
+    \vspace{0.5em}
+    \textbf{Classification via Homotopy Groups $\pi_n(\mathcal{M})$:}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{l l l l}
+            \toprule
+            \textbf{Topology} & \textbf{Defect Type} & \textbf{Structure} & \textbf{Cosmology} \\
+            \midrule
+            $\pi_0(\mathcal{M}) \neq \mathbb{I}$ & Domain Walls & Surfaces & Ruled out (Energy) \\
+            $\pi_1(\mathcal{M}) \neq \mathbb{I}$ & \textbf{Cosmic Strings} & Lines & \textbf{Viable} (LSS seeds) \\
+            $\pi_2(\mathcal{M}) \neq \mathbb{I}$ & Monopoles & Points & Ruled out \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.5em}
+    \footnotesize \textit{Defects provide an observational window into high-energy physics inaccessible to accelerators.}
 \end{frame}
 
 \begin{frame}[fragile]{Kibble-Zurek Mechanism}
