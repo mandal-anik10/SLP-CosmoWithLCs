@@ -33,7 +33,7 @@
 
 %=====| Adding custom thickness progress bar |===============================================================
 \makeatletter
-\setlength{\metropolis@progressinheadfoot@linewidth}{3pt} % Set thickness
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt} % Set thickness
 \makeatother
 \setbeamercolor{progress bar}{fg=red}
 
@@ -155,7 +155,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Kibble-Zurek Mechanism}
+\begin{frame}{Kibble-Zurek Mechanism | Project Objectives}
 \begin{itemize}
     \item[$\blacktriangleright$] Critical slowing down causes the system to freeze out at time $\hat{t}$ when the relaxation time exceeds the quench rate $\tau_Q$, fixing a finite domain size $\hat{\xi}$ and leading to universal Kibble--Zurek scaling of defect density ($\rho$),
     \[
@@ -403,10 +403,9 @@
 
 \begin{column}{0.8\textwidth}
 \begin{itemize}
-    \item[$\blacktriangleright$] 0.2\% DMOAP solution prepared in distilled water. Glass slabs dipped vertically for 5 minutes.
+    \item[$\blacktriangleright$] 0.2\% DMOAP solution prepared in distilled water. Glass slabs were dipped vertically for 5 minutes.
     \item[$\blacktriangleright$] Methoxy groups hydrolyze and bind to surface hydroxyl groups.
-    \item[$\blacktriangleright$] Subsequent baking at 110$^\circ$C for 60 minutes.
-    \item[$\blacktriangleright$] Forms strong covalent siloxane (Si-O-Si) bonds and molecules orient perpendicular to substrate.
+    \item[$\blacktriangleright$] Subsequent baking at 110$^\circ$C for 60 minutes forms strong covalent siloxane (Si-O-Si) bonds, and molecules orient perpendicular to the substrate.
 \end{itemize}
 
 \begin{figure}
@@ -456,10 +455,9 @@
 
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-    \item[$\blacktriangleright$] DMOAP-treated slabs in sandwich geometry. 
-    \item[$\blacktriangleright$] $23\,\mu\mathrm{m}$ Mylar film placed along the edges.
+    \item[$\blacktriangleright$] DMOAP-treated slabs are sandwiched together along with $23\,\mu\mathrm{m}$ Mylar film, placed along the edges.
     \item[$\blacktriangleright$] Applied gentle pressure (30 min), then epoxy cured (24 h).
-    \item[$\blacktriangleright$] Indium soldered to ITO electrodes.
+    \item[$\blacktriangleright$] Conducting wires soldered to ITO electrodes using Indium.
 \end{itemize}
 
 \end{column}
@@ -512,7 +510,7 @@
 
 \begin{column}{0.4\textwidth}
 \begin{itemize}
-    \item[$\blacktriangleright$] Measured capacitance ($C$) via LCR meter; modeled as parallel plates to measured cell thickness as,
+    \item[$\blacktriangleright$] Measured capacitance ($C$) using LCR meter; modeled as parallel plates to measured cell thickness.
 \end{itemize}
 \[ d = \frac{\varepsilon_0 \varepsilon_r A}{C} \]
     
@@ -581,7 +579,7 @@
 \begin{itemize}
     \item[$\blacktriangleright$] MBBA introduced at elevated temperature.
     \item[$\blacktriangleright$] Capillary action fills the cell uniformly.
-    \item[$\blacktriangleright$] Slow cooling minimizes defect formation.
+    \item[$\blacktriangleright$] Slow cooling minimizes permanent defect formation.
 \end{itemize}
 
 \end{column}
@@ -601,12 +599,13 @@
 % Final Setup------------------------------------------------------------------------------------
 \begin{frame}{\small{Final Setup}}
 \begin{itemize}
-    \item[$\blacktriangleright$] 10-60 V RMS, 10 kHz Sine wave field has been generated using a \textit{ function generator} and \textit{A800DI Amplifier}. 
+    \item[$\blacktriangleright$] 10-60 V RMS, 10 kHz sine wave electric field has been generated using a \textit{ function generator} and \textit{A800DI amplifier} and provided to the cell. 
 \end{itemize}
 \begin{columns}
     \begin{column}{0.35\textwidth}
     \begin{itemize}
-    \item[$\blacktriangleright$] Data taken at $28^\circ$C controlled temp; $10\times$ optical magnification.
+    \item[$\blacktriangleright$] Data taken at $28^\circ$Cm controlled temp; $10\times$ optical magnification.
+    \item[$\blacktriangleright$] Video recorded at 100 fps under polarized illumination.
     \end{itemize}
     \end{column}
 
@@ -1006,7 +1005,7 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
     \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim={0.5cm 0.5cm 0.5cm 0.5cm}, clip]{figs/imported/pi_wall.png}
-    \caption{\footnotesize{(Left) Observed under a cross polarizer, a pair of $\pm1/2$ wedge disclinations connected by a $\pi$-wall when an in-plane electric field is present. (Right) Sketch of the 2D director field; $\theta$ is the angle between the $\pi$-wall and the electric field. (Source\footcite{Blanc2005DynamicsBackflow})}}
+    \caption{\footnotesize{(L) A pair of $\pm1/2$ wedge disclinations connected by a $\pi$-wall under a cross polarizer. (R) 2D director field Sketch (Source\footcite{Blanc2005DynamicsBackflow})}}.
     \label{fig:placeholder}
     \end{figure}
     \end{column}
@@ -1049,7 +1048,8 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
     \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim={0.5cm 0.5cm 0.5cm 0.5cm}, clip]{figs/imported/domain_dyn.png}
-    \caption{\footnotesize{(Left) Observed under a cross polarizer, a pair of $\pm1/2$ wedge disclinations connected by a $\pi$-wall when an in-plane electric field is present. (Right) Sketch of the 2D director field; $\theta$ is the angle between the $\pi$-wall and the electric field. (Source\footcite{Blanc2005DynamicsBackflow})}}
+    \caption{\footnotesize{Shape evolution of a single domain at different moments and the corresponding
+polarizing optical microscope micrographs. (L) Early stage of  annihilation (R) Late stage of the annihilation(Source\footcite{Shen2020AnnihilationCrystals})}}.
     \label{fig:placeholder}
     \end{figure}
     \end{column}
@@ -1057,7 +1057,7 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
     \begin{column}{0.4\textwidth}
     \begin{figure}
     \centering
-    \includegraphics[width=\linewidth, trim={0.5cm 0.5cm 0.5cm 0.5cm}, clip]{figs/28_new_60V_dyn.png}
+    \includegraphics[width=0.95\linewidth, trim={0.5cm 0.5cm 0.5cm 0.5cm}, clip]{figs/28_new_60V_dyn.png}
     \caption{\footnotesize{Topological defects at different time stamps for 60V at 10$\times$ resolution.}}
     \label{fig:placeholder}
     \end{figure}
@@ -1092,16 +1092,16 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
 \begin{frame}{Formation dynamics}
 \begin{columns}
 
-\begin{column}{0.7\textwidth}
+\begin{column}{0.65\textwidth}
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figs/formation_dyn.png}
+    \includegraphics[width=\linewidth]{figs/formation_dyn-P.png}
     \caption{Observed freeze-out of director dynamics and strong stochasticity at high electric field frequency(10Hz)}
     \label{fig:formation_dyn}
 \end{figure}
 \end{column}
 
-\begin{column}{0.3\textwidth}
+\begin{column}{0.35\textwidth}
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{figs/electro_convection_2025-12-01T20-15-08.641.png}
@@ -1121,13 +1121,13 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
         \begin{itemize}
             \item \textbf{Open Lines:} Defect density decays as $\rho(t) \propto t^{-1}$ (standard coarsening).
             \item \textbf{Closed Loops:} Long-lived under strong E-fields; decay slower than tension models predict.
-            \item \textbf{Structure:} Variable $\pi$-wall widths observed, consistent with field-dependent coherence length.
+            \item \textbf Variable $\pi$-wall widths observed, consistent with field-dependent coherence length.
         \end{itemize}
         \item[$\blacktriangleright$] \textbf{Experimental Limits on KZM}
         \begin{itemize}
             \item \textbf{High Freq ($10\,\mathrm{kHz}$):} Dielectric response is too slow; system freezes before critical dynamics.
             \item \textbf{Low Freq:} Ion motion triggers electrohydrodynamic flow, disrupting ordered patterns.
-            \item \textit{Result: No stable intermediate regime exists for KZM scaling.}
+            \item \textit{Result: No stable intermediate regime observed for KZM scaling of defects in MBBA LC.}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -1135,14 +1135,14 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
     \begin{itemize}
         \item[$\blacktriangleright$] \textbf{Future Directions}
         \begin{itemize}
-            \item  Use magnetic fields or rapid thermal quenches to access universal scaling with more suitable LCs like 5CB.
-            \item  Verify inverse scaling of $\pi$-wall width vs. field strength\footcite{Blanc2005DynamicsBackflow}.
-            \item  Apply ML to resolve complex umbilic trajectories\footcite{Dierking2025MachineNanoparticles}.
+            \item  Magnetic fields or rapid thermal quenches can be performed to access universal scaling with more suitable LCs like 5CB.
+            \item  Inverse scaling of $\pi$-wall width vs. field strength can be verified.\footcite{Blanc2005DynamicsBackflow}.
+            \item  A more sophisticated machine-learning-based framework can be developed to resolve complex umbilic trajectories\footcite{Dierking2025MachineNanoparticles}.
         \end{itemize}
         \item[$\blacktriangleright$] \textbf{Questions I have}
-        \begin{itemize}
-            \item effect of mass difference in different vacuum states.
-            \item quantum tunnel in between vacuum manifolds.
+        \begin{itemize} 
+            \item Suppose vacuum states have non-degenerate masses; what effect would this asymmetry have on defect dynamics in the presence of gravity? 
+            \item How does the probability of quantum tunneling between vacuum states (vacuum decay) influence the stability and evolution of the defect network? 
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -1190,43 +1190,6 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
 \end{tikzpicture}
     
 \end{frame}
-
-
-% \begin{tabular}{p{6cm} | p{6cm}}
-% \makecell[t]{\boxed{\textbf{Symmetry}} Condition:\\ Cat isn't hungry} & \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs//imported/Sym_CatApple.png} & \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs//imported/Sym_CatApple.png} \\
-% \end{tabular}
-
-
-% \begin{tabular}{p{4cm} c | c}
-% \makecell[t]{\boxed{\textbf{Broken Symmetry}}\\ Condition:\\ Cat is hungry} &  \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{BrokenSym_CatApple_R.png} & \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{BrokenSym_CatApple_L.png}
-% \end{tabular}
-% \end{frame}
-
-
-
-% \begin{columns}
-% \begin{column}{0.2\textwidth}
-%     \boxed{Symmetry}
-%     \boxed{Symmetry Breaking}
-% \end{column}
-
-
-% \begin{column}{0.6\textwidth}
-% \begin{figure}
-%         \centering
-%         \includegraphics[trim={3cm 2cm 3cm 2cm}, clip, scale=0.75]{figs//imported/Sym_CatApple.png}
-%         \caption{Enter Caption}
-%         \label{fig:placeholder}
-%     \end{figure}
-% \begin{figure}
-%     \centering
-%     \includegraphics[trim={3cm 2cm 3cm 2cm}, clip, scale=0.75]{BrokenSym_CatApple_R.png}
-%     \caption{Enter Caption}
-%     \label{fig:placeholder}
-% \end{figure}
-% \end{column}
-    
-% \end{columns}
     
 
 
