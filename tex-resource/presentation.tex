@@ -83,7 +83,7 @@
 \addtobeamertemplate{footline}{}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south east, xshift=-4pt, yshift=4pt] at (current page.south east) {
-       \scalebox{0.9}{\textcolor{black!75}{\insertauthor; \insertdate}}
+       \scalebox{0.75}{\textcolor{black!75}{Anik Mandal; \insertdate}}
     };
   \end{tikzpicture}
 }
@@ -92,9 +92,9 @@
 \title{SLP Presentation}
 \subtitle{Laboratory Studies of Cosmology-Inspired Defect Dynamics in Liquid Crystals}
 \date{\today}
-\author{Anik Mandal}
-\institute{Ashoka University}
-\titlegraphic{\hfill\includegraphics[height=1.75cm]{../tex-resource/ashoka-logo.png}}
+\author{\textbf{Anik Mandal} \\ SLP Guide : Prof. Pramoda Kumar \\ PhD Supervisor : Prof. Somak Raychaudhury }
+\institute{Ashoka University, Sonipat}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{../tex-resource/ashoka-logo.png}}
 
 
 \begin{document}
@@ -119,29 +119,33 @@
 
 \begin{frame}{Symmetry and Symmetry Breaking}
 
-\begin{figure}
-    \centering
-    \subfloat[  $T > T_c$]{\includegraphics[width=0.3\linewidth, trim={0cm 0cm 0cm 0cm}, clip]{figs/imported/stable_ball.png}}\hspace{.1cm}
-    \subfloat[$T < T_c$]{\includegraphics[width=0.3\linewidth, trim={0cm 0cm 0cm 0cm}, clip]{figs/imported/Unstable_ball.png}}\hspace{.1cm}
-    \subfloat[Symmetry Breaking]{\includegraphics[width=0.3\linewidth]{figs//imported/Sym_breaking_ball.png}}
-\end{figure}
+\begin{table}
+\begin{tabular}{p{7cm} || p{7cm}}
+\toprule
+\makecell[t]{\boxed{\textbf{Symmetry}} \\ Condition: Cat isn't hungry} & \makecell[t]{\boxed{\textbf{Broken Symmetry}} \\Condition: Cat is hungry} \\
+\midrule
+\includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs//imported/Sym_CatApple.png} \hspace{5pt}\vrule width 2pt\hspace{5pt}\includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs//imported/Sym_CatApple.png} &  \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs//imported/BrokenSym_CatApple_R.png} \hspace{5pt}\vrule width 2pt\hspace{5pt} \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=0.9]{figs/imported/BrokenSym_CatApple_L.png}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{itemize}
-    \item[$\blacktriangleright$] Spontaneous symmetry breaking (SSB) ($T < T_c$) generates massive excitations via the Higgs mechanism.
     \item[$\blacktriangleright$] Early Universe evolution involves a hierarchy of symmetry-breaking events.\footcite{Kibble1982PhaseUniverse}$^,$\footcite{Vilenkin1985CosmicWalls}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Formation of Topological Defects}
+
 \begin{figure}
     \centering
-    \subfloat[Domain Walls]{\includegraphics[width=0.3\linewidth]{figs/imported/domain_wall.png}}\hspace{.1cm}
-    \subfloat[String Defects]{\includegraphics[width=0.3\linewidth]{figs/imported/string_defect.png}}
+    \subfloat[Symmetry Breaking (\href{https://cds.cern.ch/record/1664409/plots}{Source})]{\includegraphics[width=0.3\linewidth]{figs/imported/Sym_breaking.png}}\hspace{.1cm}
+    \subfloat[Domain Walls (\href{https://www.ctc.cam.ac.uk/outreach/origins/cosmic_structures_two.php}{Source})]{\includegraphics[width=0.3\linewidth]{figs/imported/domain_wall.png}}\hspace{.1cm}
+    \subfloat[String Defects (\href{https://www.ctc.cam.ac.uk/outreach/origins/cosmic_structures_two.php}{Source})]{\includegraphics[width=0.3\linewidth]{figs/imported/string_defect.png}}
 \end{figure}
 
 \begin{itemize}
-    \item[$\blacktriangleright$] Causally disconnected regions independently settle into different vacuum states, forming defects at the boundaries.\footcite{Kibble1976TopologyStrings}
+    \item[$\blacktriangleright$] Defect or mismatch forms at the boundary of two causally disconnected points in space.\footcite{Kibble1976TopologyStrings}
     \item[$\blacktriangleright$] Cosmological defects acted as gravitational seeds for large-scale structure, drove CMB anisotropies, and remain viable candidates for dark matter.
 \end{itemize}
     
@@ -150,24 +154,31 @@
 
 \begin{frame}[fragile]{Cosmology in the Laboratory}
 \begin{itemize}
-    \item[$\blacktriangleright$] In 1985, Zurek extended Kibble's idea to condensed matter physics. Where he tried to study the formation and dynamics of topological defects in quench-induced phase transitions in liquid $He$.\footcite{Zurek1985CosmologicalHelium}$^,$\footcite{Zurek1996CosmologicalSystems}
-    \item[$\blacktriangleright$] Complexity of cryogenic experiments drove the adoption of liquid crystals as a robust alternative.\footcite{Chuang1991CosmologyCrystals}$^,$\footcite{Yurke1992CoarseningCrystals}$^,$\footcite{Fowler2017KibbleZurekCrystal}
+    \item[$\blacktriangleright$] In 1985, Zurek extended Kibble's idea to condensed matter physics.\footcite{Zurek1985CosmologicalHelium}$^,$\footcite{Zurek1996CosmologicalSystems}
+    \item[$\blacktriangleright$] Liquid crystals adopted as a robust alternative.\footcite{Chuang1991CosmologyCrystals}$^,$\footcite{Yurke1992CoarseningCrystals}$^,$\footcite{Fowler2017KibbleZurekCrystal}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Kibble-Zurek Mechanism | Project Objectives}
 \begin{itemize}
-    \item[$\blacktriangleright$] Critical slowing down causes the system to freeze out at time $\hat{t}$ when the relaxation time exceeds the quench rate $\tau_Q$, fixing a finite domain size $\hat{\xi}$ and leading to universal Kibble--Zurek scaling of defect density ($\rho$),
+    \item[$\blacktriangleright$] Kibble--Zurek scaling of defect density ($\rho$),
     \[
         \rho \propto \tau_Q^{-d\nu/(1+\nu z)},
     \]
-    where $d$ is the effective defect dimension.
+    \begin{itemize}
+        \item Critical slowing down near the transition point.
+        \item system freezes at certain time and length scale.
+    \end{itemize}
     
-    \item[$\blacktriangleright$] After formation, defect networks coarsen to minimize the Frank elastic free energy, given in terms of the director field $\mathbf{n(r)}$ as,
+    \item[$\blacktriangleright$] Defect networks coarsen to minimize the Frank elastic free energy, 
     \[
         F=\frac{1}{2}\!\left[ K_1(\nabla\!\cdot\!\mathbf{n})^2 + K_2(\mathbf{n}\!\cdot\!\nabla\!\times\!\mathbf{n})^2 + K_3|\mathbf{n}\!\times\!\nabla\!\times\!\mathbf{n}|^2 \right],
     \]
-    and in overdamped systems a one-scale model predicts universal late-time decay of defect density: $\rho(t)\!\propto\! t^{-1}$ (for  line defects) and $\rho(t)\!\propto\! t^{-1/2}$ (for domain walls).
+    
+    \begin{itemize}
+        \item String defect (d=2) : $\rho(t)\!\propto\! t^{-1}$
+        \item Domain walls (d=1) : $\rho(t)\!\propto\! t^{-1/2}$
+    \end{itemize} 
 \end{itemize}
 
 \end{frame}
@@ -209,14 +220,14 @@
 \begin{column}{0.8\textwidth}
 \begin{figure}
     \centering
-    \includegraphics[width=0.95\linewidth, trim = {0 0 0 2cm}, clip]{figs/imported/Fréedericksz_Transition.png}
-    \caption{Fréedericksz transition due to electric field quench in\\ homeotropically aligned LC}
+    \includegraphics[width=0.95\linewidth, trim = {0 0 0 16cm}, clip]{figs/imported/Freedericksz_transitionP.png}
+    \caption{Fréedericksz transition due to electric field quench in homeotropically aligned LC \\(\href{https://doi.org/10.1039/B308098F}{Source})}
     \label{fig:placeholder}
 \end{figure}
 \end{column}
-
 \end{columns}    
 \end{frame}
+
 % Patterning----------------------------------------------------------------------------------------
 \begin{frame}{\small{Preparing Homeotropic Cell}}
 
@@ -410,8 +421,8 @@
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figs/imported/DMOAP.png}
-    \caption{DMOAP structure}
+    \subfloat[DMOAP (\href{https://pubchem.ncbi.nlm.nih.gov/compound/Quat-silsesquioxane}{Source})]{\includegraphics[width=0.45\linewidth]{figs/imported/DMOAP.png}}
+    \subfloat[MBBA (\href{https://en.wikipedia.org/wiki/MBBA}{Source})]{\includegraphics[width=0.45\linewidth]{figs/imported/MBBA.png}}
     \label{fig:placeholder}
 \end{figure}
 
@@ -925,7 +936,6 @@ $\blacktriangleright$ Developed an automated image processing pipeline to quanti
 
 \begin{column}{0.8\textwidth}
 \begin{itemize}
-    \item[$\blacktriangleright$] Utilized the \textit{Skan} library to model the skeleton as a network graph, summing branch lengths based on pixel connectivity.
     \item[$\blacktriangleright$] Total defect length computed by summing the lengths of all skeleton branches.
     \item[$\blacktriangleright$] Defect density derived by dividing the total length by the sample volume ($V$), given by $\rho = L / V$.
 \end{itemize}
@@ -1025,8 +1035,8 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
 \begin{frame}{Late time dynamics: cell with permanent defects}
     \begin{figure}[h]
     \centering
-    \subfloat[10V : -1.20]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/10V-rho_dyn.png}}
-    \subfloat[20V : -0.80]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/20V-rho_dyn.png}}
+    \subfloat[40V : -0.98]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/40V-rho_dyn.png}}
+    \subfloat[60V : -1.02]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/60V-rho_dyn.png}}
     % \caption{\footnotesize{late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification.}}
     \label{fig:old_dyn_string_density}
     \end{figure}
@@ -1035,8 +1045,8 @@ median \left( \frac{\sigma}{\bar{x}}(t)\right) < 0.1
 \begin{frame}{Late time dynamics: cell with permanent defects}
     \begin{figure}[h]
     \centering
-    \subfloat[40V : -0.98]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/40V-rho_dyn.png}}
-    \subfloat[60V : -1.02]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/60V-rho_dyn.png}}
+    \subfloat[10V : -1.20]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/10V-rho_dyn.png}}
+    \subfloat[20V : -0.80]{\includegraphics[width=0.5\textwidth, trim={1.5cm 0.5cm 3cm 1.5cm}, clip]{figs/20V-rho_dyn.png}}
     % \caption{\footnotesize{late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification.}}
     \label{fig:old_dyn_string_density}
     \end{figure}
@@ -1068,6 +1078,17 @@ polarizing optical microscope micrographs. (L) Early stage of  annihilation (R) 
 \end{frame}
 
 \begin{frame}{Late time dynamics: cell without permanent defects}
+
+    \begin{figure}[h]
+    \centering
+    \subfloat[40V : -0.22]{\includegraphics[width=0.5\textwidth, trim={1cm 0 2cm 1cm}, clip]{figs/28_new_40V_scalling.png}}
+    \subfloat[60V : -0.33\footcite{Guimaraes2013AnnihilationCrystal}$^,$\footcite{Dierking2025MachineNanoparticles}]{\includegraphics[width=0.5\textwidth, trim={1cm 0 2cm 1cm}, clip]{figs/28_new_60V_scalling.png}}
+    % \caption{ \textbf{New cell without permanent defects}: Log-log plot showing the late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification. The solid blue line represents the average of the estimated defect length, with the surrounding shaded region indicating the $1\sigma$ limits of random error. The orange line depicts the best power-law fit within the scaling regime. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10–25 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
+    \label{fig:dyn_string_density}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Late time dynamics: cell without permanent defects}
     \begin{figure}[h]
     \centering
     \subfloat[10V : -0.74]{\includegraphics[width=0.5\textwidth, trim={1cm 0 2cm 1cm}, clip]{figs/28_new_10V_scalling.png}}
@@ -1076,17 +1097,6 @@ polarizing optical microscope micrographs. (L) Early stage of  annihilation (R) 
     \label{fig:dyn_string_density}
     \end{figure}
     
-\end{frame}
-
-\begin{frame}{Late time dynamics: cell without permanent defects}
-
-    \begin{figure}[h]
-    \centering
-    \subfloat[40V : -0.22]{\includegraphics[width=0.5\textwidth, trim={1cm 0 2cm 1cm}, clip]{figs/28_new_40V_scalling.png}}
-    \subfloat[60V : -0.33]{\includegraphics[width=0.5\textwidth, trim={1cm 0 2cm 1cm}, clip]{figs/28_new_60V_scalling.png}}
-    % \caption{ \textbf{New cell without permanent defects}: Log-log plot showing the late-time coarsening dynamics of defect density ($\rho$) versus time ($t$) for the 10V, 20V, 40V, 60V applied field case, observed at $10\times$ magnification. The solid blue line represents the average of the estimated defect length, with the surrounding shaded region indicating the $1\sigma$ limits of random error. The orange line depicts the best power-law fit within the scaling regime. The shaded red regions mark data excluded from the analysis: early-time data (left) were discarded to remove the initial 10–25 frames, while the late-time tail (right) was excluded based on relative error selection criteria.}
-    \label{fig:dyn_string_density}
-    \end{figure}
 \end{frame}
 
 \begin{frame}{Formation dynamics}
@@ -1157,20 +1167,6 @@ polarizing optical microscope micrographs. (L) Early stage of  annihilation (R) 
     \item Our family @TDI (Mainak Da, Debadyuiti Da, Arijit, Srijit Da, Susanta)
 \end{itemize}
 
-\end{frame}
-
-\begin{frame}{}
-
-\begin{table}
-\begin{tabular}{p{7cm} || p{7cm}}
-\toprule
-\makecell[t]{\boxed{\textbf{Symmetry}} \\ Condition: Cat isn't hungry} & \makecell[t]{\boxed{\textbf{Broken Symmetry}} \\Condition: Cat is hungry} \\
-\midrule
-\includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=1]{figs//imported/Sym_CatApple.png} \hspace{5pt}\vrule width 2pt\hspace{5pt}\includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=1]{figs//imported/Sym_CatApple.png} &  \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=1]{figs//imported/BrokenSym_CatApple_R.png} \hspace{5pt}\vrule width 2pt\hspace{5pt} \includegraphics[valign=t, trim={3cm 2.5cm 3cm 2.5cm}, clip, scale=1]{figs/imported/BrokenSym_CatApple_L.png}\\
-\bottomrule
-\end{tabular}
-\end{table}
-
 \centering
 \begin{tikzpicture}
     \node[
@@ -1179,17 +1175,18 @@ polarizing optical microscope micrographs. (L) Early stage of  annihilation (R) 
         line width=2pt,
         text=red!50!black,
         rounded corners=15pt, % How round the corners are
-        minimum width=12cm,    % Exact width
+        minimum width=10cm,    % Exact width
         minimum height=2cm,   % Exact height
         align=center,          % Center text alignment
         font=\Huge\bfseries  % Optional: Make text large and bold
     ] {
         % 1.5 means "150% width", 1 means "normal height"
-        \scalebox{2}[1]{THANK YOU} 
+        \scalebox{1.5}[1]{THANK YOU} 
     };
 \end{tikzpicture}
-    
+
 \end{frame}
+
     
 
 
